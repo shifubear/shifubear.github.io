@@ -16,7 +16,7 @@ about:
     - icon: file-earmark-text-fill
       text: CV
       href: files/cv.pdf
-
+comments: false
 ---
 
 Hi! I'm a PhD student in computer science at the University of California - Irvine in the [Center for Algorithms and Theory of Computation](https://www.ics.uci.edu/~theory/). I am pleased to have Dr. Michael Goodrich and Dr. Sandy Irani as my advisors. My interests are in theoretical computer science, specifically computational geometry and quantum computing. In my free time, I enjoy playing video games, baking, and taking walks.
