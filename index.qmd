@@ -1,14 +1,43 @@
 ---
-title: "Welcome"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+image: profile.webp
+about:
+  template: jolla
+  image-width: 5cm
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/shionfukuzawa
+    - icon: github
+      text: Github
+      href: https://github.com/shifubear
+    - icon: file-earmark-text
+      text: Resume
+      href: files/resume.pdf
+    - icon: file-earmark-text-fill
+      text: CV
+      href: files/cv.pdf
+
 ---
 
+Hi! I'm a PhD student in computer science at the University of California - Irvine in the [Center for Algorithms and Theory of Computation](https://www.ics.uci.edu/~theory/). I am pleased to have Dr. Michael Goodrich and Dr. Sandy Irani as my advisors. My interests are in theoretical computer science, specifically computational geometry and quantum computing. In my free time, I enjoy playing video games, baking, and taking walks.
 
+## Education
+
+University of California, Irvine | Irvine, CA |
+PhD in Computer Science | Sept 2020 - June 2025 (Expected)
+
+
+
+Calvin University | Grand Rapids, MI |
+B.S in Mathematics | Sept 2016 - May 2020
+
+## Publications 
+
+- [Modified Iterative Quantum Amplitude Estimation is Asymptotically Optimal](https://arxiv.org/abs/2208.14612)
+ with Chris Ho, Sandy Irani, and Jasen Zion
+ to appear in ALENEX2023
+
+
+- [Diamonds are Forever in the Blockchain: Geometric Polyhedral Point-Set Pattern Matching](https://arxiv.org/abs/2208.05597)
+ with Gill Barequet, Michael Goodrich, David Mount, Martha Osegueda, and Evrim Ozel
+ CCCG2022 

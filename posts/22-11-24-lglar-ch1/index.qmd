@@ -1,0 +1,185 @@
+---
+title: "Hall LGLAR Chapter 1: Matrix Lie Groups"
+author: "Shion Fukuzawa"
+date: "2022-11-24"
+categories: [notes, math]
+---
+
+Collection of some notes and solutions to exercises from Brian Hall's "Lie Groups, Lie Algebras, and Representations". My primary motivation for going through this literature around Lie groups is to understand the unitary groups and special unitary groups better, so the problems I solve will be focused on those groups more than others. The definition numberings are assigned by myself to reference in the exercise solutions. 
+
+## Definitions 
+
+**Definition 1**: The **general linear group** over $\mathbb{R}$, $\text{GL}(n; \mathbb{R})$, is the group of all $n$ by $n$ invertible matrices with real entries, where the group operation is the standard matrix product. A similar definition is used to define $\text{GL}(n; \mathbb{C})$.
+
+**Definition 2**: $M_n(\mathbb{C})$ is the space of all $n$ by $n$ matrices with complex entries. 
+
+**Definition 3**: Let $A_m$ be a sequence of complex matrices in $M_n(\mathbb{C})$. We say that $A_m$ **converges** to a matrix $A$ if each entry of $A_m$ converges to its corresponding entry in $A$. 
+
+**Definition 4**: A **matrix Lie group** is a subgroup $G$ of $\text{GL}(n;\mathbb{C})$ with one of the following properties:
+  1. If $A_m$ is any sequence of matrices in $G$, and $A_m$ converges to some matrix $A$, then either 
+    1. $A \in G$
+    2. $A$ is not invertible. 
+  2. $G$ is a closed subgroup of $\text{GL}(n;\mathbb{C})$.
+
+**Definition 5**: A matrix $A$ is unitary if 2 column vectors are orthonormal, i.e. $\sum_{l=1}^n \overline{A}_{lj}A_{lk}=\delta_{jk}$. Equivalently, a unitary matrix is one that satisfies $A^* A = AA^* = I$. 
+
+## Examples of Matrix Lie Groups
+
+**1. Unitary group**: The collection of unitary matrices forms a subgroup of $\text{GL}(n;\mathbb{C})$ called the **unitary group**, denoted by $U(n)$. We can also define the **special unitary group**, $SU(n)$, as the subgroup of $U(n)$ with all matrices having determinant 1. 
+
+---
+
+**Quick check 1**: Show that $G = U(n)$ (or $G = SU(n)$) is a matrix Lie group. 
+
+*PROOF*: To show this, it suffices to show that $G$ satisfies one of the properties in definition 4. From the text, it seems like it is a trivial exercise to show condition 2 holds, so I prove that here (although I'm not sure if this is the cleanest way to prove it). 
+
+The goal is to show that $G$ is a closed subgroup of $\text{GL}(n;\mathbb{C})$. This means that $G$ must be closed as a group, as well as a topological subspace. First to show it is a closed group, we must show $U_1U_2 \in G$ and $U^{-1} \in G$ for all $U, U_1, U_2 \in G$. 
+
+  * Since $(U_1U_2)^*(U_1U_2) = U_2^* U_1^* U_1 U_2 = I$, $U_1U_2 \in G$. 
+  * For $U \in G$, $(UU^{-1})^* = I^* = I$. By standard matrix identities, $(UU^{-1})^* = (U^{-1})^*U^* = I$, implying that $(U^{-1})^* = (U^*)^{-1}$. Using this, we have that $(U^{-1})^* U^{-1} = (U^*)^{-1} U^{-1} = (UU^*)^{-1} = I$, proving that $U^{-1} \in G$. 
+
+To show that $G$ is a topologically closed set, first define the function $f: U(n) \rightarrow U(n)$ as $f(A) = A^* A$. This can be shown to be a continuous function. Furthermore, we can define $U(n)$ as the preimage of $\{I_n\}$, a closed set, under this continuous function, showing that $U(n)$ is indeed a closed topological set. To see that this holds for $SU(n)$, a [similar proof](https://math.stackexchange.com/questions/4075037/closed-subgroups-of-gln-mathbbc) can be used to show that $SL(n\; \mathbb{C})$ is a closed set. Since the intersection of two closed sets is closed, we get $SL(n; \mathbb{C}) \cap U(n) = SU(n)$ is closed too. 
+
+---
+
+**2. Symplectic group**: Consider the skew-symmetric bilinear form $B$ on $\mathbb{R}^{2n}$ defined by the following: 
+
+$$\omega(x, y) = \sum_{j=1}^n (x_jy_{n+j} - x_{n+j}y_j).$$
+
+The set of all $2n \times 2n$ matrices $A$ which preserve $\omega$ is the **real symplectic group** $\text{Sp}(n;\mathbb{R})$, and it is a closed subgroup of $\text{GL}(2n;\mathbb{R})$. If $\Omega$ is the $2n \times 2n$ matrix 
+
+$$\Omega = \begin{pmatrix}0 & I \\ I & 0\end{pmatrix},$$
+
+then 
+
+$$\omega(x,y) = \left< x, \Omega y \right>.$$
+
+From this, we can show that a $2n \times 2n$ real matrix $A$ belongs to $\text{Sp}(n;\mathbb{R})$ if and only if 
+
+$$-\Omega A^{T} \Omega = A^{-1}.$$
+
+## Topological Properties 
+
+There are three main topological properties we are interested in that a matrix Lie group can satisfy, which are stated in this section. 
+
+### 1. Compactness 
+
+**Definition 6**: A matrix Lie group $G \subset \text{GL}(n;\mathbb{C})$ is said to be **compact** if it is compact in the usual sense as a subset of $M_n(\mathbb{C}) \cong \mathbb{R}^{2n^2}$. 
+
+The ``usual sense'' of compactness is hard to get a sense of for those with limited exposure to topology, but thankfully the following theorem provides necessary and sufficient conditions for this property to hold, at least for subsets of Euclidean spaces. 
+
+[**Heine-Borel Theorem**](https://en.wikipedia.org/wiki/Heine%E2%80%93Borel_theorem): For a subset $S$ of Euclidean space $\mathbb{R}^n$, the following two statements are equivalent:
+
+  * $S$ is closed and bounded
+  * $S$ is compact, that is, every open cover of S has a finite subcover.
+
+Here, closed means that for any sequence $A_m \in S$ such that $A_m \rightarrow A$, then $A \in S$. We say a subset $G \subset M_n(\mathbb{C})$ is bounded if there exists a constant $C$ such that for all $A \in G$, we have $|A_{jk}| \leq C$ for all $1 \leq j,k \leq n$. 
+
+---
+
+**Quick check 2**: Show that $U(n)$ and $SU(n)$ are compact. 
+
+*PROOF*: From quick check 1, we know that $U(n)$ and $SU(n)$ are closed. They are also bounded, since by definition, the columns of matrices in these groups must be unit vectors. This means that $|A_{jk}| \leq 1$ for all $1 \leq j, k \leq n$. By the Heine-Borel theorem, we concluded that these two groups are indeed compact.
+
+---
+
+### 2. Connectedness
+
+**Definition 7**: A matrix Lie group $G$ is **path connected** if for all $A$ and $B$ in $G$, there exists a continuous path $A(t)$, $a \leq t \leq b$, lying in $G$ with $A(a) = A$ and $A(b) = B$. For any matrix Lie group $G$, the **identity component** of $G$, denoted by $G_0$, is the set of $A \in G$ for which there exists a continuous path $A(t)$, $a \leq t \leq b$, lying in $G$ with $A(a) = I$ and $A(b) = A$. 
+
+It was stated without proof that for the case of matrix Lie groups, path connectedness implies connectedness, so the two properties are used interchangeably. 
+
+---
+
+**Quick check 3**: Show that $U(n)$ and $SU(n)$ are connected for all $n \geq 1$. 
+
+*PROOF*: Every unitary matrix $U$ has the [property](https://en.wikipedia.org/wiki/Unitary_matrix#Properties) that it can be diagonalized, i.e., written as $U = VDV^{-1}$ where $V \in U(n)$ and $D$ is diagonal with diagonal entries $e^{i\theta_1}, \ldots, e^{i\theta_n}$. We can then define 
+
+$$U(t) = V\begin{pmatrix} e^{i(1-t)\theta_1} & & 0 \\  & \ddots &  \\ 0 &  & e^{i(1-t)\theta_n} \end{pmatrix}V^{-1}, 0\leq t \leq 1.$$
+
+It is clear that $U(t)$ stays in $U(n)$ for all $t$, and $U(t)$ connects $U$ to $I$, showing that $U(n)$ is indeed connected. 
+
+We can do a similar construction for $SU(n)$, but with the modification that the $n$-th diagonal element is the inverse of the product of the first $n - 1$ elements, ensuring that the determinant is 1. 
+
+---
+
+### 3. Simple Connectedness
+
+**Definition 8**: A matrix Lie group is **simply connected** if it is connected and, in addition, every loop in $G$ can be shrunken continuously to a point in $G$. 
+  More precisely, assume $G$ is connected. Then, $G$ is simply connected if for every continuous path $A(t)$, $0 \leq t \leq 1$, lying in $G$ and with $A(0) = A(1)$, there exists a continuous function $A(s, t)$, $0 \leq s, t \leq 1$, taking values in $G$ and having the following properties: 
+    1. $A(s, 0) = A(s, 1)$ for all $s$
+    2. $A(0, t) = A(t)$
+    3. $A(1, t) = A(1, 0)$ for all $t$. 
+
+It turns out that $SU(n)$ is simply connected for all $n$, but the author defers the proof to a later chapter, possibly implying that we don't have the necessary tools yet to demonstrate this. However, it is not hard to show that $SU(2)$ is simply connected, as this space (which is the space of states a single qubit can take), is isomorphic to the unit sphere, and the above properties can easily be demonstrated. 
+
+## Exercises 
+
+A collection of my solutions to select exercises. The plan is to choose the exercises related to $U(n)$ and $SU(n)$. 
+
+---
+
+**Exercise 3**: 
+
+Show that $\text{Sp}(1;\mathbb{C}) = \text{SL}(2;\mathbb{C})$ and that $\text{Sp}(1) = SU(2)$. 
+
+**Definition**: The compact symplectic group $\text{Sp}(2)$ is defined as $\text{Sp}(2) \equiv \text{Sp}(1;\mathbb{C}) \cap U(2)$.
+
+*PROOF*: Let $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \text{SL}(2;\mathbb{C})$. If suffices to show that $-\Omega A^T \Omega = A^{-1}$ for $\Omega$ defined above. Since $\det(A) = 1$, we know that $A^{-1} = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$. 
+
+$$-\Omega A^T \Omega = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} a & c \\ b & d \end{pmatrix} \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}.$$
+
+So $\text{Sp}(1;\mathbb{C}) = \text{SL}(2;\mathbb{C})$. 
+
+
+($\text{Sp}(2) \subset SU(2)$). Let $A \in SU(2)$. Then we have $\det(A) = 1$ and $A^*A = I$ so $A \in SU(2)$. 
+
+($\text{Sp}(2) \supset SU(2)$). Let $A \in SU(2)$. Since $SU(2) \subset U(2)$ holds by definition, it suffices to show that $SU(2) \subset \text{Sp}(1; \mathbb{C})$. This proof is equivalent to the first part of the problem. 
+
+$\Rightarrow$ $\text{Sp}(1) = SU(2)$. 
+
+---
+
+**Exercise 5** (Part 1): Show that if $\alpha$ and $\beta$ are arbitrary complex numbers satisfying $|\alpha|^2 + |\beta|^2 = 1$, then 
+
+$$A = \begin{pmatrix}\alpha & -\overline{\beta} \\ \beta & \overline{\alpha}\end{pmatrix} \in SU(2).$$
+
+*PROOF*: Let $\alpha$ and $\beta$ be complex numbers satisfying $|\alpha|^2 + |\beta|^2 = 1$. Use these to construct the matrix $A = \begin{pmatrix}\alpha & -\overline{\beta} \\ \beta & \overline{\alpha}\end{pmatrix}$. Then, 
+  * $\det{A} = |\alpha|^2 + |\beta|^2 = 1$, and 
+  * $A^* A = \begin{pmatrix} \overline{\alpha} & \overline{\beta} \\ -\beta & \alpha \end{pmatrix} \begin{pmatrix}\alpha & -\overline{\beta} \\ \beta & \overline{\alpha}\end{pmatrix} = I$. 
+
+So $A \in SU(2)$. 
+
+**Exercise 5** (Part 2): Show that every $A \in SU(2)$ can be expressed in the above form for a unique pair $(\alpha, \beta)$ satisfying $|\alpha|^2 + |\beta|^2$. 
+
+Begin by taking $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$. 
+
+Since $\det A = 1$ by definition of $SU(2)$. Also by definition of $SU(2)$, we have that $A^{-1} = A^*$. By definition of inverses of $2 \times 2$ matrices, we have 
+
+$$A^{-1} = \frac{1}{\det{A}} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix},$$
+
+and 
+
+$$A^* = \begin{pmatrix} \overline{a} & \overline{b} \\ \overline{c} & \overline{d} \end{pmatrix}.$$
+
+This implies that $d = \overline{a}$ and $b = -\overline{c}$. 
+
+Finally, we know that $A^* A = I$, implying that $|a|^2 + |c|^2 = 1$. 
+
+We conclude that $A = \begin{pmatrix} a & -\overline{c} \\ c & \overline{a} \end{pmatrix}$ for $|a|^2 + |c|^2 = 1$. 
+
+--- 
+
+**Exercise 9**: Suppose $a$ is an irrational real number. Show that the set $E_a$ of numbers of the form $e^{2\pi i n a}$ for $n \in \mathbb{Z}$ is dense in the unit circle $S^1$. 
+
+*PROOF*: First we show that for any $n_1 \neq n_2 \in \mathbb{Z}$, $e^{2\pi i n_1 a} \neq e^{2\pi i n_2 a}$. Without loss of generality, assume that $n_1 > n_2$. Suppose that there was a pair of integers such that $e^{2\pi i n_1 a} = e^{2\pi i n_2 a}$. Then, 
+
+$$e^{2\pi i n_1 a} - e^{2\pi i n_2 a} = 0$$
+$$\Rightarrow \cos(2\pi n_1 a) + i \sin(2\pi n_1 a) - \cos(2\pi n_2 a) - i \sin (2\pi n_2 a) = 0$$
+$$\Rightarrow -2\sin((2\pi(n_1 + n_2)a)/2) \sin((2\pi(n_1 - n_2)a)/n) + i2\cos((2\pi(n_1+n_2)a)/2)\sin((2\pi(n_1-n_2)a)/2) = 0$$
+
+It's simple to show that if any of the values in the parentheses of the sin and cos functions above, it contradicts $a$ being irrational. From this, we see that $n_1 \neq n_2 \Rightarrow e^{2\pi i n_1 a} \neq e^{2\pi i n_2 a}$.
+
+Now consider dividing the unit circle $S^1$ into $N$ evenly sized parts, each with length $2\pi / N$. Since $E_a$ contains as many elements as there are natural numbers, here must be at least one region that contains an infinite number of points. Since $E_a$ is a subgroup of $S^1$ and the group operation is equivalent to a rotation on the circle, we can rotate the bin with infinite elements to each of the other $N - 1$ arcs, while remaining in the group $E_a$. Now choose $N$ to be the inverse of any $\epsilon < 0$, and we have shown that $E_a$ is dense in $S^1$. 
+
+---

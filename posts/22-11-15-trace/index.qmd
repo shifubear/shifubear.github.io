@@ -1,0 +1,136 @@
+---
+title: "Visualizing the Trace"
+author: "Shion Fukuzawa"
+date: "2022-11-15"
+categories: [research, quantum, math]
+---
+
+When studying quantum computing and quantum information, one frequently occurring concept is that of the trace of an operator. This is quite natural given the setting, as matrices occur as the fundamental building blocks of the field. Given this, we encounter the trace in ideas including distance measures (trace distance) and classes of operators (trace preserving maps). Operationally this quantity isn't too difficult to compute as we'll see soon, but I've struggled to grasp the intuition behind why it's so important. In this post I'll be exploring some neat definitions I've found for this quantity and hopefully in the process we can get a better grasp on what this mathematical quantity is capturing. 
+
+## The Trace
+
+Let's begin by reviewing the definition of the trace. In Wikipedia [1] and Nielsen+Chuang [2], the first definition provided for the trace is the following. Given a square $n$ by $n$ matrix $A$, its *trace* is the sum of its diagonal elements: 
+
+$$\text{tr}(A) = \sum_{i = 1}^n A_{ii}.$$
+
+---
+
+### Example 
+
+Let $A = \begin{bmatrix} 4 & 3 \\ 2 & 5 \end{bmatrix}$. Then $\text{tr}(A) = 4 + 5 = 9$. 
+
+---
+
+The definition is simple enough, and it's a quantity that is very simple to compute too. However, if you're like me this may appear like a confusing way to characterize a matrix. For example, if we're using the trace directly to characterize a matrix, we can't distinguish the following two matrices that seem quite different: 
+
+$$A = \begin{bmatrix} 4 & 3 \\ 2 & 5 \end{bmatrix} \;\;\; B = \begin{bmatrix} 4 & -100000 \\ 14838429 & 5 \end{bmatrix}.$$
+
+We'll see later that the formal trace distance captures something slightly different, but I'd say this is a reasonable concern to have at first glance of this quantity. For now, let's see if we can learn more about the trace to resolve this confusion. 
+
+### Alternate definition
+
+I went back to Strang's textbook where I first learned about linear algebra [3] to see how he introduced the trace. Interestingly, the first place he introduces the trace is in the chapter about eigenvalues. This gives rise to the alternative definition of trace given by the following. 
+
+Given an $n$ by $n$ matrix $A$, the *trace* is equal to the sum of the eigenvalues of $A$. 
+
+This leads to a quick exercise we can try to verify this claim. 
+
+---
+
+### Exercise 
+
+Calculate the eigenvalues of $A = \begin{bmatrix} 4 & 3 \\ 2 & 5 \end{bmatrix}$ and verify that they do sum to 9. 
+
+--- 
+
+This definition was a bit more illuminating for me to get intuition about the trace. If you haven't seen it before, I highly recommend checking out 3Blue1Brown's video about eigenvectors and eigenvalues, as it does an amazing job of illustrating the significance of these values. In a nutshell, the eigenvector describes the principal directions that the matrix affects a vector by, and the eigenvalue shows how much that vector gets scaled. Given this, we can now see that the trace of the matrix loosely captures the average scaling that a random vector goes through, when multiplied by $A$. 
+
+## Properties 
+
+As a well studied value related to matrices, lots of properties are known about the trace. Let's go over a few common ones here to see if we can glean some intuition from them. 
+
+1. Cyclic
+
+A very useful property that I've used often for the trace is that it is *cyclic*. Formally this is described as the following 
+
+$$\text{tr}(AB) = \text{tr}(BA).$$
+
+I was a bit surprised that the above equality holds when I first saw this definition, since it is well known in matrix algebra that generally $AB \neq BA$. Thus, this property captures something that we lose from the pure matrix product, showing that there is still some relation between matrix products that the trace preserves. 
+
+Before introducing the next property, here's a quick note on where this property appears often in quantum information. Suppose we are interested in computing the trace of an operator $A$ after it has been projected to some subset of the Hilbert space spanned by a state $\left|\psi\right>$. This is written as $\text{tr}\left(A \left|\psi \right> \left< \psi \right|\right)$. Using the cyclic property, we can rewrite it as 
+
+$$\text{tr}\left(\left< \psi \right|A \left|\psi \right> \right) = \left< \psi \right|A \left|\psi \right>$$
+
+since the value in the parentheses is now a scalar. The trace now has become simply the expected value of the operator under the state $\left|\psi\right>$. 
+
+2. Linearity 
+
+A second property of the trace is that it is linear. That is, 
+
+$$\text{tr}(cA + dB) = c\text{tr}(A) + d\text{tr}(B).$$
+
+This property is a favorite amongst mathematicians because it allows analyzing a larger composite element by examining smaller simpler pieces. 
+
+3. Similarity transformation 
+
+The final property I'll discuss here is called the similarity transformation. Consider a unitary matrix $U$ (meaning $U^\dagger U = I$. Then if we take the similarity transformation $A \rightarrow UAU^\dagger$, we can use the cyclic property to see that 
+
+$$\text{tr}(UAU^\dagger) = \text{tr}(U^\dagger UA) = \text{tr}(A).$$
+
+In words, the similarity transformation of a matrix preserves its trace. A similarity transformation in some ways serves as a ''change of basis'' or rotation operation. It maintains something similar before and after the transformation, and we see with this definition that one of those things is the trace. Again, this property seems like an entrance to learning more about what exactly we are quantifying when calculating the trace. 
+
+## Geometric Interpretation of Trace 
+
+With these properties of the trace in mind, I'll highlight a few comments I've found surrounding how to visualize the trace. For many of these, it's going to be most helpful to keep in mind the picture of a matrix as a function acting on a vector, and the geometry comes from the transformation the vector goes through. Most of these are ideas I encountered from MathOverflow [5]. 
+
+1. On projection operators 
+
+The most upvoted response was how to understand the trace for projection operators. A projection matrix $A$ satisfies the property that $A^2 = A$. The name comes from its very geometric action of *projecting* a vector onto a smaller subspace. Once you project onto the smaller subspace, if you project on the same subspace you'll keep getting the same vector, which is why the above property holds. It turns out that the trace of a projection operator corresponds to the dimensionality of the subspace that it projects onto. This explains why the eigenvalues of a projection operator turn out to have to be either 0 or 1, as each eigenvalue corresponds to an extra dimension to be projected onto, and if the trace is counting the dimensions, the values should naturally be 0 or 1. 
+
+It turns out that this is a very fundamental picture in much of mathematics, as the answer is even endorsed and ellaborated upon by Terry Tao himself. I've worked with many projectors in quantum information, but hadn't considered this picture before so I hope this adds some intuition for my future learning. 
+
+2. Trace and the inner product 
+
+The inner product between vectors is something many people study during their undergraduate career. I personally like to think that the inner product characterizes how similar two elements of a vector field are. This perspective is especially useful when working with vectors all of unit length, since an inner product of 0 implies that the vectors are orthogonal, while an inner product of 1 implies that the two vectors are identical. Another thing the inner product allows us to do is capture the notion of the "length" of a vector. In undergrad, many including myself are taught to think of vectors as arrows in Euclidean space, but here I quote the answer given by one of my graduate course professors when he asked if anyone knew what a vector is. 
+
+"A vector is an element of a vector space." 
+
+Sounds a bit obvious and also a bit circular, but his point becomes more clear when we observe the definition of a vector space first. A *vector space* is just a set of objects that satisfy the eight properties that you can read about in the Wikipedia page [6], which basically boils down to "you can add two elements and they'll stay in the vector space" and "you can scale elements and they will remain in the vector space". Equipped with this definition, we now see that a vector space doesn't have to just be arrows, it can be functions, matrices, and many other strange mathematical objects as long as they satisfy those properties. 
+
+I bring this up because given a vector space, you can also 'equip' it with an inner product, promoting it to what is cleverly called an inner product space. The inner product should satisfy some nice properties too that I won't elaborate about here, but with this inner product, you can now discuss orthogonality, lengths, and other metric properties about the vectors in your space. It turns out that the trace is used in an inner product mathematicians have 'equipped' the vector space of matrices with. 
+
+For two matrices $A$ and $B$ in the space of linear operators (matrices) from $\mathbb{C}^n$ to $\mathbb{C}^m$, the inner product between $A$ and $B$ is defined as 
+
+$$\left< A, B \right> \equiv \text{Tr} A^\dagger B.$$
+
+One neat thing about the inner product is that it doesn't rely on what basis we're using to describe our elements in, it'll hold no matter what direction we are looking at our space from. With this connection, this solidifies the intuition that the trace is a basis independent property about matrices. This is consistent with our understanding of how the trace relates to the similarity transform, as that mapping can be considered a change of basis. 
+
+This perspective will help with understanding the trace distance which I want to take a deep dive into in a future post as well. 
+
+3. On unit shapes (in finite dimensional Euclidean spaces)
+
+Another interesting perspective was given as the action of the matrix on vectors that form some unit volume shapes. You can think of a something like a square or a cube with volume 1 centered at the origin with vectors pointing to its vertices starting from the origin. Now suppose you multiplied all of those vectors by a matrix $A$, and you calculated the new volume of the shape. It turns out that the new volume is *proportional* to the trace of $A$, meaning the volume can be described by $t \cdot \text{tr}(A)$ for some constant $t$. 
+
+You can do something similar with a unit ball, but now you'd have infinitely many vectors so we would need to use integration: 
+
+$$\text{Tr}(A) = n \int_{x \in B} \left< Ax, x\right> dm(x).$$
+
+The value we are integrating is the inner product between the original vector and the newly transformed vector, which again, you can think of as quantifying the amount of change that happens. This perspective is also coordinate independent, and turns out to be something you can construct from the relation to eigenvalues. So again, the trace is an operation that quantifies the amount of change an average element goes through. 
+
+
+4. Lie Algebras 
+
+Finally, there were many interesting responses relating the trace to properties of the Lie algebras formed by the operators. I'll admit I'm not very familiar with Lie algebras, so won't be able to comment on these with much depth. I would like to write a series introducing Lie algebras as a way for me to get more familiar with them, and perhaps revisit these points when that happens. 
+
+## Conclusion 
+
+In this post, we explored the trace in some depth and examined a few ways to build some intuition around what it is that the trace captures. I think the full intuition takes some concrete work with actual matrices to fully develop, but I hope these gave some new ways to think about the trace that will help develop that for you moving forward! Thanks so much for reading :) 
+
+## References 
+
+1. https://en.wikipedia.org/wiki/Trace_(linear_algebra)#:~:text=the%20inner%20product%3A-,Cyclic%20property,are%20not%20allowed%3A%20in%20general%2C&text=where%20the%20first%20equality%20is,and%20its%20transpose%20are%20equal.
+2. Quantum Computation and Quantum Information (Nielsen + Chuang) http://mmrc.amss.cas.cn/tlb/201702/W020170224608149940643.pdf
+3. Introduction to Linear Algebra (Strang) https://www.amazon.com/Introduction-Linear-Algebra-Gilbert-Strang/dp/0980232716
+4. Eigenvectors and eigenvalues (3Blue1Brown) https://www.youtube.com/watch?v=PFDu9oVAE-g&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=14
+5. https://mathoverflow.net/questions/13526/geometric-interpretation-of-trace
+6. https://en.wikipedia.org/wiki/Vector_space

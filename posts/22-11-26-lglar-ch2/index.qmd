@@ -1,0 +1,148 @@
+---
+title: "Hall LGLAR Chapter 2: The Matrix Exponential"
+author: "Shion Fukuzawa"
+date: "2022-11-26"
+categories: [notes, math]
+---
+
+This is a collection of my notes from chapter 2 of Brian Hall's "Lie Groups, Lie Algebras, and Representations". From what I know, the matrix exponential is an important operation used to connect Lie groups and Lie algebras. This chapter introduces the matrix exponential and explores properties about it that should lead to insights on the nature of this connection. 
+
+## The Exponential of a Matrix
+
+Before introducing the exponential of a matrix, we begin by defining the Hilbert-Schmidt norm of a matrix. There are multiple norms that can be defined on the space of matrices, but this seems to be the choice for the study of Lie algebras. 
+
+**Definition 1**: For any matrix $X \in M_n(\mathbb{C})$, we define 
+
+$$||X|| = \left( \sum_{j,k=1}^n |X_{j,k}|^2\right)^{1/2}.$$
+
+The quantity $||X||$ is called the **Hilbert-Schmidt norm** of $X$. 
+
+This definition is basically the definition of a norm of a vector, where we take the standard vector norm after flattening the matrix $X$, making it quite easy to memorize. A really neat property of the Hilbert-Schmidt norm is that it is independent of the basis, and can be computed by the following: 
+
+$$||X|| = \left(\text{tr} (X^*X)\right)^{1/2}.$$
+
+---
+
+**Note**: This alternative characterization for the Hilbert-Schmidt norm was somewhat confusing for me at first, but I found a nice way for me to visualize the quantity that the norm is capturing. If you recall, the standard inner product $\left< \cdot, \cdot \right>$ between vectors $x, y \in \mathbb{C}^n$ has the following property when combined with an $n \times n$ matrix $A$: 
+
+$$\left<x, Ay\right> = \left< A^* x, y \right>.$$
+
+Now if we ask how much the inner product between two unit vectors $\left< x, y\right>$ changes after transforming them by a matrix $A$, we get the following expression: 
+
+$$\left<Ax, Ay\right> = \left<A^*Ax, y\right>.$$
+
+In a previous blog post, I explored the trace in an effort to find a geometric interpretation for it. One definition I found was that the trace of an operator characterizes how much an operator scales the volume of a unit ball. Under this picture, the average difference between $\left< x, y\right>$ and $\left<Ax, Ay\right>$, with the two unit vectors $x, y$ sampled uniformly, is upper-bounded by an expression involving the trace of $A^*A$. 
+
+$$\int_x \int_y \left<x,y\right> - \left<Ax, Ay\right> dx dy = \int \int \left<x,y\right> - \left<A^*Ax, y\right> dx dy = \int \int \left<x,y\right> - \text{tr}(A^*A)/n dx dy \leq 1 - \text{tr}(A^*A)/n $$
+
+---
+
+The Hilbert-Schmidt norm satisfies the triangle inequality and a consequence of the Cauchy-Schwartz inequality, expressed as the following: 
+
+1. $||X + Y|| \leq ||X|| + ||Y||$
+2. $||XY|| \leq ||X||\; ||Y||$
+
+We also take a quick trip back to calculus class to refresh on the definition of a matrix exponential. 
+
+**Definition 2**: If $X$ is an $n \times n$ matrix, the **exponential** of $X$, written $e^X$, is defined by the usual power series 
+
+$$e^X = \sum_{m=0}^\infty \frac{X^m}{m!}.$$
+
+The text proves using the Hilbert-Schmidt norm that the above series converges for all $X \in M_n(\mathbb{C})$, and proves that $e^X$ is a continuous function of $X$. 
+
+Here we list several properties of the matrix exponential. 
+
+**Proposition 2.3** (Properties of Matrix Exponential): 
+1. $e^0 = I$. 
+2. $(e^X)^* = e^{X^*}$. 
+3. $e^X$ is invertible and $\left(e^X\right)^{-1} = e^{-X}$. 
+4. $e^{(\alpha+\beta)X} = e^{\alpha X}e^{\beta X}$ for all $\alpha, \beta \in \mathbb{C}$. 
+5. If $XY = YX$, then $e^{X+Y} = e^Xe^Y = e^Ye^X$. 
+6. If $C$ is in $\text{GL}(N;\mathbb{C})$, then $e^{CXC^{-1}} = Ce^XC^{-1}$. 
+
+**Proposition 2.4**: Let $X$ be a $n \times n$ complex matrix. Then $e^{tX}$ is a smooth curve in $M_n(\mathbb{C})$ and 
+
+$$\frac{d}{dt} e^{tX} = X e^{tX} = e^{tX} X.$$
+
+In particular, 
+
+$$\frac{d}{dt} e^{tX} \Big|_{t=0} = X.$$
+
+## Computing the Exponential 
+
+We can now examine specific examples on how we might compute the exponential of a general matrix. Suppose that we have $X \in M_n(\mathbb{C})$ with $n$ linearly independent eigenvectors $v_1, \ldots, v_n$ with eigenvalues $\lambda_1, \ldots, \lambda_n$. Then the matrix can be diagonalized as 
+
+$$X = CDC^{-1}$$
+
+where $C$ is the $n \times n$ matrix with the eigenvectors of $X$ as its columns, and $D$ is the diagonal $n \times n$ matrix with the eigenvalues on the diagonal. It is easy to show that the matrix $e^D$ is the matrix with diagonal elements $e^{\lambda_1}, \ldots, e^{\lambda_n}$, so by using property 6 from above, we have that 
+
+$$e^X = C\begin{pmatrix} e^{\lambda_1} & & 0 \\ & \ddots & \\ 0 & & e^{\lambda_n} \end{pmatrix} C^{-1}.$$
+
+Some readers may have encountered the matrix exponential when studying differential equations. Consider the following first-order differential equation
+
+$$\frac{d\mathbf{v}}{dt} = X\mathbf{v},$$
+$$\mathbf{v}(0) = \mathbf{v}_0,$$
+
+where $\mathbf{v}(t) \in \mathbb{R}^n$ and $X$ is a fixed $n \times n$ matrix. The solution of this equation is given by 
+
+$$\mathbf{v}(t) = e^{tX}\mathbf{v}_0,$$
+
+which can be verified via proposition 2.4. 
+
+## The Matrix Logarithm 
+
+We also want to define an inverse function to the matrix exponential, which will be called the matrix logarithm. The text describes how this can be done by using techniques and knowledge about the logarithm of complex numbers. I'll just state the resulting definition here. 
+
+**Definition 3**: For an  $n \times n$ matrix $A$, define $\log A$ by 
+
+$$\log A = \sum_{m=1}^\infty (-1)^{m+1} \frac{(A-I)^m}{m}$$
+
+whenever the series converges. 
+
+Like the situation with complex numbers, this function cannot be defined for general matrices, as is formalized in the following theorem. 
+
+**Theorem 2.8.** The function $\log A$ is defined and continuous on the set of all $n \times n$ complex matrices $A$ with $||A - I|| < 1$. For all $A \in M_n(\mathbb{C})$ with $||A - I|| < 1,$
+
+$$e^{\log A} = A.$$
+
+For all $X \in M_n(\mathbb{C})$ with $||X|| < \log 2$, $||e^X - I|| < 1$ and 
+
+$$\log e^X = X.$$
+
+Finally, the following proposition gives us a way to upperbound the matrix logarithm by a function of the matrix' Hilbert-Schmidt norm. 
+
+**Proposition 2.9.** There exists a constant $c$ such that for all $n \times n$ matrices $B$ with $||B|| < 1/2$, we have 
+
+$$||\log(I + B) - B|| \leq c ||B||^2.$$
+
+This can be restated in a more concise way by 
+
+$$\log(I + B) = B + O(||B||^2).$$
+
+## Further Properties of the Exponential
+
+This section introduces several key properties of the matrix exponential that will lead into the discussion of Lie algebras. The first is a familiar equation for those who have seen the Trotter product formula for quantum simulation algorithms. 
+
+**Theorem 2.11 (Lie Product Formula).** For all $X, Y \in M_n(\mathbb{C})$, we have 
+$$e^{X + Y} = \underset{m \rightarrow \infty}{\lim} \left( e^{X/m} e^{Y/m}\right)^m.$$
+
+**Theorem 2.12.** For any $X \in M_n(\mathbb{C})$, we have 
+$$\det\left(e^X\right) = e^{\text{trace}(X)}.$$
+
+**Proposition 2.16.** The exponential map is an infinitely differentiable map of $M_n(\mathbb{C})$ into $M_n(\mathbb{C})$. 
+
+## Polar Decomposition 
+
+Finally, I summarize some quick notes on the polar decomposition of a matrix. The introduction to the topic as a generalization of polar decompositions for complex numbers was very interesting, so I suggest taking a look for people who want a better understanding of the topic. 
+
+**Theorem 2.17.**
+1. Every $A \in GL(n;\mathbb{C})$ can be written uniquely in the form 
+  $$A = UP$$
+  where $U$ is unitary and $P$ is self-adjoint and positive. 
+2. Every self-adjoint positive matrix $P$ can be written uniquely in the form 
+$$P = e^X$$
+  with $X$ self-adjoint. Conversely, if $X$ is self-adjoint, then $e^X$ is self-adjoint and positive. 
+3. If we decompose each $A \in GL(n;\mathbb{C})$ uniquely as 
+$$A = Ue^X$$
+with $U$ unitary and $X$ self-adjoint, then $U$ and $X$ depend continuously on $A$. 
+

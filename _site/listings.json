@@ -5,5 +5,24 @@
       "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/about.html",
+    "items": [
+      "/posts/post-with-code/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/22-11-28-qcqi-ch10/index.html",
+      "/posts/22-11-26-lglar-ch2/index.html",
+      "/posts/22-11-24-lglar-ch1/index.html",
+      "/posts/22-11-15-trace/index.html",
+      "/posts/22-08-14-diamonds/index.html",
+      "/posts/21-08-14-cassava/index.html",
+      "/posts/21-07-15-diamonds/index.html"
+    ]
   }
 ]
