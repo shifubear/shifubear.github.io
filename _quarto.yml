@@ -13,5 +13,8 @@ format:
     theme: minty
     css: styles.css
 
+comments:
+  giscus: 
+    repo: shifubear/shifubear.github.io
 
 
