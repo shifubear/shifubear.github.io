@@ -124,6 +124,12 @@ $$SZS^\dagger = \begin{bmatrix}1&0 \\ 0&i\end{bmatrix} \begin{bmatrix}1&0 \\ 0&-
 
 ---
 
+**Exercise 10.40**: 
+
+
+
+---
+
 **Exercise 10.43**: Show that $S \subseteq N(S)$ for any subgroup $S$ of $G_n$. 
 
 

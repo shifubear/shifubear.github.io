@@ -1,0 +1,32 @@
+---
+title: "Simon's Algorithm to the Hidden Subgroup Problem"
+author: "Shion Fukuzawa"
+date: "2022-12-04"
+categories: [article, quantum, math]
+---
+
+In this article, I'll be introducing the hidden subgroup problem as a generalization of Simon's algorithm. There are many technical introductions to the hidden subgroup problem that require a degree of familiarity with mathematical tools, and my goal here is to equip readers with the basics to be able to read some of those references. 
+
+## Simon's Algorithm 
+
+The early pioneers of quantum computing showed that there exist certain problems that will take regular computers an exponential amount of time (in the size of the input) that quantum computers can solve very quickly. Many of these problems seem quite artificial at first sight, but they've demonstrated that there are ways to generalize them to solve more useful problems. A great example of this phenomenon is Simon's algorithm. The problem we solve with this algorithm is the following: 
+
+Suppose we are given access to a black-box function $f : \{0, 1\}^n \rightarrow \{0, 1\}^n$ that is promised to satisfy one of the following: 
+
+1. $f$ is 1-to-1
+2. there exists a secret string $s \neq 0^n$ such that for all $x \neq y$, we have $f(x) = f(y)$ if and only if $x \oplus s = y$. 
+
+::: {#fig-simons1}
+
+![](simons1.jpeg)
+
+An example of the first case, a 1-to-1 function. Each element in the left set maps uniquely on an element in the right set. 
+:::
+
+::: {#fig-simons2}
+![](simons2.jpeg)
+
+An example of the second case. There are pairs of items in the first set that are related by a secret string (in pink), and both elements map to the same element in the right set. 
+:::
+
+
