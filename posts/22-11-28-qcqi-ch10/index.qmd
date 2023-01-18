@@ -132,6 +132,22 @@ $$SZS^\dagger = \begin{bmatrix}1&0 \\ 0&i\end{bmatrix} \begin{bmatrix}1&0 \\ 0&-
 
 **Exercise 10.43**: Show that $S \subseteq N(S)$ for any subgroup $S$ of $G_n$. 
 
+$$N(S) \equiv \{E\in G_n | EgE^\dagger \in S, \forall g \in S.\}$$
 
+Let $E \in S$ where $S$ is a subgroup of $N(S)$. Then for all $g \in S$, $EgE^\dagger \in S$ because $S$ is a subgroup. 
 
 ---
+
+**Exercise 10.44**: Show that $N(S) = Z(S)$ for any subgroup $S$ of $G_n$ not containing $-I$. 
+
+($N(S) \subseteq Z(S)$) Take $E\in N(S)$. Consider the equality $EgE = \pm EE g = \pm g$ for some $g \in S$, where the sign depends on the commutation relation between $E$ and $g$. Suppose there exists an $E$ such that the sign is negative. Since $S$ is a subgroup we have $EgE = -g \in S$. Then, we find that $-I \in S$ by
+
+$$(EgE) g = -EggE = -I,$$
+
+which is a contradiction, so we know that $EgE = g$. From this we conclude that $Eg = gE$, so $E \in N(S)$. 
+
+($Z(S) \subseteq N(S)$) Take $E \in Z(S)$. Then, $Eg = gE$ for all $g \in S$. This implies by properties of the Pauli group that $EgE^\dagger = g$. 
+
+---
+
+**
