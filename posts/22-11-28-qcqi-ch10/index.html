@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.280">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -196,8 +196,19 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Exercise 10.39</strong>: <span class="math display">\[SXS^\dagger = \begin{bmatrix}1&amp;0 \\ 0&amp;i\end{bmatrix} \begin{bmatrix}0&amp;1 \\ 1&amp;0\end{bmatrix} \begin{bmatrix}1&amp;0 \\ 0&amp;i\end{bmatrix} = \begin{bmatrix} 1 &amp; -i \\ i &amp; 1 \end{bmatrix} = Y\]</span></p>
 <p><span class="math display">\[SZS^\dagger = \begin{bmatrix}1&amp;0 \\ 0&amp;i\end{bmatrix} \begin{bmatrix}1&amp;0 \\ 0&amp;-1\end{bmatrix} \begin{bmatrix}1&amp;0 \\ 0&amp;i\end{bmatrix} = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; =1 \end{bmatrix} = Z\]</span></p>
 <hr>
-<p><strong>Exercise 10.43</strong>: Show that <span class="math inline">\(S \subseteq N(S)\)</span> for any subgroup <span class="math inline">\(S\)</span> of <span class="math inline">\(G_n\)</span>.</p>
+<p><strong>Exercise 10.40</strong>:</p>
 <hr>
+<p><strong>Exercise 10.43</strong>: Show that <span class="math inline">\(S \subseteq N(S)\)</span> for any subgroup <span class="math inline">\(S\)</span> of <span class="math inline">\(G_n\)</span>.</p>
+<p><span class="math display">\[N(S) \equiv \{E\in G_n | EgE^\dagger \in S, \forall g \in S.\}\]</span></p>
+<p>Let <span class="math inline">\(E \in S\)</span> where <span class="math inline">\(S\)</span> is a subgroup of <span class="math inline">\(N(S)\)</span>. Then for all <span class="math inline">\(g \in S\)</span>, <span class="math inline">\(EgE^\dagger \in S\)</span> because <span class="math inline">\(S\)</span> is a subgroup.</p>
+<hr>
+<p><strong>Exercise 10.44</strong>: Show that <span class="math inline">\(N(S) = Z(S)\)</span> for any subgroup <span class="math inline">\(S\)</span> of <span class="math inline">\(G_n\)</span> not containing <span class="math inline">\(-I\)</span>.</p>
+<p>(<span class="math inline">\(N(S) \subseteq Z(S)\)</span>) Take <span class="math inline">\(E\in N(S)\)</span>. Consider the equality <span class="math inline">\(EgE = \pm EE g = \pm g\)</span> for some <span class="math inline">\(g \in S\)</span>, where the sign depends on the commutation relation between <span class="math inline">\(E\)</span> and <span class="math inline">\(g\)</span>. Suppose there exists an <span class="math inline">\(E\)</span> such that the sign is negative. Since <span class="math inline">\(S\)</span> is a subgroup we have <span class="math inline">\(EgE = -g \in S\)</span>. Then, we find that <span class="math inline">\(-I \in S\)</span> by</p>
+<p><span class="math display">\[(EgE) g = -EggE = -I,\]</span></p>
+<p>which is a contradiction, so we know that <span class="math inline">\(EgE = g\)</span>. From this we conclude that <span class="math inline">\(Eg = gE\)</span>, so <span class="math inline">\(E \in N(S)\)</span>.</p>
+<p>(<span class="math inline">\(Z(S) \subseteq N(S)\)</span>) Take <span class="math inline">\(E \in Z(S)\)</span>. Then, <span class="math inline">\(Eg = gE\)</span> for all <span class="math inline">\(g \in S\)</span>. This implies by properties of the Pauli group that <span class="math inline">\(EgE^\dagger = g\)</span>.</p>
+<hr>
+<p>**</p>
 
 
 </section>
@@ -335,8 +346,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<script src="https://giscus.app/client.js" data-repo="shifubear/shifubear.github.io" data-repo-id="R_kgDOIgiXHw" data-category="General" data-category-id="DIC_kwDOIgiXH84CS3yH" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
