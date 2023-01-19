@@ -21,7 +21,7 @@
 <item>
   <title>Art and AI</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/art-ai/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/23-01-17-art-ai/index.html</link>
   <description><![CDATA[ 
 
 
@@ -56,13 +56,13 @@
   <category>technology</category>
   <category>arts</category>
   <category>blog</category>
-  <guid>https://www.shionfukuzawa.com/posts/art-ai/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/23-01-17-art-ai/index.html</guid>
   <pubDate>Tue, 17 Jan 2023 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>QCQI Chapter 10 Solutions</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/qcqi-ch10/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/22-11-28-qcqi-ch10/index.html</link>
   <description><![CDATA[ 
 
 
@@ -144,13 +144,13 @@
  ]]></description>
   <category>notes</category>
   <category>quantum</category>
-  <guid>https://www.shionfukuzawa.com/posts/qcqi-ch10/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/22-11-28-qcqi-ch10/index.html</guid>
   <pubDate>Mon, 28 Nov 2022 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Hall LGLAR Chapter 2: The Matrix Exponential</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/lglar-ch2/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/22-11-26-lglar-ch2/index.html</link>
   <description><![CDATA[ 
 
 
@@ -236,13 +236,13 @@
  ]]></description>
   <category>notes</category>
   <category>math</category>
-  <guid>https://www.shionfukuzawa.com/posts/lglar-ch2/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/22-11-26-lglar-ch2/index.html</guid>
   <pubDate>Sat, 26 Nov 2022 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Hall LGLAR Chapter 1: Matrix Lie Groups</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/lglar-ch1/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/22-11-24-lglar-ch1/index.html</link>
   <description><![CDATA[ 
 
 
@@ -356,13 +356,13 @@
  ]]></description>
   <category>notes</category>
   <category>math</category>
-  <guid>https://www.shionfukuzawa.com/posts/lglar-ch1/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/22-11-24-lglar-ch1/index.html</guid>
   <pubDate>Thu, 24 Nov 2022 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Visualizing the Trace</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/trace/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/22-11-15-trace/index.html</link>
   <description><![CDATA[ 
 
 
@@ -474,13 +474,13 @@
   <category>research</category>
   <category>quantum</category>
   <category>math</category>
-  <guid>https://www.shionfukuzawa.com/posts/trace/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/22-11-15-trace/index.html</guid>
   <pubDate>Tue, 15 Nov 2022 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Diamonds are Forever in the Blockchain</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/diamonds2/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/22-08-14-diamonds/index.html</link>
   <description><![CDATA[ 
 
 
@@ -500,13 +500,13 @@
 <h1>Our Tools</h1>
 <p>I won’t dive into the details of the algorithm here, but introduce a few tools we used that I found to be very interesting and fun to work with. Polygons and polyhedrons can be defined in many different ways mathematically, but the way we decided to represent them is using what’s called the polyhedral distance function. (The problem is of primary interest in three dimensions, but we also provide a two-dimensional solution and so most figures will use two dimensions. These ideas aren’t hard to generalize to higher dimensions but are much clearer in two dimensions when drawing them. As such, when I use ‘polyhedron’ in the below explanation, this is interchangeable with ‘polygon’ for the two-dimensional case.)</p>
 <div id="pdistance">
-<p><img src="https://www.shionfukuzawa.com/posts/diamonds2/pdistance.webp" class="img-fluid"></p>
+<p><img src="https://www.shionfukuzawa.com/posts/22-08-14-diamonds/pdistance.webp" class="img-fluid"></p>
 <p>Polyhedral Distance Function</p>
 </div>
 <p>In simple terms, this distance function has a reference “unit ball” of the polyhedron of interest with a center. It then measures the distance between points p and q by first placing the unit ball centered at p, then returning how much you have to scale the unit ball to touch the point q. This distance function doesn’t necessarily have all the “nice” properties mathematicians want in their distance functions, but it works great in a computational setting.</p>
 <p>With our mathematical definition of the polyhedron in hand, our algorithm computes the C-shaped minimum width annulus (MWA) of the point set S. Our reasoning for this is that if the two scans indeed represent the same diamond, the minimum width annulus should have a width very close to zero, thus providing a good metric for determining the similarity between the two objects.</p>
 <div id="mwa">
-<p><img src="https://www.shionfukuzawa.com/posts/diamonds2/mwa.png" class="img-fluid"></p>
+<p><img src="https://www.shionfukuzawa.com/posts/22-08-14-diamonds/mwa.png" class="img-fluid"></p>
 <p>Minimum Width Annulus</p>
 </div>
 <p>The MWA is defined as the concentric placement of two copies of the polyhedron such that all the points in the scan lie in between the two scans, such that the difference in polyhedral distance from the center to the two placements is minimized.</p>
@@ -522,14 +522,14 @@
  ]]></description>
   <category>research</category>
   <category>geometry</category>
-  <guid>https://www.shionfukuzawa.com/posts/diamonds2/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/22-08-14-diamonds/index.html</guid>
   <pubDate>Sun, 14 Aug 2022 07:00:00 GMT</pubDate>
-  <media:content url="https://www.shionfukuzawa.com/posts/diamonds2/pdistance.webp" medium="image" type="image/webp"/>
+  <media:content url="https://www.shionfukuzawa.com/posts/22-08-14-diamonds/pdistance.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Cassava Leaf Detection</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/cassava/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/21-08-14-cassava/index.html</link>
   <description><![CDATA[ 
 
 
@@ -543,7 +543,7 @@
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img src="https://www.shionfukuzawa.com/posts/cassava/cassava1.png" id="fig-cassava1" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava2.png" id="fig-cassava2" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava3.png" id="fig-cassava3" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava4.png" id="fig-cassava4" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava5.png" id="fig-cassava5" class="img-fluid figure-img"></p>
+<p><img src="https://www.shionfukuzawa.com/posts/21-08-14-cassava/cassava1.png" id="fig-cassava1" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/21-08-14-cassava/cassava2.png" id="fig-cassava2" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/21-08-14-cassava/cassava3.png" id="fig-cassava3" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/21-08-14-cassava/cassava4.png" id="fig-cassava4" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/21-08-14-cassava/cassava5.png" id="fig-cassava5" class="img-fluid figure-img"></p>
 </div>
 </div>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Example Images from the data set. In the top row, we have bacterial blight, brown streak disease, and green mottle from left to right. On the bottom row, we have mottle disease and a healthy Cassava plant from left to right.</figcaption><p></p>
@@ -554,7 +554,7 @@
 <section id="data" class="level1">
 <h1>Data</h1>
 <p>We were provided with a training dataset of 21,397 images each with a 600x800 resolution. Each image is labeled with the corresponding diseases category: Cassava Bacterial Blight (0), Cassava Brown Streak Disease (1), Cassava Green Mottle (2), Cassava Mosaic Disease (3), and Healthy (4). The frequency distribution for each class can be seen in the following plot.</p>
-<p><img src="https://www.shionfukuzawa.com/posts/cassava/plot.png" class="img-fluid"></p>
+<p><img src="https://www.shionfukuzawa.com/posts/21-08-14-cassava/plot.png" class="img-fluid"></p>
 <p>It’s clear that there is an overrepresentation of images representing the Cassava Mosaic Diseases. If this skewed-ness is not dealt with, this can lead to models that are biased towards selecting items with label 3. Since the true distribution of each disease is unknown, we would like to avoid this kind of bias, and assume that in reality each disease is seen about the same number of times.</p>
 </section>
 <section id="techniques" class="level1">
@@ -648,14 +648,14 @@
  ]]></description>
   <category>projects</category>
   <category>machine learning</category>
-  <guid>https://www.shionfukuzawa.com/posts/cassava/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/21-08-14-cassava/index.html</guid>
   <pubDate>Sat, 14 Aug 2021 07:00:00 GMT</pubDate>
-  <media:content url="https://www.shionfukuzawa.com/posts/cassava/cassava1.png" medium="image" type="image/png" height="108" width="144"/>
+  <media:content url="https://www.shionfukuzawa.com/posts/21-08-14-cassava/cassava1.png" medium="image" type="image/png" height="108" width="144"/>
 </item>
 <item>
   <title>Diamonds</title>
   <dc:creator>Shion Fukuzawa</dc:creator>
-  <link>https://www.shionfukuzawa.com/posts/diamonds/index.html</link>
+  <link>https://www.shionfukuzawa.com/posts/21-07-15-diamonds/index.html</link>
   <description><![CDATA[ 
 
 
@@ -679,7 +679,7 @@
  ]]></description>
   <category>research</category>
   <category>geometry</category>
-  <guid>https://www.shionfukuzawa.com/posts/diamonds/index.html</guid>
+  <guid>https://www.shionfukuzawa.com/posts/21-07-15-diamonds/index.html</guid>
   <pubDate>Thu, 15 Jul 2021 07:00:00 GMT</pubDate>
 </item>
 </channel>
