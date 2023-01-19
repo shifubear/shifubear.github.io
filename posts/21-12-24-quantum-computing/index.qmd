@@ -1,0 +1,87 @@
+---
+title: "Introduction to Quantum Computing"
+author: "Shion Fukuzawa"
+date: "2022-12-24"
+categories: [quantum, reference]
+draft: true
+---
+
+This post introduces the minimum quantum computing notation and terminology I assume from readers when reading my blog posts. 
+
+# A single qubit 
+
+The primary language of quantum computing is the language of linear algebra. We describe states that our computer is in using vectors, and operations we can do on our computer using matrices. There are a few caveats for this foundation, but I will probably address those when they appear in each post. 
+
+To begin, it is helpful to consider the case of just a single qubit, the smallest unit of quantum information. Like a regular bit, the qubit can be in one of two basis states, $\left|0\right>$ or $\left|1\right>$. We read the strange brackets as "ket 0" and "ket 1" respectively. These are actually shorthands for the following two column vectors: 
+
+$$\left|0\right> \equiv \begin{bmatrix} 1 \\ 0 \end{bmatrix}$$
+
+$$\left|1\right> \equiv \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
+
+What makes these different from regular bits, is that we can also put qubits in superpositions of the above two states. For example, we could have a state 
+
+$$\left|\psi \right> = \alpha\left|0\right> + \beta\left|1\right> = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}.$$
+
+A very important operation in quantum computing is measurement. If we measure the state above, we will see the result $\left|0\right>$ with probabiliy $|\alpha|^2$ and $\left|1\right>$ with probability $|\beta|^2$. Because of this property, we require that the squares of the elements to sum to 1. 
+
+---
+
+**Exercise**: Determine the probability of measuring the state $\left|0\right>$ given the following states:
+
+1. $\left|\psi_1\right> = \frac{1}{\sqrt{2}} \left|0\right> + \frac{1}{\sqrt{2}} \left|1\right>$
+
+2. $\left|\psi_2\right> = \frac{i}{\sqrt{3}} \left|0\right> - \frac{\sqrt{-2}}{\sqrt{3}} \left|1\right>$
+
+::: {.callout-tip collapse="true"}
+## Solutions
+
+1. The probability is 1/2. $\left|\frac{1}{\sqrt{2}} \right|^2 = \frac{1}{2}$.
+
+2. The probability is 1/3. $\left|\frac{i}{\sqrt{3}} \right|^2 = \frac{1}{3}$.
+:::
+
+---
+
+We can apply different operations called "gates" to qubits. We represent the action of a gate using matrices. Since qubits need to be unit vectors, we can only apply gates which take unit vectors to unit vectors. Matrices (or gates) that satisfy this are called "unitary" matrices (or gates). A nice property of unitary matrices we will use a lot is that all of these matrices are invertible. Not only are they invertible, the inverse is just the conjugate transpose of the original matrix! 
+
+More explicitly, given a unitary matrix $U$, we have $U U^\dagger = U^\dagger U = I$, where $U^\dagger$ is the conjugate transpose of $U$. 
+
+For single qubit gates (2 by 2 matrices), we know that the following four matrices can be combined to generate *any* single qubit gate you might want to build. 
+
+$$I \equiv \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \;\;\; X \equiv \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
+$$Y \equiv \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \;\;\; Z \equiv \begin{bmatrix} 1 & 0\\ 0 & -1 \end{bmatrix} \;\;\;$$
+
+One common way to express a sequence of quantum operations is using the circuit notation. The following example shows an image of applying an $X$ gate to a qubit that starts in the $\left|0\right>$ state. 
+
+[[[IMAGE]]]
+
+Using what we know so far, we can determine what the state of our qubit is after the gate is applied: 
+
+$$X\left|0\right> = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \left|1\right>$$
+
+From this, we can see that the $X$ gate is like a "bitflip" operation, switching between $\left|0\right>$ and $\left|1\right>$. 
+
+Another important gate is the Hadamard gate, defined as 
+
+$$H \equiv \frac{1}{\sqrt{2}}\left(X + Z\right) = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$$
+
+---
+
+**Exercise**: Determine what the state is after applying the $H$ gate to $\left|0\right>$. 
+
+::: {.callout-tip collapse="true"}
+## Solution
+
+$$H\left|0\right> = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}}(\left|0\right> + \left|1\right>)$$
+
+:::
+
+---
+
+# Multiple qubits
+
+It is relatively simple to generalize the above discussion to multiple qubits, but to do so we must define a way to combine two smaller systems. For this, we introduce the tensor product (or Kronecker product). 
+
+## Tensor product 
+
+Given two matrices, we define the 

@@ -3,18 +3,23 @@ project:
 
 website:
   title: "Shion Fukuzawa"
+  image: files/icon.png
+  site-url: https://www.shionfukuzawa.com
   navbar:
     right:
       - blog.qmd
       - icon: github
         href: https://github.com/shifubear
+      - icon: rss
+        href: index.xml
+
 format:
   html:
     theme: minty
     css: styles.css
 
-# comments:
-#   giscus: 
-#     repo: shifubear/shifubear.github.io
+comments:
+  giscus: 
+    repo: shifubear/shifubear.github.io
 
 

@@ -3,6 +3,7 @@ title: "Simon's Algorithm to the Hidden Subgroup Problem"
 author: "Shion Fukuzawa"
 date: "2022-12-04"
 categories: [article, quantum, math]
+draft: true
 ---
 
 In this article, I'll be introducing the hidden subgroup problem as a generalization of Simon's algorithm. There are many technical introductions to the hidden subgroup problem that require a degree of familiarity with mathematical tools, and my goal here is to equip readers with the basics to be able to read some of those references. 

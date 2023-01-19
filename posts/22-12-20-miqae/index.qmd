@@ -1,0 +1,55 @@
+---
+title: "Counting with Quantum Computers"
+author: "Shion Fukuzawa"
+date: "2022-12-20"
+categories: [research, quantum]
+draft: true 
+---
+
+*[This article is an overview of joint work with Sandy Irani, Chris Ho, and Jasen Zion: [preprint](https://arxiv.org/abs/2208.14612)]*
+
+(This post is organized into several levels. You can read through the post upto whatever level you desire, each adding a little more depth to the discussion of the topic. Level 1 is targeted at a general audience, requiring minimal knowledge of math, computer science, and physics. Level 2 is targeted towards undergraduates in related fields. Level 3 is targeted towards graduate students studying quantum computing.)
+
+# Level 1: Introduction 
+
+Imagine a room full of boxes numbered from 1 through a very large number $N$. You're not allowed to go into this room, but you notice that there is someone inside. When you give the oracle a number, it goes and opens the box for you. After yelling out a few numbers, you notice that some boxes are empty, but some boxes are filled with treasure. Can you come up with an efficient way to approximate the number of boxes that are filled with treasure? 
+
+This problem is called the "approximate counting" problem in computer science. It turns out that with a classical computer, you can't do much better than opening each box one at a time. That is, if there are $N$ boxes, you'll need about $N$ moves. This is a great problem to learn a little about the power of quantum computers, which can get a very good solution by only using $\sqrt{N}$ moves. The advantage of using quantum computers for this problem was demonstrated in 1998 in the paper by [Brassard, Høyer and Tapp](https://arxiv.org/pdf/quant-ph/9805082.pdf) and their algorithm is taught in many introductory quantum computing courses. We won't go into the details of that algorithm here, but the algorithm described here borrows some key techniques from that original work. 
+
+The last decade has been an exciting time for quantum computing, as we have seen the first physical realizations of an idea which has been purely theoretical for several decades. You may have noticed something strange here: If quantum computers have been physically created only so recently, how did people like Brassard design algorithms for the technology? Well, since the development of quantum physics, many brilliant scientists had hopes that we could make use of the unusual phenomenon to help speed up certain computational tasks. With this goal in mind, many physicists and computer scientists constructed a theoretical framework for modeling computation that follows quantum mechanical rules. From these basic rules, many algorithms were designed which could be shown to require less computational resources than a traditional computer would. An example of this is the approximate counting problem that we will be studying here. 
+
+Though we are seeing many physical devices, they are still very much in their infancy in terms of size and performance. The quantum computers we have today can only run on very small problems, and can't fully take advantage of "quantum mechanical circuits" that many of the algorithms designed by theorists require. Because of this, we will still need to wait several years before seeing these algorithms in action. However, we still want to make use of the quantum computers that have been created. To supplement their weakness, there has been a lot of recent work on constructing hybrid algorithms. We know that quantum computers are very good at certain problems, but we also know that for many other problems, they can't do much better than the computers we have today. Using this information, we can use quantum computers for exactly the part of the algorithm that they excel at, and let the classical computer do the rest of the work. We showed in our work a hybrid algorithm that is much easier for the quantum computer to run than Brassard et al.'s algorithm, but still has the *same scaling in terms of computational resources required*. 
+
+## High level description 
+
+Using a classical computer to solve this problem is like having one robot inside the room full of boxes. We can give it one instruction at a time, meaning if we want to check $N$ boxes, we need to give it $N$ instructions. One way to think of a quantum computer in this setting, is that our robot is able to split into smaller clones, and we can give one instruction for all of the clones to execute at the same time. A useful way to do this for this setting is to split the robot in a way where each clone is standing across a different box. Then we can give the single command, "open the box in front of you". Often times conversations about quantum advantage ends here, claiming that this parallelization is how quantum computers speed up computation. The problem with this statement is that the hard part about designing quantum algorithms usually begins *after* this step. 
+
+After we give the instruction to all the clones, we now need to check each clone to see what the result of their action was. So in a way, we transformed the problem of checking one box at a time, to now checking one clone at a time. The difference though, is that we are able to combine the information the clones have in useful ways to solve the problem, while the boxes could only be opened and closed. 
+
+These types of problems have been very well studied, and what we know is that for problems like this is that quantum computers offer up to a *quadratic* speed up. This is pretty good, but no where near an *exponential speed up* which can be achieved for different problems. In the next section, I introduce some of the mathematical techniques we use, and give a more technical description of the algorithm. 
+
+# Level 2: Technical description and the algorithm
+
+To describe the math behind the algorithm, we will need to introduce a slightly different version of the problem. I'll explain how to use this method to solve the original counting problem later in this post. 
+
+## Amplitude estimation 
+
+Suppose that we have an unknown quantum gate $A$ that acts on $n + 1$ qubits that we can apply as many times as we want. Mathematically, we describe the action by
+
+$$A\left|0\right>_n\left|0\right> = \sqrt{1 - a}\left|\psi_0\right>_n\left|0\right> + \sqrt{a}\left|\psi_1\right>_n\left|1\right>.$$
+
+We will call the states whose last qubit are $\left|1\right>$ as the **marked** states. Once this state is generated, we can measure it and will find a marked state with probability $a$. At this point, the problem is basically approximating the probability a biased coin will be heads. In quantum computing, the square root of the probability is called the amplitude of a state, and so this general problem is referred to as the **amplitude estimation problem**. 
+
+If we are able to precisely approximate the probability of finding a marked state, this probability corresponds to the density of marked states out of all possible states. This gives a simple way to convert between amplitude estimation and approximate counting. 
+
+## Chernoff bounds 
+
+Let's figure out how many times we would have to run our first circuit to determine what the probability of success $a$ is. First, we will formalize the problem a little more. We would like to approximate what $a$ is up to some precision which we will represent with the variable $\epsilon$, which we are very confident about. To quantify our confidence, we introduce another variable $\delta$. At the end of our algorithm, we want to be able to say that the probability that we are wrong is at most $\delta$ (or that the probability we are right is at least $1 - \delta$). 
+
+Ideally we want these two numbers to be as close to 0 as possible. Intuitively, it is not hard to imagine that the more times we flip our coin, the better idea of the probability we have with higher confidence. 
+
+It turns out that this scenario is so ubiquitous, there is a well known tool to give us a very good approximation on how many times we need to flip the coin. The following equation is what is called a Chernoff bound, which does exactly what we need. I won't derive it here, but there is a [great reference](https://math.mit.edu/~goemans/18310S15/chernoff-notes.pdf) for those who want to learn more. 
+
+$$\mathbb{P}[a \not \in [\hat{a}-\epsilon, \hat{a}+\epsilon]] \leq 2e^{-2N\epsilon}$$
+
+The equation may look intimidating at first, but we can break it down to understand it 
