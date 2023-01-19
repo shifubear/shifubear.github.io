@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Shion Fukuzawa</title>
+<link>https://www.shionfukuzawa.com/blog.html</link>
+<atom:link href="https://www.shionfukuzawa.com/blog.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<image>
+<url>https://www.shionfukuzawa.com/files/icon.png</url>
+<title>Shion Fukuzawa</title>
+<link>https://www.shionfukuzawa.com/blog.html</link>
+<height>144</height>
+<width>144</width>
+</image>
+<generator>quarto-1.2.280</generator>
+<lastBuildDate>Tue, 17 Jan 2023 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Art and AI</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/art-ai/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Last year, OpenAI announced the second version of their text-to-image deep learning model, <a href="https://openai.com/dall-e-2/">Dall-E 2</a>. If you haven’t seen it, I encourage you to explore the linked page and check out some of what this model is capable of doing. If you’re anything like me, you will be shocked and fascinated at the quality and range of the results the model can produce. I spoke with fellow computer scientists who were surprised by how soon a model of this caliber appeared. Many of us were expecting something like this to appear in the near future, but not so soon (especially considering the level the first <a href="https://openai.com/blog/dall-e/">Dall-E</a> was at just one year ago).</p>
+<p>I’m hopeful that through maintaining (or creating) a deep connection between the artist and audience, art will not be lost to AI and if anything this is an opportunity for us to sharpen our understanding and ideals for art’s role in society.</p>
+<p>It has always been true that it may take a while for someone to discover something new, but once it’s found others are able to learn the mechanics fairly quickly. A similar thing can be said about the technology behind Dall-E 2 (<a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)">transformers</a>), and we have seen many alternative services deployed throughout this year for generating images from text prompts.</p>
+<p>Though these can be fun to play around with, there have been many debates surrounding the implications and ethics of using this technology. A quick search for AI art on any social media platform will reveal a wide range of opinions on the matter.</p>
+<p>Before sharing my thoughts, let’s take a moment to deconstruct the main critique that is brought up against AI art. The following quote from <a href="https://www.instagram.com/p/CmMds1dM__Z/">Lois van Baarle’s instagram post</a> captures the essence of the frustrations I’ve seen online: “I wholeheartedly support the ongoing protest against AI art. Why? Because my artwork is included in the datasets used to train these image generators without my consent.” Many of these posts are accompanied by strong anti-AI sentiments and a sense of fear in the comments about the implications of this emerging technology. The core of this critique is against the way these models are being trained and deployed, with the objective being to ban or restrict the usage of these models all together.</p>
+<p>I sympathize with regulating the training data that these models have access to, but I also do not think that there is much we are able to do to stop nefarious players to keep training and publicizing models. There are many counterarguments against the critique above as well, such as saying that the way the models learn from the data is the same as how human artists learn and get inspired from the art they engage with. As a computer scientist, it’s hard to object to this argument knowing the way these models learn from data, and how many people in the field believe that the way humans learn can be boiled down to the mechanics of a neural network. Ultimately, this discussion misses the mark of what is important, and instead we should take this opportunity to think about what art means to us and the role we want it to have moving forward.</p>
+<section id="my-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="my-thoughts">My Thoughts</h2>
+<p>As a huge lover of the arts and a budding computer scientist, this battle has been a painful one to watch unfold. However, I am hopeful for the future of art and technology <em>especially</em> in light of these conversations. My thoughts on the matter are that technologies like this force us to rethink what art means to us, and what we want it to mean to us moving forward.</p>
+<p>A quick tour through the development of computer science will help motivate my point. Computer science studies <em>algorithms</em>, which are a set of instructions for solving different problems. When creating these algorithms, we are forced to think about small decisions we make subconsciously for different tasks. Talk to any new undergraduate in computer science and they will tell you that it takes a lot of thought to tell a computer how to find a number in a list, something you could ask a child to do with three words: “Where is 27?”.</p>
+<p>In the process of formalizing this field, an interesting question was posed by Alan Turing. “Is it possible to create a machine such that a person wouldn’t be able to distinguish whether it is a human or a machine?” This is referred to as the <a href="https://en.wikipedia.org/wiki/Turing_test">Turing test</a>, and was set up as a major milestone for the field of computer science. Many people agreed that when a machine is able to do this, we will be able to call it “intelligent”.</p>
+<p>We proudly label ourselves as an “intelligent” species, but the advance of technology continually forces us to wrestle with what that word means. For example, another “intelligent” pursuit humans have been very proud of is the ability to play chess, at extremely high levels. This is why the victory of Deep Blue against Gary Kasparov spurred conversation from around the dinner table to academic conferences, leading to an uproar about the takeover of AI.</p>
+<p>The Turing test can also be cleared by many large scale language models these days, as was demonstrated by a <a href="https://www.scientificamerican.com/article/google-engineer-claims-ai-chatbot-is-sentient-why-that-matters/">Google engineer claiming that an AI chatbot is sentient</a>. It seems that AI is passing the Turing test for image creation too, as is evident by these articles: <a href="https://www.gamerevolution.com/news/931803-reddit-art-subreddit-shuts-down-ai-artist-mod-ban">Reddit’s Art Subreddit Shuts Down After Mod Mistakes Real Artist for AI</a>, <a href="https://www.buzzfeednews.com/article/chrisstokelwalker/art-subreddit-illustrator-ai-art-controversy">A Professional Artist Spent 100 Hours Working On This Book Cover Image, Only To Be Accused Of Using AI</a>.</p>
+<p>Even though these “feats of intelligence” are now child’s play for these models, we refuse to accept that they’ve become “intelligent”. Chess is still extremely popular (arguably <a href="https://win.gg/news/ludwig-broke-viewership-record-during-chessboxing-event/">more popular</a> <a href="https://www.chess.com/article/view/chesscom-reaches-100-million-members">than it’s</a> <a href="https://en.wikipedia.org/wiki/PogChamps">ever been</a>) and we don’t get excited to share our crazy day to a chatbot. Instead, we realize that these milestones for intelligence didn’t really capture the essence of the word. We push the goal post further and, in this process refine our understanding of intelligence and its role in what it means to be human.</p>
+<p>I’ve learned that part of studying computer science is facing a stream of confrontations on our understanding of intelligence. The reason I keep studying it is because the more I learn, the more my appreciation for the complexity of the human experience increases. I feel a sense of awe similar to when I stare into the depths of the ocean. Each discovery adding a ray of light, forcing us to confront the reality that the bottom is much deeper than we thought.</p>
+<p>In a similar way, I feel like we are now being confronted with the opportunity to think about what art is, and the role it plays in our human experience. For me, art is never just about the work itself, but is a bridge for me to connect with others in ways that we can’t in conversation. My experiences with art I love are amplified by the stories they carry both explicitly and implicitly. The world the artist was living in when they created the work and the world I’m experiencing, combined, generates a unique perception of the work that only I can really experience. Sure, AI can be trained on large databases of images and mix those in clever ways to create new works but, for me, it’s hard to imagine that this will replace the role art plays in our lives. I am confident that when we think deeply about what remains after AI rummages through the space of what we call art, we will come out with a deeper appreciation of what it means to us in the first place.</p>
+<p>At the end of the day, I may practice against a chess bot, but it’s so that I can play a great game with my friend the next time we’re sitting over a chess board. Chatbots have their useful moments, but what we remember from them are when they fail and we all laugh at the screenshot together. We won’t lose art if we take the time to slow down enough to share and listen to each others’ stories.</p>
+</section>
+<section id="concluding-remarks" class="level2">
+<h2 class="anchored" data-anchor-id="concluding-remarks">Concluding Remarks</h2>
+<p>I thought about this topic for a while before writing it up, and this is now my current response to any questions surrounding art and AI. Sure, it leaves open a lot of questions, like “what is art?”, but I think this is a great opportunity for me to slow down and reevaluate the way I interact with art. When I mindlessly scroll through instagram, am I fully appreciating the humanity and stories of the people who created the work? If I play music while I’m studying or at the gym, is that limiting my focus that should be directed at the musicians? My answer to these questions is <em>no</em>, as is probably the case for many who are reading this. To that end, I want to challenge myself moving forward to wrestle more with this question by taking more time to fully immerse myself in various arts. If AI were to take over art, it’ll be when we stop connecting through the experiences.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>technology</category>
+  <category>arts</category>
+  <category>blog</category>
+  <guid>https://www.shionfukuzawa.com/posts/art-ai/index.html</guid>
+  <pubDate>Tue, 17 Jan 2023 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>QCQI Chapter 10 Solutions</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/qcqi-ch10/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>My solutions to select exercises in chapter 10 of Nielsen+Chuang’s QCQI.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">10.5</h2>
+<hr>
+<p><strong>Exercise 10.29</strong>: Let <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%5Cpsi_1%5Cright%3E,%20%5Cleft%7C%5Cpsi_2%5Cright%3E%20%5Cin%20V_S">. We consider an arbitrary linear combination of these two vectors</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%5Cpsi%5Cright%3E%20=%20a%5Cleft%7C%5Cpsi_1%5Cright%3E%20+%20b%20%5Cleft%7C%5Cpsi_2%5Cright%3E,%20%5Ctext%7B%20for%20some%20%7D%20a,%20b,%20%5Cin%20%5Cmathbb%7BC%7D."></p>
+<p>Now consider the action of some <img src="https://latex.codecogs.com/png.latex?M%20%5Cin%20S"> on <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%5Cpsi%5Cright%3E">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?M%5Cleft%7C%5Cpsi%5Cright%3E%20=%20M%20(a%5Cleft%7C%5Cpsi_1%5Cright%3E%20+%20b%20%5Cleft%7C%5Cpsi_2%5Cright%3E)%20=%20aM%5Cleft%7C%5Cpsi_1%5Cright%3E%20+%20b%20M%5Cleft%7C%5Cpsi_2%5Cright%3E%20=%20a%5Cleft%7C%5Cpsi_1%5Cright%3E%20+%20b%20%5Cleft%7C%5Cpsi_2%5Cright%3E%20=%20%5Cleft%7C%5Cpsi%5Cright%3E."></p>
+<p>Therefore, <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%5Cpsi%5Cright%3E%20%5Cin%20V_S">.</p>
+<p>If <img src="https://latex.codecogs.com/png.latex?V_S"> contains any element from an eigenvalue -1 subspace, we could easily construct a state that violates the above property, so the second statement is true.</p>
+<hr>
+<p><strong>Exercise 10.30</strong>:</p>
+<p>Suppose that <img src="https://latex.codecogs.com/png.latex?%5Cpm%20iI%20%5Cin%20S">. Then, by the group operation this implies that <img src="https://latex.codecogs.com/png.latex?-I%20%5Cin%20S">. By contraposition, this proves the statement.</p>
+<hr>
+<p><strong>Exercise 10.31</strong>: Let <img src="https://latex.codecogs.com/png.latex?S"> be a subgroup of <img src="https://latex.codecogs.com/png.latex?G_n"> generated by elements <img src="https://latex.codecogs.com/png.latex?g_1,%20%5Cldots,%20g_l">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?(%5CRightarrow)">. Suppose that all elements in <img src="https://latex.codecogs.com/png.latex?S"> commute. That is, for any <img src="https://latex.codecogs.com/png.latex?M,%20N%20%5Cin%20S">, we have <img src="https://latex.codecogs.com/png.latex?MN%20=%20NM">. Since <img src="https://latex.codecogs.com/png.latex?g_i,%20g_j%20%5Cin%20S">, the generators must commute too..</p>
+<p><img src="https://latex.codecogs.com/png.latex?(%5CLeftarrow)">. Suppose that each pair of generators <img src="https://latex.codecogs.com/png.latex?g_i"> and <img src="https://latex.codecogs.com/png.latex?g_j"> commute for all <img src="https://latex.codecogs.com/png.latex?i,%20j">. Let <img src="https://latex.codecogs.com/png.latex?M,%20N%20%5Cin%20S">, meaning they can be written as products <img src="https://latex.codecogs.com/png.latex?M%20=%20g_1%5E%7Bm_1%7D%20%5Ccdots%20g_l%5E%7Bm_l%7D"> and <img src="https://latex.codecogs.com/png.latex?N%20=%20g_1%5E%7Bn_1%7D%20%5Ccdots%20g_l%5E%7Bn_l%7D"> for <img src="https://latex.codecogs.com/png.latex?m_i,%20n_i%20%5Cin%20%5C%7B0,%201%5C%7D">. Then</p>
+<p><img src="https://latex.codecogs.com/png.latex?MN%20=%20(g_1%5E%7Bm_1%7D%20%5Ccdots%20g_l%5E%7Bm_l%7D)(g_1%5E%7Bn_1%7D%20%5Ccdots%20g_l%5E%7Bn_l%7D)%20=%20(g_1%5E%7Bn_1%7D%20%5Ccdots%20g_l%5E%7Bn_l%7D)(g_1%5E%7Bm_1%7D%20%5Ccdots%20g_l%5E%7Bm_l%7D)%20=%20NM"></p>
+<p>since we can swap elements one at a time until we go from the second term to the third term in the above equation. Therefore all elements of <img src="https://latex.codecogs.com/png.latex?S"> commute.</p>
+<hr>
+<p><strong>Exercise 10.32</strong>: Can be easily verified directly.</p>
+<hr>
+<p><strong>Exercise 10.33</strong>:</p>
+<p><img src="https://latex.codecogs.com/png.latex?(%5CRightarrow)"> Suppose that <img src="https://latex.codecogs.com/png.latex?g"> and <img src="https://latex.codecogs.com/png.latex?g'"> commute. Since both are elements of the Pauli group, this means that in each index we have either 1) a non-identity Pauli on one generator and identity on the other or 2) the same Pauli on each position. If both generators are built with identities and the same Pauli, they trivially commute and it is not necessary to test. Another possibility is that the total number of indices with non-commuting terms is even, since in a non-commuting index the commutator picks up a phase of -1. To determine this, we represent <img src="https://latex.codecogs.com/png.latex?g%20=%20(x_1,%20%5Cldots,%20x_n,%20z_1,%20%5Cldots,%20z_n)"> and <img src="https://latex.codecogs.com/png.latex?g'%20=%20(x_1',%20%5Cldots,%20x_n',%20z_1',%20%5Cldots,%20z_n')">, where we have used a length <img src="https://latex.codecogs.com/png.latex?2n"> bit vector to represent indices of the generator that have (or don’t have) an <img src="https://latex.codecogs.com/png.latex?X"> component with 1 (or 0), and the same in the second half of the matrix for <img src="https://latex.codecogs.com/png.latex?Z">. For <img src="https://latex.codecogs.com/png.latex?Y"> we simply set the corresponding index for both terms to 1. Now if the two generators commute, then we should have</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bi=1%7D%5En%20(x_iz_i'%20+%20z_ix_i')%20=%200,"></p>
+<p>which is exactly what the ‘twisted’ inner product computes between different rows.</p>
+<p><img src="https://latex.codecogs.com/png.latex?(%5CLeftarrow)"> Suppose that for <img src="https://latex.codecogs.com/png.latex?g,%20g'%20%5Cin%20S">, we have <img src="https://latex.codecogs.com/png.latex?r(g)%5CLambda%20r(g')%5ET%20=%200">. This implies that the total number of non-commuting indices of <img src="https://latex.codecogs.com/png.latex?g"> and <img src="https://latex.codecogs.com/png.latex?g'"> is even. This implies <img src="https://latex.codecogs.com/png.latex?g"> and <img src="https://latex.codecogs.com/png.latex?g'"> commute since each non-commuting index contributes a phase of -1 when taking the commutator, which when taken to an even power gives 1.</p>
+<hr>
+<p><strong>Exercise 10.34</strong>: Let <img src="https://latex.codecogs.com/png.latex?S%20=%20%5Cleft%3C%20g_1,%20%5Cldots,%20g_l%20%5Cright%3E">. Show that <img src="https://latex.codecogs.com/png.latex?-I"> is not an element of <img src="https://latex.codecogs.com/png.latex?S"> if and only if <img src="https://latex.codecogs.com/png.latex?g_j%5E2%20=%20I"> for all <img src="https://latex.codecogs.com/png.latex?j">, and <img src="https://latex.codecogs.com/png.latex?g_j%20%5Cneq%20-I"> for all <img src="https://latex.codecogs.com/png.latex?j">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?(%5CRightarrow)"> Suppose <img src="https://latex.codecogs.com/png.latex?-I%20%5Cnot%20%5Cin%20S">. Then, since <img src="https://latex.codecogs.com/png.latex?S"> is a subgroup of the Pauli group, we have <img src="https://latex.codecogs.com/png.latex?g_j%5E2%20=%20I"> for all <img src="https://latex.codecogs.com/png.latex?j">, but <img src="https://latex.codecogs.com/png.latex?g_j%20%5Cneq%20-I"> for all <img src="https://latex.codecogs.com/png.latex?j"> by assumption.</p>
+<p><img src="https://latex.codecogs.com/png.latex?(%5CLeftarrow)"> Suppose <img src="https://latex.codecogs.com/png.latex?g_j%5E2%20=%20I"> for all <img src="https://latex.codecogs.com/png.latex?j">, and <img src="https://latex.codecogs.com/png.latex?g_j%20%5Cneq%20-I"> for all <img src="https://latex.codecogs.com/png.latex?j">. By the first condition, we know that <img src="https://latex.codecogs.com/png.latex?g_j%20%5Cneq%20%5Cpm%20i%20M"> for any <img src="https://latex.codecogs.com/png.latex?n"> Pauli string <img src="https://latex.codecogs.com/png.latex?M">. By exercise 10.30, we conclude that <img src="https://latex.codecogs.com/png.latex?-I%20%5Cnot%20%5Cin%20S">.</p>
+<hr>
+<p><strong>Exercise 10.35</strong>: Let <img src="https://latex.codecogs.com/png.latex?S"> be a subgroup of <img src="https://latex.codecogs.com/png.latex?G_n"> such that <img src="https://latex.codecogs.com/png.latex?-I"> is not an element of <img src="https://latex.codecogs.com/png.latex?S">.</p>
+<p>Seems trivial? And very similar to 10.34.</p>
+<hr>
+<p><strong>Exercise 10.36</strong>:</p>
+<p><img src="https://latex.codecogs.com/png.latex?UX_1U%5E%5Cdagger%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D0&amp;0&amp;1&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%201&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D0&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%201&amp;0&amp;0&amp;0%5Cend%7Bbmatrix%7D%20=%20X_1X_2"></p>
+<p><img src="https://latex.codecogs.com/png.latex?UX_2U%5E%5Cdagger%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D0&amp;1&amp;0&amp;0%20%5C%5C%201&amp;0&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D0&amp;1&amp;0&amp;0%20%5C%5C%201&amp;0&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20=%20X_2"></p>
+<p><img src="https://latex.codecogs.com/png.latex?UZ_1U%5E%5Cdagger%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;-1&amp;0%20%5C%5C%200&amp;0&amp;0&amp;-1%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;-1&amp;0%20%5C%5C%200&amp;0&amp;0&amp;-1%5Cend%7Bbmatrix%7D%20=%20Z_1"></p>
+<p><img src="https://latex.codecogs.com/png.latex?UZ_2U%5E%5Cdagger%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;-1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;1&amp;0%20%5C%5C%200&amp;0&amp;0&amp;-1%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%20%5C%5C%200&amp;0&amp;1&amp;0%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0&amp;0&amp;0%20%5C%5C%200&amp;-1&amp;0&amp;0%20%5C%5C%200&amp;0&amp;-1&amp;0%20%5C%5C%200&amp;0&amp;0&amp;1%5Cend%7Bbmatrix%7D%20=%20Z_1Z_2"></p>
+<hr>
+<p><strong>Exercise 10.37</strong>: <img src="https://latex.codecogs.com/png.latex?UY_1U%5E%5Cdagger%20=%20iUX_1Z_1U%5E%5Cdagger%20=%20iUX_1U%5E%5Cdagger%20U%20Z_1%20U%5E%5Cdagger%20=%20i%20(X_1%20X_2)%20Z_1%20=%20Y_1%20X_2."></p>
+<hr>
+<p><strong>Exercise 10.38</strong>:</p>
+<p>Got some hints from <a href="https://enakai00.hatenablog.com/entry/2018/04/14/124307">enakai blog</a>.</p>
+<p>Let <img src="https://latex.codecogs.com/png.latex?M%20%5Cin%20%5C%7BZ_1,%20Z_2,%20X_1,%20X_2%5C%7D">. By assumption, <img src="https://latex.codecogs.com/png.latex?U"> and <img src="https://latex.codecogs.com/png.latex?V"> act on <img src="https://latex.codecogs.com/png.latex?M"> in the same way under conjugation:</p>
+<p><img src="https://latex.codecogs.com/png.latex?UMU%5E%5Cdagger%20=%20VM%20V%5E%5Cdagger%20%5CLeftrightarrow%20M(U%5E%5Cdagger%20V)%20=%20(U%5E%5Cdagger%20V)M."></p>
+<p>Note that we can express any <img src="https://latex.codecogs.com/png.latex?4%20%5Ctimes%204"> matrix <img src="https://latex.codecogs.com/png.latex?U%5E%5Cdagger%20V"> as <img src="https://latex.codecogs.com/png.latex?I_1%20%5Cotimes%20A%20+%20Z_1%20%5Cotimes%20B%20+%20X_1%20%5Cotimes%20C%20+%20Y_1%20%5Cotimes%20D"> where <img src="https://latex.codecogs.com/png.latex?A,%20B,%20C,%20D"> are linear combinations of the 1 qubit Paulis.</p>
+<p>Suppose <img src="https://latex.codecogs.com/png.latex?M%20=%20Z_1">. Consider <img src="https://latex.codecogs.com/png.latex?Z_1(U%5E%5Cdagger%20V)%20=%20Z_1(I_1%20%5Cotimes%20A%20+%20Z_1%20%5Cotimes%20B%20+%20X_1%20%5Cotimes%20C%20+%20Y_1%20%5Cotimes%20D)%20=%20Z_1%20%5Cotimes%20A%20+%20I_1%20%5Cotimes%20B%20+%20Z_1(X_1%20%5Cotimes%20C%20+%20Y_1%20%5Cotimes%20D)"> and <img src="https://latex.codecogs.com/png.latex?(U%5E%5Cdagger%20V)Z_1%20=%20(I_1%20%5Cotimes%20A%20+%20Z_1%20%5Cotimes%20B%20+%20X_1%20%5Cotimes%20C%20+%20Y_1%20%5Cotimes%20D)Z_1%20=%20Z_1%20%5Cotimes%20A%20+%20I_1%20%5Cotimes%20B%20-%20Z_1(X_1%20%5Cotimes%20C%20+%20Y_1%20%5Cotimes%20D)."></p>
+<p>Since the two must be equal by assumption, we see that <img src="https://latex.codecogs.com/png.latex?X_1%20%5Cotimes%20C%20+%20Y_1%20%5Cotimes%20D%20=%200"> and <img src="https://latex.codecogs.com/png.latex?(U%5E%5Cdagger%20V)%20=%20I_1%20%5Cotimes%20A%20+%20Z_1%20%5Cotimes%20B">.</p>
+<p>The same equality must hold for the case <img src="https://latex.codecogs.com/png.latex?M%20=%20X_1"> which we consider next. <img src="https://latex.codecogs.com/png.latex?X_1(U%5E%5Cdagger%20V)%20=%20X_1(I_1%20%5Cotimes%20A%20+%20Z_1%20%5Cotimes%20B)"> and <img src="https://latex.codecogs.com/png.latex?(U%5E%5Cdagger%20V)X_1%20=%20(I_1%20%5Cotimes%20A%20+%20Z_1%20%5Cotimes%20B)X_1"> from which we can see that <img src="https://latex.codecogs.com/png.latex?B%20=%200">. This implies that <img src="https://latex.codecogs.com/png.latex?U%5E%5Cdagger%20V%20=%20I_1%20%5Cotimes%20A">.</p>
+<p>To determine what <img src="https://latex.codecogs.com/png.latex?A"> is, we can use a similar analysis with <img src="https://latex.codecogs.com/png.latex?M%20=%20Z_2,%20X_2">, from which we conclude that <img src="https://latex.codecogs.com/png.latex?U%5E%5Cdagger%20V%20=%20I">, which implies that <img src="https://latex.codecogs.com/png.latex?U%20=%20V">.</p>
+<hr>
+<p><strong>Exercise 10.39</strong>: <img src="https://latex.codecogs.com/png.latex?SXS%5E%5Cdagger%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0%20%5C%5C%200&amp;i%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D0&amp;1%20%5C%5C%201&amp;0%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0%20%5C%5C%200&amp;i%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D%201%20&amp;%20-i%20%5C%5C%20i%20&amp;%201%20%5Cend%7Bbmatrix%7D%20=%20Y"></p>
+<p><img src="https://latex.codecogs.com/png.latex?SZS%5E%5Cdagger%20=%20%5Cbegin%7Bbmatrix%7D1&amp;0%20%5C%5C%200&amp;i%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0%20%5C%5C%200&amp;-1%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D1&amp;0%20%5C%5C%200&amp;i%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D%201%20&amp;%200%20%5C%5C%200%20&amp;%20=1%20%5Cend%7Bbmatrix%7D%20=%20Z"></p>
+<hr>
+<p><strong>Exercise 10.40</strong>:</p>
+<hr>
+<p><strong>Exercise 10.43</strong>: Show that <img src="https://latex.codecogs.com/png.latex?S%20%5Csubseteq%20N(S)"> for any subgroup <img src="https://latex.codecogs.com/png.latex?S"> of <img src="https://latex.codecogs.com/png.latex?G_n">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?N(S)%20%5Cequiv%20%5C%7BE%5Cin%20G_n%20%7C%20EgE%5E%5Cdagger%20%5Cin%20S,%20%5Cforall%20g%20%5Cin%20S.%5C%7D"></p>
+<p>Let <img src="https://latex.codecogs.com/png.latex?E%20%5Cin%20S"> where <img src="https://latex.codecogs.com/png.latex?S"> is a subgroup of <img src="https://latex.codecogs.com/png.latex?N(S)">. Then for all <img src="https://latex.codecogs.com/png.latex?g%20%5Cin%20S">, <img src="https://latex.codecogs.com/png.latex?EgE%5E%5Cdagger%20%5Cin%20S"> because <img src="https://latex.codecogs.com/png.latex?S"> is a subgroup.</p>
+<hr>
+<p><strong>Exercise 10.44</strong>: Show that <img src="https://latex.codecogs.com/png.latex?N(S)%20=%20Z(S)"> for any subgroup <img src="https://latex.codecogs.com/png.latex?S"> of <img src="https://latex.codecogs.com/png.latex?G_n"> not containing <img src="https://latex.codecogs.com/png.latex?-I">.</p>
+<p>(<img src="https://latex.codecogs.com/png.latex?N(S)%20%5Csubseteq%20Z(S)">) Take <img src="https://latex.codecogs.com/png.latex?E%5Cin%20N(S)">. Consider the equality <img src="https://latex.codecogs.com/png.latex?EgE%20=%20%5Cpm%20EE%20g%20=%20%5Cpm%20g"> for some <img src="https://latex.codecogs.com/png.latex?g%20%5Cin%20S">, where the sign depends on the commutation relation between <img src="https://latex.codecogs.com/png.latex?E"> and <img src="https://latex.codecogs.com/png.latex?g">. Suppose there exists an <img src="https://latex.codecogs.com/png.latex?E"> such that the sign is negative. Since <img src="https://latex.codecogs.com/png.latex?S"> is a subgroup we have <img src="https://latex.codecogs.com/png.latex?EgE%20=%20-g%20%5Cin%20S">. Then, we find that <img src="https://latex.codecogs.com/png.latex?-I%20%5Cin%20S"> by</p>
+<p><img src="https://latex.codecogs.com/png.latex?(EgE)%20g%20=%20-EggE%20=%20-I,"></p>
+<p>which is a contradiction, so we know that <img src="https://latex.codecogs.com/png.latex?EgE%20=%20g">. From this we conclude that <img src="https://latex.codecogs.com/png.latex?Eg%20=%20gE">, so <img src="https://latex.codecogs.com/png.latex?E%20%5Cin%20N(S)">.</p>
+<p>(<img src="https://latex.codecogs.com/png.latex?Z(S)%20%5Csubseteq%20N(S)">) Take <img src="https://latex.codecogs.com/png.latex?E%20%5Cin%20Z(S)">. Then, <img src="https://latex.codecogs.com/png.latex?Eg%20=%20gE"> for all <img src="https://latex.codecogs.com/png.latex?g%20%5Cin%20S">. This implies by properties of the Pauli group that <img src="https://latex.codecogs.com/png.latex?EgE%5E%5Cdagger%20=%20g">.</p>
+<hr>
+<p>**</p>
+
+
+</section>
+
+ ]]></description>
+  <category>notes</category>
+  <category>quantum</category>
+  <guid>https://www.shionfukuzawa.com/posts/qcqi-ch10/index.html</guid>
+  <pubDate>Mon, 28 Nov 2022 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Hall LGLAR Chapter 2: The Matrix Exponential</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/lglar-ch2/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is a collection of my notes from chapter 2 of Brian Hall’s “Lie Groups, Lie Algebras, and Representations”. From what I know, the matrix exponential is an important operation used to connect Lie groups and Lie algebras. This chapter introduces the matrix exponential and explores properties about it that should lead to insights on the nature of this connection.</p>
+<section id="the-exponential-of-a-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="the-exponential-of-a-matrix">The Exponential of a Matrix</h2>
+<p>Before introducing the exponential of a matrix, we begin by defining the Hilbert-Schmidt norm of a matrix. There are multiple norms that can be defined on the space of matrices, but this seems to be the choice for the study of Lie algebras.</p>
+<p><strong>Definition 1</strong>: For any matrix <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20M_n(%5Cmathbb%7BC%7D)">, we define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%7C%7CX%7C%7C%20=%20%5Cleft(%20%5Csum_%7Bj,k=1%7D%5En%20%7CX_%7Bj,k%7D%7C%5E2%5Cright)%5E%7B1/2%7D."></p>
+<p>The quantity <img src="https://latex.codecogs.com/png.latex?%7C%7CX%7C%7C"> is called the <strong>Hilbert-Schmidt norm</strong> of <img src="https://latex.codecogs.com/png.latex?X">.</p>
+<p>This definition is basically the definition of a norm of a vector, where we take the standard vector norm after flattening the matrix <img src="https://latex.codecogs.com/png.latex?X">, making it quite easy to memorize. A really neat property of the Hilbert-Schmidt norm is that it is independent of the basis, and can be computed by the following:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%7C%7CX%7C%7C%20=%20%5Cleft(%5Ctext%7Btr%7D%20(X%5E*X)%5Cright)%5E%7B1/2%7D."></p>
+<hr>
+<p><strong>Note</strong>: This alternative characterization for the Hilbert-Schmidt norm was somewhat confusing for me at first, but I found a nice way for me to visualize the quantity that the norm is capturing. If you recall, the standard inner product <img src="https://latex.codecogs.com/png.latex?%5Cleft%3C%20%5Ccdot,%20%5Ccdot%20%5Cright%3E"> between vectors <img src="https://latex.codecogs.com/png.latex?x,%20y%20%5Cin%20%5Cmathbb%7BC%7D%5En"> has the following property when combined with an <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrix <img src="https://latex.codecogs.com/png.latex?A">:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cleft%3Cx,%20Ay%5Cright%3E%20=%20%5Cleft%3C%20A%5E*%20x,%20y%20%5Cright%3E."></p>
+<p>Now if we ask how much the inner product between two unit vectors <img src="https://latex.codecogs.com/png.latex?%5Cleft%3C%20x,%20y%5Cright%3E"> changes after transforming them by a matrix <img src="https://latex.codecogs.com/png.latex?A">, we get the following expression:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cleft%3CAx,%20Ay%5Cright%3E%20=%20%5Cleft%3CA%5E*Ax,%20y%5Cright%3E."></p>
+<p>In a previous blog post, I explored the trace in an effort to find a geometric interpretation for it. One definition I found was that the trace of an operator characterizes how much an operator scales the volume of a unit ball. Under this picture, the average difference between <img src="https://latex.codecogs.com/png.latex?%5Cleft%3C%20x,%20y%5Cright%3E"> and <img src="https://latex.codecogs.com/png.latex?%5Cleft%3CAx,%20Ay%5Cright%3E">, with the two unit vectors <img src="https://latex.codecogs.com/png.latex?x,%20y"> sampled uniformly, is upper-bounded by an expression involving the trace of <img src="https://latex.codecogs.com/png.latex?A%5E*A">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cint_x%20%5Cint_y%20%5Cleft%3Cx,y%5Cright%3E%20-%20%5Cleft%3CAx,%20Ay%5Cright%3E%20dx%20dy%20=%20%5Cint%20%5Cint%20%5Cleft%3Cx,y%5Cright%3E%20-%20%5Cleft%3CA%5E*Ax,%20y%5Cright%3E%20dx%20dy%20=%20%5Cint%20%5Cint%20%5Cleft%3Cx,y%5Cright%3E%20-%20%5Ctext%7Btr%7D(A%5E*A)/n%20dx%20dy%20%5Cleq%201%20-%20%5Ctext%7Btr%7D(A%5E*A)/n%20"></p>
+<hr>
+<p>The Hilbert-Schmidt norm satisfies the triangle inequality and a consequence of the Cauchy-Schwartz inequality, expressed as the following:</p>
+<ol type="1">
+<li><img src="https://latex.codecogs.com/png.latex?%7C%7CX%20+%20Y%7C%7C%20%5Cleq%20%7C%7CX%7C%7C%20+%20%7C%7CY%7C%7C"></li>
+<li><img src="https://latex.codecogs.com/png.latex?%7C%7CXY%7C%7C%20%5Cleq%20%7C%7CX%7C%7C%5C;%20%7C%7CY%7C%7C"></li>
+</ol>
+<p>We also take a quick trip back to calculus class to refresh on the definition of a matrix exponential.</p>
+<p><strong>Definition 2</strong>: If <img src="https://latex.codecogs.com/png.latex?X"> is an <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrix, the <strong>exponential</strong> of <img src="https://latex.codecogs.com/png.latex?X">, written <img src="https://latex.codecogs.com/png.latex?e%5EX">, is defined by the usual power series</p>
+<p><img src="https://latex.codecogs.com/png.latex?e%5EX%20=%20%5Csum_%7Bm=0%7D%5E%5Cinfty%20%5Cfrac%7BX%5Em%7D%7Bm!%7D."></p>
+<p>The text proves using the Hilbert-Schmidt norm that the above series converges for all <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20M_n(%5Cmathbb%7BC%7D)">, and proves that <img src="https://latex.codecogs.com/png.latex?e%5EX"> is a continuous function of <img src="https://latex.codecogs.com/png.latex?X">.</p>
+<p>Here we list several properties of the matrix exponential.</p>
+<p><strong>Proposition 2.3</strong> (Properties of Matrix Exponential): 1. <img src="https://latex.codecogs.com/png.latex?e%5E0%20=%20I">. 2. <img src="https://latex.codecogs.com/png.latex?(e%5EX)%5E*%20=%20e%5E%7BX%5E*%7D">. 3. <img src="https://latex.codecogs.com/png.latex?e%5EX"> is invertible and <img src="https://latex.codecogs.com/png.latex?%5Cleft(e%5EX%5Cright)%5E%7B-1%7D%20=%20e%5E%7B-X%7D">. 4. <img src="https://latex.codecogs.com/png.latex?e%5E%7B(%5Calpha+%5Cbeta)X%7D%20=%20e%5E%7B%5Calpha%20X%7De%5E%7B%5Cbeta%20X%7D"> for all <img src="https://latex.codecogs.com/png.latex?%5Calpha,%20%5Cbeta%20%5Cin%20%5Cmathbb%7BC%7D">. 5. If <img src="https://latex.codecogs.com/png.latex?XY%20=%20YX">, then <img src="https://latex.codecogs.com/png.latex?e%5E%7BX+Y%7D%20=%20e%5EXe%5EY%20=%20e%5EYe%5EX">. 6. If <img src="https://latex.codecogs.com/png.latex?C"> is in <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(N;%5Cmathbb%7BC%7D)">, then <img src="https://latex.codecogs.com/png.latex?e%5E%7BCXC%5E%7B-1%7D%7D%20=%20Ce%5EXC%5E%7B-1%7D">.</p>
+<p><strong>Proposition 2.4</strong>: Let <img src="https://latex.codecogs.com/png.latex?X"> be a <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> complex matrix. Then <img src="https://latex.codecogs.com/png.latex?e%5E%7BtX%7D"> is a smooth curve in <img src="https://latex.codecogs.com/png.latex?M_n(%5Cmathbb%7BC%7D)"> and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bd%7D%7Bdt%7D%20e%5E%7BtX%7D%20=%20X%20e%5E%7BtX%7D%20=%20e%5E%7BtX%7D%20X."></p>
+<p>In particular,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bd%7D%7Bdt%7D%20e%5E%7BtX%7D%20%5CBig%7C_%7Bt=0%7D%20=%20X."></p>
+</section>
+<section id="computing-the-exponential" class="level2">
+<h2 class="anchored" data-anchor-id="computing-the-exponential">Computing the Exponential</h2>
+<p>We can now examine specific examples on how we might compute the exponential of a general matrix. Suppose that we have <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20M_n(%5Cmathbb%7BC%7D)"> with <img src="https://latex.codecogs.com/png.latex?n"> linearly independent eigenvectors <img src="https://latex.codecogs.com/png.latex?v_1,%20%5Cldots,%20v_n"> with eigenvalues <img src="https://latex.codecogs.com/png.latex?%5Clambda_1,%20%5Cldots,%20%5Clambda_n">. Then the matrix can be diagonalized as</p>
+<p><img src="https://latex.codecogs.com/png.latex?X%20=%20CDC%5E%7B-1%7D"></p>
+<p>where <img src="https://latex.codecogs.com/png.latex?C"> is the <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrix with the eigenvectors of <img src="https://latex.codecogs.com/png.latex?X"> as its columns, and <img src="https://latex.codecogs.com/png.latex?D"> is the diagonal <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrix with the eigenvalues on the diagonal. It is easy to show that the matrix <img src="https://latex.codecogs.com/png.latex?e%5ED"> is the matrix with diagonal elements <img src="https://latex.codecogs.com/png.latex?e%5E%7B%5Clambda_1%7D,%20%5Cldots,%20e%5E%7B%5Clambda_n%7D">, so by using property 6 from above, we have that</p>
+<p><img src="https://latex.codecogs.com/png.latex?e%5EX%20=%20C%5Cbegin%7Bpmatrix%7D%20e%5E%7B%5Clambda_1%7D%20&amp;%20&amp;%200%20%5C%5C%20&amp;%20%5Cddots%20&amp;%20%5C%5C%200%20&amp;%20&amp;%20e%5E%7B%5Clambda_n%7D%20%5Cend%7Bpmatrix%7D%20C%5E%7B-1%7D."></p>
+<p>Some readers may have encountered the matrix exponential when studying differential equations. Consider the following first-order differential equation</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bd%5Cmathbf%7Bv%7D%7D%7Bdt%7D%20=%20X%5Cmathbf%7Bv%7D,"> <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bv%7D(0)%20=%20%5Cmathbf%7Bv%7D_0,"></p>
+<p>where <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bv%7D(t)%20%5Cin%20%5Cmathbb%7BR%7D%5En"> and <img src="https://latex.codecogs.com/png.latex?X"> is a fixed <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrix. The solution of this equation is given by</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bv%7D(t)%20=%20e%5E%7BtX%7D%5Cmathbf%7Bv%7D_0,"></p>
+<p>which can be verified via proposition 2.4.</p>
+</section>
+<section id="the-matrix-logarithm" class="level2">
+<h2 class="anchored" data-anchor-id="the-matrix-logarithm">The Matrix Logarithm</h2>
+<p>We also want to define an inverse function to the matrix exponential, which will be called the matrix logarithm. The text describes how this can be done by using techniques and knowledge about the logarithm of complex numbers. I’ll just state the resulting definition here.</p>
+<p><strong>Definition 3</strong>: For an <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrix <img src="https://latex.codecogs.com/png.latex?A">, define <img src="https://latex.codecogs.com/png.latex?%5Clog%20A"> by</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Clog%20A%20=%20%5Csum_%7Bm=1%7D%5E%5Cinfty%20(-1)%5E%7Bm+1%7D%20%5Cfrac%7B(A-I)%5Em%7D%7Bm%7D"></p>
+<p>whenever the series converges.</p>
+<p>Like the situation with complex numbers, this function cannot be defined for general matrices, as is formalized in the following theorem.</p>
+<p><strong>Theorem 2.8.</strong> The function <img src="https://latex.codecogs.com/png.latex?%5Clog%20A"> is defined and continuous on the set of all <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> complex matrices <img src="https://latex.codecogs.com/png.latex?A"> with <img src="https://latex.codecogs.com/png.latex?%7C%7CA%20-%20I%7C%7C%20%3C%201">. For all <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20M_n(%5Cmathbb%7BC%7D)"> with <img src="https://latex.codecogs.com/png.latex?%7C%7CA%20-%20I%7C%7C%20%3C%201,"></p>
+<p><img src="https://latex.codecogs.com/png.latex?e%5E%7B%5Clog%20A%7D%20=%20A."></p>
+<p>For all <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20M_n(%5Cmathbb%7BC%7D)"> with <img src="https://latex.codecogs.com/png.latex?%7C%7CX%7C%7C%20%3C%20%5Clog%202">, <img src="https://latex.codecogs.com/png.latex?%7C%7Ce%5EX%20-%20I%7C%7C%20%3C%201"> and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Clog%20e%5EX%20=%20X."></p>
+<p>Finally, the following proposition gives us a way to upperbound the matrix logarithm by a function of the matrix’ Hilbert-Schmidt norm.</p>
+<p><strong>Proposition 2.9.</strong> There exists a constant <img src="https://latex.codecogs.com/png.latex?c"> such that for all <img src="https://latex.codecogs.com/png.latex?n%20%5Ctimes%20n"> matrices <img src="https://latex.codecogs.com/png.latex?B"> with <img src="https://latex.codecogs.com/png.latex?%7C%7CB%7C%7C%20%3C%201/2">, we have</p>
+<p><img src="https://latex.codecogs.com/png.latex?%7C%7C%5Clog(I%20+%20B)%20-%20B%7C%7C%20%5Cleq%20c%20%7C%7CB%7C%7C%5E2."></p>
+<p>This can be restated in a more concise way by</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Clog(I%20+%20B)%20=%20B%20+%20O(%7C%7CB%7C%7C%5E2)."></p>
+</section>
+<section id="further-properties-of-the-exponential" class="level2">
+<h2 class="anchored" data-anchor-id="further-properties-of-the-exponential">Further Properties of the Exponential</h2>
+<p>This section introduces several key properties of the matrix exponential that will lead into the discussion of Lie algebras. The first is a familiar equation for those who have seen the Trotter product formula for quantum simulation algorithms.</p>
+<p><strong>Theorem 2.11 (Lie Product Formula).</strong> For all <img src="https://latex.codecogs.com/png.latex?X,%20Y%20%5Cin%20M_n(%5Cmathbb%7BC%7D)">, we have <img src="https://latex.codecogs.com/png.latex?e%5E%7BX%20+%20Y%7D%20=%20%5Cunderset%7Bm%20%5Crightarrow%20%5Cinfty%7D%7B%5Clim%7D%20%5Cleft(%20e%5E%7BX/m%7D%20e%5E%7BY/m%7D%5Cright)%5Em."></p>
+<p><strong>Theorem 2.12.</strong> For any <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20M_n(%5Cmathbb%7BC%7D)">, we have <img src="https://latex.codecogs.com/png.latex?%5Cdet%5Cleft(e%5EX%5Cright)%20=%20e%5E%7B%5Ctext%7Btrace%7D(X)%7D."></p>
+<p><strong>Proposition 2.16.</strong> The exponential map is an infinitely differentiable map of <img src="https://latex.codecogs.com/png.latex?M_n(%5Cmathbb%7BC%7D)"> into <img src="https://latex.codecogs.com/png.latex?M_n(%5Cmathbb%7BC%7D)">.</p>
+</section>
+<section id="polar-decomposition" class="level2">
+<h2 class="anchored" data-anchor-id="polar-decomposition">Polar Decomposition</h2>
+<p>Finally, I summarize some quick notes on the polar decomposition of a matrix. The introduction to the topic as a generalization of polar decompositions for complex numbers was very interesting, so I suggest taking a look for people who want a better understanding of the topic.</p>
+<p><strong>Theorem 2.17.</strong> 1. Every <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20GL(n;%5Cmathbb%7BC%7D)"> can be written uniquely in the form <img src="https://latex.codecogs.com/png.latex?A%20=%20UP"> where <img src="https://latex.codecogs.com/png.latex?U"> is unitary and <img src="https://latex.codecogs.com/png.latex?P"> is self-adjoint and positive. 2. Every self-adjoint positive matrix <img src="https://latex.codecogs.com/png.latex?P"> can be written uniquely in the form <img src="https://latex.codecogs.com/png.latex?P%20=%20e%5EX"> with <img src="https://latex.codecogs.com/png.latex?X"> self-adjoint. Conversely, if <img src="https://latex.codecogs.com/png.latex?X"> is self-adjoint, then <img src="https://latex.codecogs.com/png.latex?e%5EX"> is self-adjoint and positive. 3. If we decompose each <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20GL(n;%5Cmathbb%7BC%7D)"> uniquely as <img src="https://latex.codecogs.com/png.latex?A%20=%20Ue%5EX"> with <img src="https://latex.codecogs.com/png.latex?U"> unitary and <img src="https://latex.codecogs.com/png.latex?X"> self-adjoint, then <img src="https://latex.codecogs.com/png.latex?U"> and <img src="https://latex.codecogs.com/png.latex?X"> depend continuously on <img src="https://latex.codecogs.com/png.latex?A">.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>notes</category>
+  <category>math</category>
+  <guid>https://www.shionfukuzawa.com/posts/lglar-ch2/index.html</guid>
+  <pubDate>Sat, 26 Nov 2022 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Hall LGLAR Chapter 1: Matrix Lie Groups</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/lglar-ch1/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Collection of some notes and solutions to exercises from Brian Hall’s “Lie Groups, Lie Algebras, and Representations”. My primary motivation for going through this literature around Lie groups is to understand the unitary groups and special unitary groups better, so the problems I solve will be focused on those groups more than others. The definition numberings are assigned by myself to reference in the exercise solutions.</p>
+<section id="definitions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<p><strong>Definition 1</strong>: The <strong>general linear group</strong> over <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BR%7D">, <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(n;%20%5Cmathbb%7BR%7D)">, is the group of all <img src="https://latex.codecogs.com/png.latex?n"> by <img src="https://latex.codecogs.com/png.latex?n"> invertible matrices with real entries, where the group operation is the standard matrix product. A similar definition is used to define <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(n;%20%5Cmathbb%7BC%7D)">.</p>
+<p><strong>Definition 2</strong>: <img src="https://latex.codecogs.com/png.latex?M_n(%5Cmathbb%7BC%7D)"> is the space of all <img src="https://latex.codecogs.com/png.latex?n"> by <img src="https://latex.codecogs.com/png.latex?n"> matrices with complex entries.</p>
+<p><strong>Definition 3</strong>: Let <img src="https://latex.codecogs.com/png.latex?A_m"> be a sequence of complex matrices in <img src="https://latex.codecogs.com/png.latex?M_n(%5Cmathbb%7BC%7D)">. We say that <img src="https://latex.codecogs.com/png.latex?A_m"> <strong>converges</strong> to a matrix <img src="https://latex.codecogs.com/png.latex?A"> if each entry of <img src="https://latex.codecogs.com/png.latex?A_m"> converges to its corresponding entry in <img src="https://latex.codecogs.com/png.latex?A">.</p>
+<p><strong>Definition 4</strong>: A <strong>matrix Lie group</strong> is a subgroup <img src="https://latex.codecogs.com/png.latex?G"> of <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(n;%5Cmathbb%7BC%7D)"> with one of the following properties: 1. If <img src="https://latex.codecogs.com/png.latex?A_m"> is any sequence of matrices in <img src="https://latex.codecogs.com/png.latex?G">, and <img src="https://latex.codecogs.com/png.latex?A_m"> converges to some matrix <img src="https://latex.codecogs.com/png.latex?A">, then either 1. <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20G"> 2. <img src="https://latex.codecogs.com/png.latex?A"> is not invertible. 2. <img src="https://latex.codecogs.com/png.latex?G"> is a closed subgroup of <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(n;%5Cmathbb%7BC%7D)">.</p>
+<p><strong>Definition 5</strong>: A matrix <img src="https://latex.codecogs.com/png.latex?A"> is unitary if 2 column vectors are orthonormal, i.e.&nbsp;<img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bl=1%7D%5En%20%5Coverline%7BA%7D_%7Blj%7DA_%7Blk%7D=%5Cdelta_%7Bjk%7D">. Equivalently, a unitary matrix is one that satisfies <img src="https://latex.codecogs.com/png.latex?A%5E*%20A%20=%20AA%5E*%20=%20I">.</p>
+</section>
+<section id="examples-of-matrix-lie-groups" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-matrix-lie-groups">Examples of Matrix Lie Groups</h2>
+<p><strong>1. Unitary group</strong>: The collection of unitary matrices forms a subgroup of <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(n;%5Cmathbb%7BC%7D)"> called the <strong>unitary group</strong>, denoted by <img src="https://latex.codecogs.com/png.latex?U(n)">. We can also define the <strong>special unitary group</strong>, <img src="https://latex.codecogs.com/png.latex?SU(n)">, as the subgroup of <img src="https://latex.codecogs.com/png.latex?U(n)"> with all matrices having determinant 1.</p>
+<hr>
+<p><strong>Quick check 1</strong>: Show that <img src="https://latex.codecogs.com/png.latex?G%20=%20U(n)"> (or <img src="https://latex.codecogs.com/png.latex?G%20=%20SU(n)">) is a matrix Lie group.</p>
+<p><em>PROOF</em>: To show this, it suffices to show that <img src="https://latex.codecogs.com/png.latex?G"> satisfies one of the properties in definition 4. From the text, it seems like it is a trivial exercise to show condition 2 holds, so I prove that here (although I’m not sure if this is the cleanest way to prove it).</p>
+<p>The goal is to show that <img src="https://latex.codecogs.com/png.latex?G"> is a closed subgroup of <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(n;%5Cmathbb%7BC%7D)">. This means that <img src="https://latex.codecogs.com/png.latex?G"> must be closed as a group, as well as a topological subspace. First to show it is a closed group, we must show <img src="https://latex.codecogs.com/png.latex?U_1U_2%20%5Cin%20G"> and <img src="https://latex.codecogs.com/png.latex?U%5E%7B-1%7D%20%5Cin%20G"> for all <img src="https://latex.codecogs.com/png.latex?U,%20U_1,%20U_2%20%5Cin%20G">.</p>
+<ul>
+<li>Since <img src="https://latex.codecogs.com/png.latex?(U_1U_2)%5E*(U_1U_2)%20=%20U_2%5E*%20U_1%5E*%20U_1%20U_2%20=%20I">, <img src="https://latex.codecogs.com/png.latex?U_1U_2%20%5Cin%20G">.</li>
+<li>For <img src="https://latex.codecogs.com/png.latex?U%20%5Cin%20G">, <img src="https://latex.codecogs.com/png.latex?(UU%5E%7B-1%7D)%5E*%20=%20I%5E*%20=%20I">. By standard matrix identities, <img src="https://latex.codecogs.com/png.latex?(UU%5E%7B-1%7D)%5E*%20=%20(U%5E%7B-1%7D)%5E*U%5E*%20=%20I">, implying that <img src="https://latex.codecogs.com/png.latex?(U%5E%7B-1%7D)%5E*%20=%20(U%5E*)%5E%7B-1%7D">. Using this, we have that <img src="https://latex.codecogs.com/png.latex?(U%5E%7B-1%7D)%5E*%20U%5E%7B-1%7D%20=%20(U%5E*)%5E%7B-1%7D%20U%5E%7B-1%7D%20=%20(UU%5E*)%5E%7B-1%7D%20=%20I">, proving that <img src="https://latex.codecogs.com/png.latex?U%5E%7B-1%7D%20%5Cin%20G">.</li>
+</ul>
+<p>To show that <img src="https://latex.codecogs.com/png.latex?G"> is a topologically closed set, first define the function <img src="https://latex.codecogs.com/png.latex?f:%20U(n)%20%5Crightarrow%20U(n)"> as <img src="https://latex.codecogs.com/png.latex?f(A)%20=%20A%5E*%20A">. This can be shown to be a continuous function. Furthermore, we can define <img src="https://latex.codecogs.com/png.latex?U(n)"> as the preimage of <img src="https://latex.codecogs.com/png.latex?%5C%7BI_n%5C%7D">, a closed set, under this continuous function, showing that <img src="https://latex.codecogs.com/png.latex?U(n)"> is indeed a closed topological set. To see that this holds for <img src="https://latex.codecogs.com/png.latex?SU(n)">, a <a href="https://math.stackexchange.com/questions/4075037/closed-subgroups-of-gln-mathbbc">similar proof</a> can be used to show that <img src="https://latex.codecogs.com/png.latex?SL(n%5C;%20%5Cmathbb%7BC%7D)"> is a closed set. Since the intersection of two closed sets is closed, we get <img src="https://latex.codecogs.com/png.latex?SL(n;%20%5Cmathbb%7BC%7D)%20%5Ccap%20U(n)%20=%20SU(n)"> is closed too.</p>
+<hr>
+<p><strong>2. Symplectic group</strong>: Consider the skew-symmetric bilinear form <img src="https://latex.codecogs.com/png.latex?B"> on <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BR%7D%5E%7B2n%7D"> defined by the following:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Comega(x,%20y)%20=%20%5Csum_%7Bj=1%7D%5En%20(x_jy_%7Bn+j%7D%20-%20x_%7Bn+j%7Dy_j)."></p>
+<p>The set of all <img src="https://latex.codecogs.com/png.latex?2n%20%5Ctimes%202n"> matrices <img src="https://latex.codecogs.com/png.latex?A"> which preserve <img src="https://latex.codecogs.com/png.latex?%5Comega"> is the <strong>real symplectic group</strong> <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(n;%5Cmathbb%7BR%7D)">, and it is a closed subgroup of <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BGL%7D(2n;%5Cmathbb%7BR%7D)">. If <img src="https://latex.codecogs.com/png.latex?%5COmega"> is the <img src="https://latex.codecogs.com/png.latex?2n%20%5Ctimes%202n"> matrix</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5COmega%20=%20%5Cbegin%7Bpmatrix%7D0%20&amp;%20I%20%5C%5C%20I%20&amp;%200%5Cend%7Bpmatrix%7D,"></p>
+<p>then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Comega(x,y)%20=%20%5Cleft%3C%20x,%20%5COmega%20y%20%5Cright%3E."></p>
+<p>From this, we can show that a <img src="https://latex.codecogs.com/png.latex?2n%20%5Ctimes%202n"> real matrix <img src="https://latex.codecogs.com/png.latex?A"> belongs to <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(n;%5Cmathbb%7BR%7D)"> if and only if</p>
+<p><img src="https://latex.codecogs.com/png.latex?-%5COmega%20A%5E%7BT%7D%20%5COmega%20=%20A%5E%7B-1%7D."></p>
+</section>
+<section id="topological-properties" class="level2">
+<h2 class="anchored" data-anchor-id="topological-properties">Topological Properties</h2>
+<p>There are three main topological properties we are interested in that a matrix Lie group can satisfy, which are stated in this section.</p>
+<section id="compactness" class="level3">
+<h3 class="anchored" data-anchor-id="compactness">1. Compactness</h3>
+<p><strong>Definition 6</strong>: A matrix Lie group <img src="https://latex.codecogs.com/png.latex?G%20%5Csubset%20%5Ctext%7BGL%7D(n;%5Cmathbb%7BC%7D)"> is said to be <strong>compact</strong> if it is compact in the usual sense as a subset of <img src="https://latex.codecogs.com/png.latex?M_n(%5Cmathbb%7BC%7D)%20%5Ccong%20%5Cmathbb%7BR%7D%5E%7B2n%5E2%7D">.</p>
+<p>The ``usual sense’’ of compactness is hard to get a sense of for those with limited exposure to topology, but thankfully the following theorem provides necessary and sufficient conditions for this property to hold, at least for subsets of Euclidean spaces.</p>
+<p><a href="https://en.wikipedia.org/wiki/Heine%E2%80%93Borel_theorem"><strong>Heine-Borel Theorem</strong></a>: For a subset <img src="https://latex.codecogs.com/png.latex?S"> of Euclidean space <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BR%7D%5En">, the following two statements are equivalent:</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?S"> is closed and bounded</li>
+<li><img src="https://latex.codecogs.com/png.latex?S"> is compact, that is, every open cover of S has a finite subcover.</li>
+</ul>
+<p>Here, closed means that for any sequence <img src="https://latex.codecogs.com/png.latex?A_m%20%5Cin%20S"> such that <img src="https://latex.codecogs.com/png.latex?A_m%20%5Crightarrow%20A">, then <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20S">. We say a subset <img src="https://latex.codecogs.com/png.latex?G%20%5Csubset%20M_n(%5Cmathbb%7BC%7D)"> is bounded if there exists a constant <img src="https://latex.codecogs.com/png.latex?C"> such that for all <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20G">, we have <img src="https://latex.codecogs.com/png.latex?%7CA_%7Bjk%7D%7C%20%5Cleq%20C"> for all <img src="https://latex.codecogs.com/png.latex?1%20%5Cleq%20j,k%20%5Cleq%20n">.</p>
+<hr>
+<p><strong>Quick check 2</strong>: Show that <img src="https://latex.codecogs.com/png.latex?U(n)"> and <img src="https://latex.codecogs.com/png.latex?SU(n)"> are compact.</p>
+<p><em>PROOF</em>: From quick check 1, we know that <img src="https://latex.codecogs.com/png.latex?U(n)"> and <img src="https://latex.codecogs.com/png.latex?SU(n)"> are closed. They are also bounded, since by definition, the columns of matrices in these groups must be unit vectors. This means that <img src="https://latex.codecogs.com/png.latex?%7CA_%7Bjk%7D%7C%20%5Cleq%201"> for all <img src="https://latex.codecogs.com/png.latex?1%20%5Cleq%20j,%20k%20%5Cleq%20n">. By the Heine-Borel theorem, we concluded that these two groups are indeed compact.</p>
+<hr>
+</section>
+<section id="connectedness" class="level3">
+<h3 class="anchored" data-anchor-id="connectedness">2. Connectedness</h3>
+<p><strong>Definition 7</strong>: A matrix Lie group <img src="https://latex.codecogs.com/png.latex?G"> is <strong>path connected</strong> if for all <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> in <img src="https://latex.codecogs.com/png.latex?G">, there exists a continuous path <img src="https://latex.codecogs.com/png.latex?A(t)">, <img src="https://latex.codecogs.com/png.latex?a%20%5Cleq%20t%20%5Cleq%20b">, lying in <img src="https://latex.codecogs.com/png.latex?G"> with <img src="https://latex.codecogs.com/png.latex?A(a)%20=%20A"> and <img src="https://latex.codecogs.com/png.latex?A(b)%20=%20B">. For any matrix Lie group <img src="https://latex.codecogs.com/png.latex?G">, the <strong>identity component</strong> of <img src="https://latex.codecogs.com/png.latex?G">, denoted by <img src="https://latex.codecogs.com/png.latex?G_0">, is the set of <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20G"> for which there exists a continuous path <img src="https://latex.codecogs.com/png.latex?A(t)">, <img src="https://latex.codecogs.com/png.latex?a%20%5Cleq%20t%20%5Cleq%20b">, lying in <img src="https://latex.codecogs.com/png.latex?G"> with <img src="https://latex.codecogs.com/png.latex?A(a)%20=%20I"> and <img src="https://latex.codecogs.com/png.latex?A(b)%20=%20A">.</p>
+<p>It was stated without proof that for the case of matrix Lie groups, path connectedness implies connectedness, so the two properties are used interchangeably.</p>
+<hr>
+<p><strong>Quick check 3</strong>: Show that <img src="https://latex.codecogs.com/png.latex?U(n)"> and <img src="https://latex.codecogs.com/png.latex?SU(n)"> are connected for all <img src="https://latex.codecogs.com/png.latex?n%20%5Cgeq%201">.</p>
+<p><em>PROOF</em>: Every unitary matrix <img src="https://latex.codecogs.com/png.latex?U"> has the <a href="https://en.wikipedia.org/wiki/Unitary_matrix#Properties">property</a> that it can be diagonalized, i.e., written as <img src="https://latex.codecogs.com/png.latex?U%20=%20VDV%5E%7B-1%7D"> where <img src="https://latex.codecogs.com/png.latex?V%20%5Cin%20U(n)"> and <img src="https://latex.codecogs.com/png.latex?D"> is diagonal with diagonal entries <img src="https://latex.codecogs.com/png.latex?e%5E%7Bi%5Ctheta_1%7D,%20%5Cldots,%20e%5E%7Bi%5Ctheta_n%7D">. We can then define</p>
+<p><img src="https://latex.codecogs.com/png.latex?U(t)%20=%20V%5Cbegin%7Bpmatrix%7D%20e%5E%7Bi(1-t)%5Ctheta_1%7D%20&amp;%20&amp;%200%20%5C%5C%20%20&amp;%20%5Cddots%20&amp;%20%20%5C%5C%200%20&amp;%20%20&amp;%20e%5E%7Bi(1-t)%5Ctheta_n%7D%20%5Cend%7Bpmatrix%7DV%5E%7B-1%7D,%200%5Cleq%20t%20%5Cleq%201."></p>
+<p>It is clear that <img src="https://latex.codecogs.com/png.latex?U(t)"> stays in <img src="https://latex.codecogs.com/png.latex?U(n)"> for all <img src="https://latex.codecogs.com/png.latex?t">, and <img src="https://latex.codecogs.com/png.latex?U(t)"> connects <img src="https://latex.codecogs.com/png.latex?U"> to <img src="https://latex.codecogs.com/png.latex?I">, showing that <img src="https://latex.codecogs.com/png.latex?U(n)"> is indeed connected.</p>
+<p>We can do a similar construction for <img src="https://latex.codecogs.com/png.latex?SU(n)">, but with the modification that the <img src="https://latex.codecogs.com/png.latex?n">-th diagonal element is the inverse of the product of the first <img src="https://latex.codecogs.com/png.latex?n%20-%201"> elements, ensuring that the determinant is 1.</p>
+<hr>
+</section>
+<section id="simple-connectedness" class="level3">
+<h3 class="anchored" data-anchor-id="simple-connectedness">3. Simple Connectedness</h3>
+<p><strong>Definition 8</strong>: A matrix Lie group is <strong>simply connected</strong> if it is connected and, in addition, every loop in <img src="https://latex.codecogs.com/png.latex?G"> can be shrunken continuously to a point in <img src="https://latex.codecogs.com/png.latex?G">. More precisely, assume <img src="https://latex.codecogs.com/png.latex?G"> is connected. Then, <img src="https://latex.codecogs.com/png.latex?G"> is simply connected if for every continuous path <img src="https://latex.codecogs.com/png.latex?A(t)">, <img src="https://latex.codecogs.com/png.latex?0%20%5Cleq%20t%20%5Cleq%201">, lying in <img src="https://latex.codecogs.com/png.latex?G"> and with <img src="https://latex.codecogs.com/png.latex?A(0)%20=%20A(1)">, there exists a continuous function <img src="https://latex.codecogs.com/png.latex?A(s,%20t)">, <img src="https://latex.codecogs.com/png.latex?0%20%5Cleq%20s,%20t%20%5Cleq%201">, taking values in <img src="https://latex.codecogs.com/png.latex?G"> and having the following properties: 1. <img src="https://latex.codecogs.com/png.latex?A(s,%200)%20=%20A(s,%201)"> for all <img src="https://latex.codecogs.com/png.latex?s"> 2. <img src="https://latex.codecogs.com/png.latex?A(0,%20t)%20=%20A(t)"> 3. <img src="https://latex.codecogs.com/png.latex?A(1,%20t)%20=%20A(1,%200)"> for all <img src="https://latex.codecogs.com/png.latex?t">.</p>
+<p>It turns out that <img src="https://latex.codecogs.com/png.latex?SU(n)"> is simply connected for all <img src="https://latex.codecogs.com/png.latex?n">, but the author defers the proof to a later chapter, possibly implying that we don’t have the necessary tools yet to demonstrate this. However, it is not hard to show that <img src="https://latex.codecogs.com/png.latex?SU(2)"> is simply connected, as this space (which is the space of states a single qubit can take), is isomorphic to the unit sphere, and the above properties can easily be demonstrated.</p>
+</section>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>A collection of my solutions to select exercises. The plan is to choose the exercises related to <img src="https://latex.codecogs.com/png.latex?U(n)"> and <img src="https://latex.codecogs.com/png.latex?SU(n)">.</p>
+<hr>
+<p><strong>Exercise 3</strong>:</p>
+<p>Show that <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(1;%5Cmathbb%7BC%7D)%20=%20%5Ctext%7BSL%7D(2;%5Cmathbb%7BC%7D)"> and that <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(1)%20=%20SU(2)">.</p>
+<p><strong>Definition</strong>: The compact symplectic group <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(2)"> is defined as <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(2)%20%5Cequiv%20%5Ctext%7BSp%7D(1;%5Cmathbb%7BC%7D)%20%5Ccap%20U(2)">.</p>
+<p><em>PROOF</em>: Let <img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bpmatrix%7D%20a%20&amp;%20b%20%5C%5C%20c%20&amp;%20d%20%5Cend%7Bpmatrix%7D%20%5Cin%20%5Ctext%7BSL%7D(2;%5Cmathbb%7BC%7D)">. If suffices to show that <img src="https://latex.codecogs.com/png.latex?-%5COmega%20A%5ET%20%5COmega%20=%20A%5E%7B-1%7D"> for <img src="https://latex.codecogs.com/png.latex?%5COmega"> defined above. Since <img src="https://latex.codecogs.com/png.latex?%5Cdet(A)%20=%201">, we know that <img src="https://latex.codecogs.com/png.latex?A%5E%7B-1%7D%20=%20%5Cbegin%7Bpmatrix%7D%20d%20&amp;%20-b%20%5C%5C%20-c%20&amp;%20a%20%5Cend%7Bpmatrix%7D">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?-%5COmega%20A%5ET%20%5COmega%20=%20%5Cbegin%7Bpmatrix%7D%200%20&amp;%20-1%20%5C%5C%201%20&amp;%200%20%5Cend%7Bpmatrix%7D%20%5Cbegin%7Bpmatrix%7D%20a%20&amp;%20c%20%5C%5C%20b%20&amp;%20d%20%5Cend%7Bpmatrix%7D%20%5Cbegin%7Bpmatrix%7D%200%20&amp;%201%20%5C%5C%20-1%20&amp;%200%20%5Cend%7Bpmatrix%7D%20=%20%5Cbegin%7Bpmatrix%7D%20d%20&amp;%20-b%20%5C%5C%20-c%20&amp;%20a%20%5Cend%7Bpmatrix%7D."></p>
+<p>So <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(1;%5Cmathbb%7BC%7D)%20=%20%5Ctext%7BSL%7D(2;%5Cmathbb%7BC%7D)">.</p>
+<p>(<img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(2)%20%5Csubset%20SU(2)">). Let <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20SU(2)">. Then we have <img src="https://latex.codecogs.com/png.latex?%5Cdet(A)%20=%201"> and <img src="https://latex.codecogs.com/png.latex?A%5E*A%20=%20I"> so <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20SU(2)">.</p>
+<p>(<img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(2)%20%5Csupset%20SU(2)">). Let <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20SU(2)">. Since <img src="https://latex.codecogs.com/png.latex?SU(2)%20%5Csubset%20U(2)"> holds by definition, it suffices to show that <img src="https://latex.codecogs.com/png.latex?SU(2)%20%5Csubset%20%5Ctext%7BSp%7D(1;%20%5Cmathbb%7BC%7D)">. This proof is equivalent to the first part of the problem.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BSp%7D(1)%20=%20SU(2)">.</p>
+<hr>
+<p><strong>Exercise 5</strong> (Part 1): Show that if <img src="https://latex.codecogs.com/png.latex?%5Calpha"> and <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> are arbitrary complex numbers satisfying <img src="https://latex.codecogs.com/png.latex?%7C%5Calpha%7C%5E2%20+%20%7C%5Cbeta%7C%5E2%20=%201">, then</p>
+<p><img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bpmatrix%7D%5Calpha%20&amp;%20-%5Coverline%7B%5Cbeta%7D%20%5C%5C%20%5Cbeta%20&amp;%20%5Coverline%7B%5Calpha%7D%5Cend%7Bpmatrix%7D%20%5Cin%20SU(2)."></p>
+<p><em>PROOF</em>: Let <img src="https://latex.codecogs.com/png.latex?%5Calpha"> and <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> be complex numbers satisfying <img src="https://latex.codecogs.com/png.latex?%7C%5Calpha%7C%5E2%20+%20%7C%5Cbeta%7C%5E2%20=%201">. Use these to construct the matrix <img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bpmatrix%7D%5Calpha%20&amp;%20-%5Coverline%7B%5Cbeta%7D%20%5C%5C%20%5Cbeta%20&amp;%20%5Coverline%7B%5Calpha%7D%5Cend%7Bpmatrix%7D">. Then, * <img src="https://latex.codecogs.com/png.latex?%5Cdet%7BA%7D%20=%20%7C%5Calpha%7C%5E2%20+%20%7C%5Cbeta%7C%5E2%20=%201">, and * <img src="https://latex.codecogs.com/png.latex?A%5E*%20A%20=%20%5Cbegin%7Bpmatrix%7D%20%5Coverline%7B%5Calpha%7D%20&amp;%20%5Coverline%7B%5Cbeta%7D%20%5C%5C%20-%5Cbeta%20&amp;%20%5Calpha%20%5Cend%7Bpmatrix%7D%20%5Cbegin%7Bpmatrix%7D%5Calpha%20&amp;%20-%5Coverline%7B%5Cbeta%7D%20%5C%5C%20%5Cbeta%20&amp;%20%5Coverline%7B%5Calpha%7D%5Cend%7Bpmatrix%7D%20=%20I">.</p>
+<p>So <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20SU(2)">.</p>
+<p><strong>Exercise 5</strong> (Part 2): Show that every <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20SU(2)"> can be expressed in the above form for a unique pair <img src="https://latex.codecogs.com/png.latex?(%5Calpha,%20%5Cbeta)"> satisfying <img src="https://latex.codecogs.com/png.latex?%7C%5Calpha%7C%5E2%20+%20%7C%5Cbeta%7C%5E2">.</p>
+<p>Begin by taking <img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bpmatrix%7D%20a%20&amp;%20b%20%5C%5C%20c%20&amp;%20d%20%5Cend%7Bpmatrix%7D">.</p>
+<p>Since <img src="https://latex.codecogs.com/png.latex?%5Cdet%20A%20=%201"> by definition of <img src="https://latex.codecogs.com/png.latex?SU(2)">. Also by definition of <img src="https://latex.codecogs.com/png.latex?SU(2)">, we have that <img src="https://latex.codecogs.com/png.latex?A%5E%7B-1%7D%20=%20A%5E*">. By definition of inverses of <img src="https://latex.codecogs.com/png.latex?2%20%5Ctimes%202"> matrices, we have</p>
+<p><img src="https://latex.codecogs.com/png.latex?A%5E%7B-1%7D%20=%20%5Cfrac%7B1%7D%7B%5Cdet%7BA%7D%7D%20%5Cbegin%7Bpmatrix%7D%20d%20&amp;%20-b%20%5C%5C%20-c%20&amp;%20a%20%5Cend%7Bpmatrix%7D,"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?A%5E*%20=%20%5Cbegin%7Bpmatrix%7D%20%5Coverline%7Ba%7D%20&amp;%20%5Coverline%7Bb%7D%20%5C%5C%20%5Coverline%7Bc%7D%20&amp;%20%5Coverline%7Bd%7D%20%5Cend%7Bpmatrix%7D."></p>
+<p>This implies that <img src="https://latex.codecogs.com/png.latex?d%20=%20%5Coverline%7Ba%7D"> and <img src="https://latex.codecogs.com/png.latex?b%20=%20-%5Coverline%7Bc%7D">.</p>
+<p>Finally, we know that <img src="https://latex.codecogs.com/png.latex?A%5E*%20A%20=%20I">, implying that <img src="https://latex.codecogs.com/png.latex?%7Ca%7C%5E2%20+%20%7Cc%7C%5E2%20=%201">.</p>
+<p>We conclude that <img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bpmatrix%7D%20a%20&amp;%20-%5Coverline%7Bc%7D%20%5C%5C%20c%20&amp;%20%5Coverline%7Ba%7D%20%5Cend%7Bpmatrix%7D"> for <img src="https://latex.codecogs.com/png.latex?%7Ca%7C%5E2%20+%20%7Cc%7C%5E2%20=%201">.</p>
+<hr>
+<p><strong>Exercise 9</strong>: Suppose <img src="https://latex.codecogs.com/png.latex?a"> is an irrational real number. Show that the set <img src="https://latex.codecogs.com/png.latex?E_a"> of numbers of the form <img src="https://latex.codecogs.com/png.latex?e%5E%7B2%5Cpi%20i%20n%20a%7D"> for <img src="https://latex.codecogs.com/png.latex?n%20%5Cin%20%5Cmathbb%7BZ%7D"> is dense in the unit circle <img src="https://latex.codecogs.com/png.latex?S%5E1">.</p>
+<p><em>PROOF</em>: First we show that for any <img src="https://latex.codecogs.com/png.latex?n_1%20%5Cneq%20n_2%20%5Cin%20%5Cmathbb%7BZ%7D">, <img src="https://latex.codecogs.com/png.latex?e%5E%7B2%5Cpi%20i%20n_1%20a%7D%20%5Cneq%20e%5E%7B2%5Cpi%20i%20n_2%20a%7D">. Without loss of generality, assume that <img src="https://latex.codecogs.com/png.latex?n_1%20%3E%20n_2">. Suppose that there was a pair of integers such that <img src="https://latex.codecogs.com/png.latex?e%5E%7B2%5Cpi%20i%20n_1%20a%7D%20=%20e%5E%7B2%5Cpi%20i%20n_2%20a%7D">. Then,</p>
+<p><img src="https://latex.codecogs.com/png.latex?e%5E%7B2%5Cpi%20i%20n_1%20a%7D%20-%20e%5E%7B2%5Cpi%20i%20n_2%20a%7D%20=%200"> <img src="https://latex.codecogs.com/png.latex?%5CRightarrow%20%5Ccos(2%5Cpi%20n_1%20a)%20+%20i%20%5Csin(2%5Cpi%20n_1%20a)%20-%20%5Ccos(2%5Cpi%20n_2%20a)%20-%20i%20%5Csin%20(2%5Cpi%20n_2%20a)%20=%200"> <img src="https://latex.codecogs.com/png.latex?%5CRightarrow%20-2%5Csin((2%5Cpi(n_1%20+%20n_2)a)/2)%20%5Csin((2%5Cpi(n_1%20-%20n_2)a)/n)%20+%20i2%5Ccos((2%5Cpi(n_1+n_2)a)/2)%5Csin((2%5Cpi(n_1-n_2)a)/2)%20=%200"></p>
+<p>It’s simple to show that if any of the values in the parentheses of the sin and cos functions above, it contradicts <img src="https://latex.codecogs.com/png.latex?a"> being irrational. From this, we see that <img src="https://latex.codecogs.com/png.latex?n_1%20%5Cneq%20n_2%20%5CRightarrow%20e%5E%7B2%5Cpi%20i%20n_1%20a%7D%20%5Cneq%20e%5E%7B2%5Cpi%20i%20n_2%20a%7D">.</p>
+<p>Now consider dividing the unit circle <img src="https://latex.codecogs.com/png.latex?S%5E1"> into <img src="https://latex.codecogs.com/png.latex?N"> evenly sized parts, each with length <img src="https://latex.codecogs.com/png.latex?2%5Cpi%20/%20N">. Since <img src="https://latex.codecogs.com/png.latex?E_a"> contains as many elements as there are natural numbers, here must be at least one region that contains an infinite number of points. Since <img src="https://latex.codecogs.com/png.latex?E_a"> is a subgroup of <img src="https://latex.codecogs.com/png.latex?S%5E1"> and the group operation is equivalent to a rotation on the circle, we can rotate the bin with infinite elements to each of the other <img src="https://latex.codecogs.com/png.latex?N%20-%201"> arcs, while remaining in the group <img src="https://latex.codecogs.com/png.latex?E_a">. Now choose <img src="https://latex.codecogs.com/png.latex?N"> to be the inverse of any <img src="https://latex.codecogs.com/png.latex?%5Cepsilon%20%3C%200">, and we have shown that <img src="https://latex.codecogs.com/png.latex?E_a"> is dense in <img src="https://latex.codecogs.com/png.latex?S%5E1">.</p>
+<hr>
+
+
+</section>
+
+ ]]></description>
+  <category>notes</category>
+  <category>math</category>
+  <guid>https://www.shionfukuzawa.com/posts/lglar-ch1/index.html</guid>
+  <pubDate>Thu, 24 Nov 2022 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Visualizing the Trace</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/trace/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>When studying quantum computing and quantum information, one frequently occurring concept is that of the trace of an operator. This is quite natural given the setting, as matrices occur as the fundamental building blocks of the field. Given this, we encounter the trace in ideas including distance measures (trace distance) and classes of operators (trace preserving maps). Operationally this quantity isn’t too difficult to compute as we’ll see soon, but I’ve struggled to grasp the intuition behind why it’s so important. In this post I’ll be exploring some neat definitions I’ve found for this quantity and hopefully in the process we can get a better grasp on what this mathematical quantity is capturing.</p>
+<section id="the-trace" class="level2">
+<h2 class="anchored" data-anchor-id="the-trace">The Trace</h2>
+<p>Let’s begin by reviewing the definition of the trace. In Wikipedia [1] and Nielsen+Chuang [2], the first definition provided for the trace is the following. Given a square <img src="https://latex.codecogs.com/png.latex?n"> by <img src="https://latex.codecogs.com/png.latex?n"> matrix <img src="https://latex.codecogs.com/png.latex?A">, its <em>trace</em> is the sum of its diagonal elements:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D(A)%20=%20%5Csum_%7Bi%20=%201%7D%5En%20A_%7Bii%7D."></p>
+<hr>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Let <img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bbmatrix%7D%204%20&amp;%203%20%5C%5C%202%20&amp;%205%20%5Cend%7Bbmatrix%7D">. Then <img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D(A)%20=%204%20+%205%20=%209">.</p>
+<hr>
+<p>The definition is simple enough, and it’s a quantity that is very simple to compute too. However, if you’re like me this may appear like a confusing way to characterize a matrix. For example, if we’re using the trace directly to characterize a matrix, we can’t distinguish the following two matrices that seem quite different:</p>
+<p><img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bbmatrix%7D%204%20&amp;%203%20%5C%5C%202%20&amp;%205%20%5Cend%7Bbmatrix%7D%20%5C;%5C;%5C;%20B%20=%20%5Cbegin%7Bbmatrix%7D%204%20&amp;%20-100000%20%5C%5C%2014838429%20&amp;%205%20%5Cend%7Bbmatrix%7D."></p>
+<p>We’ll see later that the formal trace distance captures something slightly different, but I’d say this is a reasonable concern to have at first glance of this quantity. For now, let’s see if we can learn more about the trace to resolve this confusion.</p>
+</section>
+<section id="alternate-definition" class="level3">
+<h3 class="anchored" data-anchor-id="alternate-definition">Alternate definition</h3>
+<p>I went back to Strang’s textbook where I first learned about linear algebra [3] to see how he introduced the trace. Interestingly, the first place he introduces the trace is in the chapter about eigenvalues. This gives rise to the alternative definition of trace given by the following.</p>
+<p>Given an <img src="https://latex.codecogs.com/png.latex?n"> by <img src="https://latex.codecogs.com/png.latex?n"> matrix <img src="https://latex.codecogs.com/png.latex?A">, the <em>trace</em> is equal to the sum of the eigenvalues of <img src="https://latex.codecogs.com/png.latex?A">.</p>
+<p>This leads to a quick exercise we can try to verify this claim.</p>
+<hr>
+</section>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<p>Calculate the eigenvalues of <img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bbmatrix%7D%204%20&amp;%203%20%5C%5C%202%20&amp;%205%20%5Cend%7Bbmatrix%7D"> and verify that they do sum to 9.</p>
+<hr>
+<p>This definition was a bit more illuminating for me to get intuition about the trace. If you haven’t seen it before, I highly recommend checking out 3Blue1Brown’s video about eigenvectors and eigenvalues, as it does an amazing job of illustrating the significance of these values. In a nutshell, the eigenvector describes the principal directions that the matrix affects a vector by, and the eigenvalue shows how much that vector gets scaled. Given this, we can now see that the trace of the matrix loosely captures the average scaling that a random vector goes through, when multiplied by <img src="https://latex.codecogs.com/png.latex?A">.</p>
+</section>
+</section>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>As a well studied value related to matrices, lots of properties are known about the trace. Let’s go over a few common ones here to see if we can glean some intuition from them.</p>
+<ol type="1">
+<li>Cyclic</li>
+</ol>
+<p>A very useful property that I’ve used often for the trace is that it is <em>cyclic</em>. Formally this is described as the following</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D(AB)%20=%20%5Ctext%7Btr%7D(BA)."></p>
+<p>I was a bit surprised that the above equality holds when I first saw this definition, since it is well known in matrix algebra that generally <img src="https://latex.codecogs.com/png.latex?AB%20%5Cneq%20BA">. Thus, this property captures something that we lose from the pure matrix product, showing that there is still some relation between matrix products that the trace preserves.</p>
+<p>Before introducing the next property, here’s a quick note on where this property appears often in quantum information. Suppose we are interested in computing the trace of an operator <img src="https://latex.codecogs.com/png.latex?A"> after it has been projected to some subset of the Hilbert space spanned by a state <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%5Cpsi%5Cright%3E">. This is written as <img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D%5Cleft(A%20%5Cleft%7C%5Cpsi%20%5Cright%3E%20%5Cleft%3C%20%5Cpsi%20%5Cright%7C%5Cright)">. Using the cyclic property, we can rewrite it as</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D%5Cleft(%5Cleft%3C%20%5Cpsi%20%5Cright%7CA%20%5Cleft%7C%5Cpsi%20%5Cright%3E%20%5Cright)%20=%20%5Cleft%3C%20%5Cpsi%20%5Cright%7CA%20%5Cleft%7C%5Cpsi%20%5Cright%3E"></p>
+<p>since the value in the parentheses is now a scalar. The trace now has become simply the expected value of the operator under the state <img src="https://latex.codecogs.com/png.latex?%5Cleft%7C%5Cpsi%5Cright%3E">.</p>
+<ol start="2" type="1">
+<li>Linearity</li>
+</ol>
+<p>A second property of the trace is that it is linear. That is,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D(cA%20+%20dB)%20=%20c%5Ctext%7Btr%7D(A)%20+%20d%5Ctext%7Btr%7D(B)."></p>
+<p>This property is a favorite amongst mathematicians because it allows analyzing a larger composite element by examining smaller simpler pieces.</p>
+<ol start="3" type="1">
+<li>Similarity transformation</li>
+</ol>
+<p>The final property I’ll discuss here is called the similarity transformation. Consider a unitary matrix <img src="https://latex.codecogs.com/png.latex?U"> (meaning <img src="https://latex.codecogs.com/png.latex?U%5E%5Cdagger%20U%20=%20I">. Then if we take the similarity transformation <img src="https://latex.codecogs.com/png.latex?A%20%5Crightarrow%20UAU%5E%5Cdagger">, we can use the cyclic property to see that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Btr%7D(UAU%5E%5Cdagger)%20=%20%5Ctext%7Btr%7D(U%5E%5Cdagger%20UA)%20=%20%5Ctext%7Btr%7D(A)."></p>
+<p>In words, the similarity transformation of a matrix preserves its trace. A similarity transformation in some ways serves as a ‘’change of basis’’ or rotation operation. It maintains something similar before and after the transformation, and we see with this definition that one of those things is the trace. Again, this property seems like an entrance to learning more about what exactly we are quantifying when calculating the trace.</p>
+</section>
+<section id="geometric-interpretation-of-trace" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-interpretation-of-trace">Geometric Interpretation of Trace</h2>
+<p>With these properties of the trace in mind, I’ll highlight a few comments I’ve found surrounding how to visualize the trace. For many of these, it’s going to be most helpful to keep in mind the picture of a matrix as a function acting on a vector, and the geometry comes from the transformation the vector goes through. Most of these are ideas I encountered from MathOverflow [5].</p>
+<ol type="1">
+<li>On projection operators</li>
+</ol>
+<p>The most upvoted response was how to understand the trace for projection operators. A projection matrix <img src="https://latex.codecogs.com/png.latex?A"> satisfies the property that <img src="https://latex.codecogs.com/png.latex?A%5E2%20=%20A">. The name comes from its very geometric action of <em>projecting</em> a vector onto a smaller subspace. Once you project onto the smaller subspace, if you project on the same subspace you’ll keep getting the same vector, which is why the above property holds. It turns out that the trace of a projection operator corresponds to the dimensionality of the subspace that it projects onto. This explains why the eigenvalues of a projection operator turn out to have to be either 0 or 1, as each eigenvalue corresponds to an extra dimension to be projected onto, and if the trace is counting the dimensions, the values should naturally be 0 or 1.</p>
+<p>It turns out that this is a very fundamental picture in much of mathematics, as the answer is even endorsed and ellaborated upon by Terry Tao himself. I’ve worked with many projectors in quantum information, but hadn’t considered this picture before so I hope this adds some intuition for my future learning.</p>
+<ol start="2" type="1">
+<li>Trace and the inner product</li>
+</ol>
+<p>The inner product between vectors is something many people study during their undergraduate career. I personally like to think that the inner product characterizes how similar two elements of a vector field are. This perspective is especially useful when working with vectors all of unit length, since an inner product of 0 implies that the vectors are orthogonal, while an inner product of 1 implies that the two vectors are identical. Another thing the inner product allows us to do is capture the notion of the “length” of a vector. In undergrad, many including myself are taught to think of vectors as arrows in Euclidean space, but here I quote the answer given by one of my graduate course professors when he asked if anyone knew what a vector is.</p>
+<p>“A vector is an element of a vector space.”</p>
+<p>Sounds a bit obvious and also a bit circular, but his point becomes more clear when we observe the definition of a vector space first. A <em>vector space</em> is just a set of objects that satisfy the eight properties that you can read about in the Wikipedia page [6], which basically boils down to “you can add two elements and they’ll stay in the vector space” and “you can scale elements and they will remain in the vector space”. Equipped with this definition, we now see that a vector space doesn’t have to just be arrows, it can be functions, matrices, and many other strange mathematical objects as long as they satisfy those properties.</p>
+<p>I bring this up because given a vector space, you can also ‘equip’ it with an inner product, promoting it to what is cleverly called an inner product space. The inner product should satisfy some nice properties too that I won’t elaborate about here, but with this inner product, you can now discuss orthogonality, lengths, and other metric properties about the vectors in your space. It turns out that the trace is used in an inner product mathematicians have ‘equipped’ the vector space of matrices with.</p>
+<p>For two matrices <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> in the space of linear operators (matrices) from <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BC%7D%5En"> to <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BC%7D%5Em">, the inner product between <img src="https://latex.codecogs.com/png.latex?A"> and <img src="https://latex.codecogs.com/png.latex?B"> is defined as</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cleft%3C%20A,%20B%20%5Cright%3E%20%5Cequiv%20%5Ctext%7BTr%7D%20A%5E%5Cdagger%20B."></p>
+<p>One neat thing about the inner product is that it doesn’t rely on what basis we’re using to describe our elements in, it’ll hold no matter what direction we are looking at our space from. With this connection, this solidifies the intuition that the trace is a basis independent property about matrices. This is consistent with our understanding of how the trace relates to the similarity transform, as that mapping can be considered a change of basis.</p>
+<p>This perspective will help with understanding the trace distance which I want to take a deep dive into in a future post as well.</p>
+<ol start="3" type="1">
+<li>On unit shapes (in finite dimensional Euclidean spaces)</li>
+</ol>
+<p>Another interesting perspective was given as the action of the matrix on vectors that form some unit volume shapes. You can think of a something like a square or a cube with volume 1 centered at the origin with vectors pointing to its vertices starting from the origin. Now suppose you multiplied all of those vectors by a matrix <img src="https://latex.codecogs.com/png.latex?A">, and you calculated the new volume of the shape. It turns out that the new volume is <em>proportional</em> to the trace of <img src="https://latex.codecogs.com/png.latex?A">, meaning the volume can be described by <img src="https://latex.codecogs.com/png.latex?t%20%5Ccdot%20%5Ctext%7Btr%7D(A)"> for some constant <img src="https://latex.codecogs.com/png.latex?t">.</p>
+<p>You can do something similar with a unit ball, but now you’d have infinitely many vectors so we would need to use integration:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BTr%7D(A)%20=%20n%20%5Cint_%7Bx%20%5Cin%20B%7D%20%5Cleft%3C%20Ax,%20x%5Cright%3E%20dm(x)."></p>
+<p>The value we are integrating is the inner product between the original vector and the newly transformed vector, which again, you can think of as quantifying the amount of change that happens. This perspective is also coordinate independent, and turns out to be something you can construct from the relation to eigenvalues. So again, the trace is an operation that quantifies the amount of change an average element goes through.</p>
+<ol start="4" type="1">
+<li>Lie Algebras</li>
+</ol>
+<p>Finally, there were many interesting responses relating the trace to properties of the Lie algebras formed by the operators. I’ll admit I’m not very familiar with Lie algebras, so won’t be able to comment on these with much depth. I would like to write a series introducing Lie algebras as a way for me to get more familiar with them, and perhaps revisit these points when that happens.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In this post, we explored the trace in some depth and examined a few ways to build some intuition around what it is that the trace captures. I think the full intuition takes some concrete work with actual matrices to fully develop, but I hope these gave some new ways to think about the trace that will help develop that for you moving forward! Thanks so much for reading :)</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>https://en.wikipedia.org/wiki/Trace_(linear_algebra)#:~:text=the%20inner%20product%3A-,Cyclic%20property,are%20not%20allowed%3A%20in%20general%2C&amp;text=where%20the%20first%20equality%20is,and%20its%20transpose%20are%20equal.</li>
+<li>Quantum Computation and Quantum Information (Nielsen + Chuang) http://mmrc.amss.cas.cn/tlb/201702/W020170224608149940643.pdf</li>
+<li>Introduction to Linear Algebra (Strang) https://www.amazon.com/Introduction-Linear-Algebra-Gilbert-Strang/dp/0980232716</li>
+<li>Eigenvectors and eigenvalues (3Blue1Brown) https://www.youtube.com/watch?v=PFDu9oVAE-g&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&amp;index=14</li>
+<li>https://mathoverflow.net/questions/13526/geometric-interpretation-of-trace</li>
+<li>https://en.wikipedia.org/wiki/Vector_space</li>
+</ol>
+
+
+</section>
+
+ ]]></description>
+  <category>research</category>
+  <category>quantum</category>
+  <category>math</category>
+  <guid>https://www.shionfukuzawa.com/posts/trace/index.html</guid>
+  <pubDate>Tue, 15 Nov 2022 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Diamonds are Forever in the Blockchain</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/diamonds2/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>About a year ago, I wrote a blog post about some computational solutions that have been proposed to create a more ethical diamond supply chain. Over the last year, I collaborated with some brilliant people to analyze and propose these solutions. We mainly focused on the process of comparing two different scans of diamonds.</p>
+<p>Throughout the diamond manufacturing process, the diamond is mined, polished, and carved often in different locations before it is finally sold to customers. When the diamond transitions between steps, it is often transferred to a new location. One step of interest is to verify that the correct diamonds have been transferred between each location, to make sure the diamond is properly tracked along the supply chain. From our market research, it appears that organizations like <a href="https://www.tracr.com/">Tracr</a> use machine learning techniques to automate this matching process.</p>
+<p>In our recent work which can be viewed <a href="https://arxiv.org/abs/2208.05597">here</a>, we analyze this problem from the perspective of computational geometry and propose an approximation algorithm to match two scans of diamonds to the desired precision. I’ll give a quick overview of the methods we used, and some of the challenges that we leave open for future exploration.</p>
+<section id="the-problem" class="level1">
+<h1>The Problem</h1>
+<p>The problem setting we consider is the following: After the necessary processing is completed at location A, we are given a polyhedron C that represents the processed diamond. We are also given a set of points S generated by scanning the same diamond once it arrives at location B. Can you verify that point set S has shape C?</p>
+<p>Below is a sketch of an example instance of the problem in two dimensions.</p>
+<p>There’s a body of work that offer solutions to a slight variation of this problem known as <a href="https://en.wikipedia.org/wiki/Point-set_registration">point-set registration</a>. In this instance, instead of a polyhedron at location A, we are given another set of points, and we want to compute a translation that aligns these two point sets as best as possible. There are many brilliant algorithms that you can read more about on the linked Wikipedia page and perform very well in practice, but none of these offer theoretical guarantees about performance.</p>
+<p>There’s also a lot of theoretical work about a specific instance of this problem, where instead of a polyhedron you’re given a circle or a sphere, and you want to find the best fitting one for your set of points. However, there has surprisingly not been much work when considering a polyhedron and a set of points. It turns out it is very challenging to handle the degrees of freedom present in the set of points as well as the possible polyhedra that could be given to you. In this work, we simplified the problem to just look at convex polyhedra.</p>
+</section>
+<section id="our-tools" class="level1">
+<h1>Our Tools</h1>
+<p>I won’t dive into the details of the algorithm here, but introduce a few tools we used that I found to be very interesting and fun to work with. Polygons and polyhedrons can be defined in many different ways mathematically, but the way we decided to represent them is using what’s called the polyhedral distance function. (The problem is of primary interest in three dimensions, but we also provide a two-dimensional solution and so most figures will use two dimensions. These ideas aren’t hard to generalize to higher dimensions but are much clearer in two dimensions when drawing them. As such, when I use ‘polyhedron’ in the below explanation, this is interchangeable with ‘polygon’ for the two-dimensional case.)</p>
+<div id="pdistance">
+<p><img src="https://www.shionfukuzawa.com/posts/diamonds2/pdistance.webp" class="img-fluid"></p>
+<p>Polyhedral Distance Function</p>
+</div>
+<p>In simple terms, this distance function has a reference “unit ball” of the polyhedron of interest with a center. It then measures the distance between points p and q by first placing the unit ball centered at p, then returning how much you have to scale the unit ball to touch the point q. This distance function doesn’t necessarily have all the “nice” properties mathematicians want in their distance functions, but it works great in a computational setting.</p>
+<p>With our mathematical definition of the polyhedron in hand, our algorithm computes the C-shaped minimum width annulus (MWA) of the point set S. Our reasoning for this is that if the two scans indeed represent the same diamond, the minimum width annulus should have a width very close to zero, thus providing a good metric for determining the similarity between the two objects.</p>
+<div id="mwa">
+<p><img src="https://www.shionfukuzawa.com/posts/diamonds2/mwa.png" class="img-fluid"></p>
+<p>Minimum Width Annulus</p>
+</div>
+<p>The MWA is defined as the concentric placement of two copies of the polyhedron such that all the points in the scan lie in between the two scans, such that the difference in polyhedral distance from the center to the two placements is minimized.</p>
+</section>
+<section id="future-directions" class="level1">
+<h1>Future Directions</h1>
+<p>In our paper, we introduce approximation algorithms to solve this problem in a few different settings (eg. is rotation required?) in two and three dimensions. We do this first by noticing that the search region in the middle can be narrowed down systematically to yield an efficient algorithm, even for high levels of precision. The rotation case turns out to be slightly more demanding, and we imagine there are ways to improve our method in this domain.</p>
+<p>An interesting direction that can also be explored is the notion of Voronoi diagrams for convex polyhedral distance functions. It turns out the standard Voronoi diagram represents the exact solution to this problem in the case that the shape given is a circle or sphere. We imagine a similar property holds for polygons and polyhedra, but there is a lot we don’t quite understand about Voronoi diagrams for these distance functions.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>research</category>
+  <category>geometry</category>
+  <guid>https://www.shionfukuzawa.com/posts/diamonds2/index.html</guid>
+  <pubDate>Sun, 14 Aug 2022 07:00:00 GMT</pubDate>
+  <media:content url="https://www.shionfukuzawa.com/posts/diamonds2/pdistance.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Cassava Leaf Detection</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/cassava/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Cassava is one of the largest providers of carbohydrates in Africa, due to its nutritional value and its ability to withstand harsh conditions. However, the crop is not immune to a variety of viral diseases which are the cause of a low crop yield for the 80 percent of sub-Saharan household farms that grow Cassava. Existing methods of detecting viral diseases rely on a small group of experts manually examining each plant to identify the type of disease. This is a very inefficient solution to this problem but works because most viral diseases have clear visually detectable symptoms. Because of this nature, solutions to this problem based on using image data are very well studied as shown in <a href="https://www.sciencedirect.com/science/article/pii/S1574954120301321">this survey</a>.</p>
+<p>A <a href="https://www.kaggle.com/c/cassava-leaf-disease-classification/overview">competition was hosted on Kaggle</a> to come up with techniques to classify Cassava diseases using pictures of the plants. Though we weren’t able to participate in the live version, my group decided this would be a fun problem to tackle as the final project for our <a href="https://royf.org/crs/W21/CS273A/">machine learning class</a>.</p>
+<div id="fig-cassava-dataset" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://www.shionfukuzawa.com/posts/cassava/cassava1.png" id="fig-cassava1" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava2.png" id="fig-cassava2" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava3.png" id="fig-cassava3" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava4.png" id="fig-cassava4" class="img-fluid figure-img"> <img src="https://www.shionfukuzawa.com/posts/cassava/cassava5.png" id="fig-cassava5" class="img-fluid figure-img"></p>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Example Images from the data set. In the top row, we have bacterial blight, brown streak disease, and green mottle from left to right. On the bottom row, we have mottle disease and a healthy Cassava plant from left to right.</figcaption><p></p>
+</figure>
+</div>
+<p>Since farmers primarily only have access to mobile devices, we wanted to create a model that was lightweight but still accurate enough to classify photos taken with close to 90% accuracy. To accomplish this, we used convolutional neural networks created through transfer learning of the MobileNetV2 neural network.</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<p>We were provided with a training dataset of 21,397 images each with a 600x800 resolution. Each image is labeled with the corresponding diseases category: Cassava Bacterial Blight (0), Cassava Brown Streak Disease (1), Cassava Green Mottle (2), Cassava Mosaic Disease (3), and Healthy (4). The frequency distribution for each class can be seen in the following plot.</p>
+<p><img src="https://www.shionfukuzawa.com/posts/cassava/plot.png" class="img-fluid"></p>
+<p>It’s clear that there is an overrepresentation of images representing the Cassava Mosaic Diseases. If this skewed-ness is not dealt with, this can lead to models that are biased towards selecting items with label 3. Since the true distribution of each disease is unknown, we would like to avoid this kind of bias, and assume that in reality each disease is seen about the same number of times.</p>
+</section>
+<section id="techniques" class="level1">
+<h1>Techniques</h1>
+<section id="convolutional-neural-networks-and-transfer-learning" class="level2">
+<h2 class="anchored" data-anchor-id="convolutional-neural-networks-and-transfer-learning">Convolutional Neural Networks and Transfer Learning</h2>
+<p>After <a href="https://arxiv.org/abs/1409.0575">outperforming all other known models</a> in the 2012 ImageNet Large-Scale Visual Recognition Challenge, deep convolutional neural networks have been seen as a very successful tool in tackling image classification problems. Though powerful, a challenge with CNNs is that they require a huge training dataset and extensive computing power. There are many great resources on CNNs on the web, so I will spare the technical details in this post.</p>
+<p>To get around this problem, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0957417417307844">transfer learning has been proposed</a> as a way to take advantage of the quality of CNN models, while not requiring as much resources for training. In transfer learning, a CNN is first pre-trained on a different, much larger data set and later fine-tuned on the data set corresponding to the problem of interest. The transferability of such networks has been an <a href="https://arxiv.org/abs/1411.1792">active area of research</a>, and we decided to try it out for this project ourselves.</p>
+<p>Since one of our goals was a lightweight model, we chose <a href="https://arxiv.org/abs/1801.04381">MobileNetV2</a> as our CNN to transfer from. MobileNetV2 is a model developed by a group from Google, that is optimized for mobile devices.</p>
+</section>
+<section id="data-augmentation-and-class-balanced-cross-entropy-loss" class="level2">
+<h2 class="anchored" data-anchor-id="data-augmentation-and-class-balanced-cross-entropy-loss">Data Augmentation and Class-Balanced Cross-Entropy Loss</h2>
+<p>With an architecture in place, we are on a great start, but there is another problem that we are aware of prior to starting the training process. One, we would like to have more training data, and second, the data is heavily skewed towards a single class.</p>
+<p>To solve the first problem, we use a popular technique in image classification called data augmentation, where we artificially create extra training data by randomly applying a combination of rotations, flips, and scaling operations on the existing data.</p>
+<p>To solve the second problem, we used the class-balanced cross-entropy loss function that introduces a weighting factor that is inversely proportional to the effective number of samples. The equation to select the effective number of samples is <img src="https://latex.codecogs.com/png.latex?E_%7Bn_i%7D%20=%20(1%20-%20%5Cbeta)%5E%7Bn_i%7D%20/%20(1%20-%20%5Cbeta)"> where <img src="https://latex.codecogs.com/png.latex?n_i"> is the number of samples in class <img src="https://latex.codecogs.com/png.latex?i"> and <img src="https://latex.codecogs.com/png.latex?%5Cbeta"> is 0.9999.</p>
+</section>
+</section>
+<section id="experiments" class="level1">
+<h1>Experiments</h1>
+<p>We decided to use an 80/20 split training/validation split and the validation accuracy to guide the model selection process. We performed a stratified split so that the training and validation data have roughly the same distribution. All of our experiments used a MobileNetV2 feature extractor pre-trained on the ImageNet data set which served as the”backbone” of the model. The classifier or “head” of the model was a dense layer of 5 nodes connected to the feature extractor which, after applying a softmax operation, would output the probability that the input image belonged to each class. For the loss function, we decided to use cross-entropy loss. In order to make comparisons between models consistent, we decided to use the same optimizer and hyperparameters for every model.</p>
+<p>We determined that the best combination of augmentations to use were horizontal flips, vertical flips, brightness contrast, and transpose. The following table summarizes the validation accuracy we were able to acquire using different combinations of augmentations and the cross-entropy loss.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Models</th>
+<th style="text-align: center;">Validation Accuracy (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Baseline (trained only classifier)</td>
+<td style="text-align: center;">76.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Baseline (trained entire model)</td>
+<td style="text-align: center;">84.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Baseline + Augmentations</td>
+<td style="text-align: center;">85.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Baseline + Balanced CE</td>
+<td style="text-align: center;">84.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Baseline + Balanced CE + Augmentations</td>
+<td style="text-align: center;">85.0</td>
+</tr>
+</tbody>
+</table>
+<p>The slight decrease in performance using the class-balanced loss function might be because the validation data has the same distribution as the training data so trying to balance the loss function is counter-productive, however, it may still be beneficial for the test data since that might have a different class distribution.</p>
+<p>Finally, we tested the performance of our model using test time augmentation and the results are summarized in the following table:</p>
+<table class="table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 28%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Models</th>
+<th style="text-align: center;">Test Accuracy (%)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">With Test Time Augmentation</td>
+<td>Without Test Time Augmentation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Baseline + Augmentations</td>
+<td style="text-align: center;">85.9</td>
+<td>88.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Baseline + Balanced CE + Augmentations</td>
+<td style="text-align: center;">85.2</td>
+<td>86.6</td>
+</tr>
+</tbody>
+</table>
+<p>Even during test time augmentation, it seems that the balanced cross entropy loss is counter productive to improving the accuracy of the model. Some more information about the general distributions of the diseases as seen in reality may help guide whether or not this is due to a skewed dataset or a reflection of what actually happens.</p>
+<p>We were able to improve the performance of the model on the test data up to 88.1, which didn’t quite reach our final goal of 90% accuracy. Using the techniques I outlined in this post, this was the highest score we could achieve. To create a model with even better accuracy, we would need to implement a few other techniques which will be left as a project for another time.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>projects</category>
+  <category>machine learning</category>
+  <guid>https://www.shionfukuzawa.com/posts/cassava/index.html</guid>
+  <pubDate>Sat, 14 Aug 2021 07:00:00 GMT</pubDate>
+  <media:content url="https://www.shionfukuzawa.com/posts/cassava/cassava1.png" medium="image" type="image/png" height="108" width="144"/>
+</item>
+<item>
+  <title>Diamonds</title>
+  <dc:creator>Shion Fukuzawa</dc:creator>
+  <link>https://www.shionfukuzawa.com/posts/diamonds/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>There is an increasing demand and interest in being able to prove that diamonds are ethically and sustainably sourced. There are several organizations working on creating effective tracking methods using cutting edge technology that combine various tools including blockchain, machine learning, and much more. I heard about this problem from my advisor Michael Goodrich who was wondering if we would be able to come up with effective algorithms to increase the accuracy and effectiveness of this process throughout various stages in the process.</p>
+<p>There are many interesting questions to be asked about the efficacy and impact having these systems could have, which I might discuss in another post. This post will focus on the question from a purely computer science perspective.</p>
+<p>A diamond goes through several stages before it is sold. After collecting the raw diamonds, these diamonds are sliced into half, then finally carved and polished to look like the jewel you and I are accustomed to seeing. The main role in the tracking systems is to be able to follow a diamond going through this process, and making sure that it is being processed at each stage by organizations committed to ethical and sustainably sourced diamond production.</p>
+<p>To this end, at each stage of the process, the tracking systems take a snap shot of the diamond in the form of a 3D scan, and uploads it to the database. Having a record of these diamonds should be able to allow users to verify that the diamond didn’t switch midway through the pipeline, which could imply unverified vendors adding their products midway through the system.</p>
+<p>Given the way current 3D scanning technology works, the results of these scanned objects is not a perfect reconstruction of the object within the computer, but usually a set of points sampled from various parts of the surface object that can approximate the scanned object. This set of points is called a point cloud. Usually, our eyes can process these points and effectively perceive what shape these points form, but it’s not easy to get a computer to understand the point cloud in the way that we do.</p>
+<p>So now we know that the objects we will be handling in this problem are massive amounts of point clouds of diamonds at various stages. Given these objects, some of the key questions we are interested in exploring are:</p>
+<ul>
+<li><p>Given two different scans of the same diamond in the same stage, is there an effective way to determine whether they are the same or not?</p></li>
+<li><p>Given two different scans of the same diamond in different stages of the manufacturing process, can we determine which part of the earlier-stage diamond the later-stage diamond came from?</p></li>
+<li><p>Diamonds generally have very rigid shapes, even in raw form. Given a scan of points, can we determine what polytope (fancy word for shapes like cubes, tetrahedrons, and other three-dimensional objects with flat sides) it is?</p></li>
+</ul>
+<p>I’ll use this platform to summarize some concepts I learn along the way that might be useful in tackling some of these problems, and hopefully have some updates in the future on any successes!</p>
+
+
+
+ ]]></description>
+  <category>research</category>
+  <category>geometry</category>
+  <guid>https://www.shionfukuzawa.com/posts/diamonds/index.html</guid>
+  <pubDate>Thu, 15 Jul 2021 07:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

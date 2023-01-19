@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Shion Fukuzawa">
+<meta name="dcterms.date" content="2022-12-04">
 
-<title>Shion Fukuzawa</title>
+<title>Shion Fukuzawa - Simon’s Algorithm to the Hidden Subgroup Problem</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -58,8 +61,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -69,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Shion Fukuzawa</span>
     </a>
   </div>
@@ -79,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html">
+    <a class="nav-link" href="../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
@@ -88,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -99,52 +103,75 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Simon’s Algorithm to the Hidden Subgroup Problem</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">article</div>
+                <div class="quarto-category">quantum</div>
+                <div class="quarto-category">math</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Shion Fukuzawa </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 4, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.webp" class="about-image
-  round " style="height: 5cm; width: 5cm;">
- <main class="content" id="quarto-document-content">
-<p>Hi! I’m a PhD student in computer science at the University of California - Irvine in the <a href="https://www.ics.uci.edu/~theory/">Center for Algorithms and Theory of Computation</a>. I am pleased to have Dr.&nbsp;Michael Goodrich and Dr.&nbsp;Sandy Irani as my advisors. My interests are in theoretical computer science, specifically computational geometry and quantum computing. In my free time, I enjoy playing video games, baking, and taking walks.</p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<p>University of California, Irvine | Irvine, CA | PhD in Computer Science | Sept 2020 - June 2025 (Expected)</p>
-<p>Calvin University | Grand Rapids, MI | B.S in Mathematics | Sept 2016 - May 2020</p>
-</section>
-<section id="publications" class="level2">
-<h2 data-anchor-id="publications">Publications</h2>
-<ul>
-<li><p><a href="https://arxiv.org/abs/2208.14612">Modified Iterative Quantum Amplitude Estimation is Asymptotically Optimal</a> with Chris Ho, Sandy Irani, and Jasen Zion to appear in ALENEX2023</p></li>
-<li><p><a href="https://arxiv.org/abs/2208.05597">Diamonds are Forever in the Blockchain: Geometric Polyhedral Point-Set Pattern Matching</a> with Gill Barequet, Michael Goodrich, David Mount, Martha Osegueda, and Evrim Ozel CCCG2022</p></li>
-</ul>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>In this article, I’ll be introducing the hidden subgroup problem as a generalization of Simon’s algorithm. There are many technical introductions to the hidden subgroup problem that require a degree of familiarity with mathematical tools, and my goal here is to equip readers with the basics to be able to read some of those references.</p>
+<section id="simons-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="simons-algorithm">Simon’s Algorithm</h2>
+<p>The early pioneers of quantum computing showed that there exist certain problems that will take regular computers an exponential amount of time (in the size of the input) that quantum computers can solve very quickly. Many of these problems seem quite artificial at first sight, but they’ve demonstrated that there are ways to generalize them to solve more useful problems. A great example of this phenomenon is Simon’s algorithm. The problem we solve with this algorithm is the following:</p>
+<p>Suppose we are given access to a black-box function <span class="math inline">\(f : \{0, 1\}^n \rightarrow \{0, 1\}^n\)</span> that is promised to satisfy one of the following:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> is 1-to-1</li>
+<li>there exists a secret string <span class="math inline">\(s \neq 0^n\)</span> such that for all <span class="math inline">\(x \neq y\)</span>, we have <span class="math inline">\(f(x) = f(y)\)</span> if and only if <span class="math inline">\(x \oplus s = y\)</span>.</li>
+</ol>
+<div id="fig-simons1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="simons1.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: An example of the first case, a 1-to-1 function. Each element in the left set maps uniquely on an element in the right set.</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-simons2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="simons2.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: An example of the second case. There are pairs of items in the first set that are related by a secret string (in pink), and both elements map to the same element in the right set.</figcaption><p></p>
+</figure>
+</div>
 
 
 </section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://linkedin.com/in/shionfukuzawa" class="about-link">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/shifubear" class="about-link">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="/files/resume.pdf" class="about-link">
-    <i class="bi bi-file-earmark-text"></i>
-     <span class="about-link-text">Resume</span>
-  </a>
-  <a href="/files/cv.pdf" class="about-link">
-    <i class="bi bi-file-earmark-text-fill"></i>
-     <span class="about-link-text">CV</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -165,6 +192,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;
@@ -270,6 +304,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://giscus.app/client.js" data-repo="shifubear/shifubear.github.io" data-repo-id="R_kgDOIgiXHw" data-category="General" data-category-id="DIC_kwDOIgiXH84CS3yH" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
