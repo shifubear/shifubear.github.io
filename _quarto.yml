@@ -7,6 +7,7 @@ website:
   site-url: https://www.shionfukuzawa.com
   navbar:
     right:
+      - research.qmd
       - blog.qmd
       - icon: github
         href: https://github.com/shifubear

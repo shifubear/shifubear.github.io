@@ -1,0 +1,20 @@
+---
+title: "Hall LGLAR Chapter 3: The Matrix Exponential"
+author: "Shion Fukuzawa"
+date: "2022-11-26"
+categories: [notes, math]
+---
+
+This is a collection of my notes from chapter 3 of Brian Hall's "Lie Groups, Lie Algebras, and Representations". In this chapter we are finally introduced to the definition of a Lie algebra, and learn how they are related to Lie groups. In the literature, Lie algebras are often expressed using lowercase Gothic (Fraktur) characters. In latex, these characters can be written using the command "\\mathfrak". 
+
+## Definitions and First Examples
+
+**Definition 1**: A **finite-dimensional real or complex Lie algebra** is a finite-dimensional real or complex vector space $\frak{g}$, together with a map $[\cdot, \cdot]$ from $\frak{g} \times \frak{g}$ into $\frak{g}$, with the following properties: 
+1. $[\cdot, \cdot]$ is bilinear.
+2. $[\cdot, \cdot]$ is skew-symmetric: $[X, Y] = - [Y, X]$ for all $X, Y \in \frak{g}$. 
+3. The **Jacobi identity** holds:
+$$[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0$$
+for all $X, Y, Z \in \frak{g}$. 
+
+Two elements $X, Y$ of a Lie algebra $ \frak{g}$ **commute** if $[X, Y] = 0$. A Lie algebra $\frak{g}$ is **commutative** if $[X, Y] = 0$ for all $X, Y \in \frak{g}$. 
+

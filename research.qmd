@@ -1,0 +1,7 @@
+---
+title: "Research"
+page-layout: full
+title-block-banner: false
+---
+
+Currently I'm interested in questions regarding state and unitary synthesis. In the classical setting, computer scientists like to study decision problems, which are questions which have a yes or no question (e.g. can I choose numbers from this list so they sum to 0? can I solve this maze? Is 2384973874927 a prime number?), since we have a good idea of how to use the answer to the decision problem to find a solution we are interested in. Quantumly, this is much more difficult. The structure of quantum states is much more complex, and it's not clear how to go from the answer of a decision problem to finding a certain state that we want (My advisor Sandy [wrote a paper](https://arxiv.org/pdf/2111.02999v1.pdf) on this). This inspired a new line of research asking a new question, how hard is it to synthesize an arbitrary state? It's surprising that the language around this question is just being formalized, even though it seems like a very natural question to ask. An extension to this question that is also developing is asking how hard it is to implement some desired operations on quantum states. 

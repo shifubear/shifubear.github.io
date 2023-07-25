@@ -19,14 +19,16 @@ about:
 comments: false
 ---
 
-Hi! I'm a PhD student in computer science at the University of California - Irvine in the [Center for Algorithms and Theory of Computation](https://www.ics.uci.edu/~theory/). I am pleased to have Dr. Michael Goodrich and Dr. Sandy Irani as my advisors. My interests are in theoretical computer science, specifically computational geometry and quantum computing. In my free time, I enjoy playing video games, baking, and taking walks.
+Hi! I'm a PhD candidate in computer science at the University of California - Irvine in the [Center for Algorithms and Theory of Computation](https://www.ics.uci.edu/~theory/). I am pleased to have Dr. Michael Goodrich and Dr. Sandy Irani as my advisors. My interests are in theoretical computer science, recently focused on quantum computing and quantum information. In my free time, I enjoy playing video games, piano, baking, and taking walks.
+
+## Now 
+
+I am currently visiting the Simons Institute for their [Summer cluster on quantum computing](simons.berkeley.edu/programs/summer-cluster-quantum-computing). I'll be here until August 6, and will be flying back home to Tokyo for a month before returning for the Fall quarter. 
 
 ## Education
 
 University of California, Irvine | Irvine, CA |
 PhD in Computer Science | Sept 2020 - June 2025 (Expected)
-
-
 
 Calvin University | Grand Rapids, MI |
 B.S in Mathematics | Sept 2016 - May 2020

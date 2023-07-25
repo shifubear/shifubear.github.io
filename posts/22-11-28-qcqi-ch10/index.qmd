@@ -150,4 +150,8 @@ which is a contradiction, so we know that $EgE = g$. From this we conclude that 
 
 ---
 
+**Exercise 10.45**: 
+
+---
+
 **

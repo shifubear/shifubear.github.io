@@ -1,5 +1,5 @@
 ---
-title: "Art and AI"
+title: "Art and AI: A new era for art?"
 author: "Shion Fukuzawa"
 date: "2023-01-17"
 categories: [technology, arts, blog]
@@ -37,8 +37,12 @@ In a similar way, I feel like we are now being confronted with the opportunity t
 
 At the end of the day, I may practice against a chess bot, but it's so that I can play a great game with my friend the next time we're sitting over a chess board. Chatbots have their useful moments, but what we remember from them are when they fail and we all laugh at the screenshot together. We won't lose art if we take the time to slow down enough to share and listen to each others' stories. 
 
+## A New Era
+
+Still, I do think we are at a moment in art history where a huge shift will occur, both for the artist and the audience. This isn't only because of AI art, but other technologies like social media, video games and streaming services providing a stream of accessible entertainment beyond any caliber of what we have seen before. I'm not an expert in art history, but there are clear markers in time we use to identify art from different eras, and these markers are identified through a mix of stylistic and cultural shifts that influence the art of the time. 
+
 ## Concluding Remarks
 
-I thought about this topic for a while before writing it up, and this is now my current response to any questions surrounding art and AI. Sure, it leaves open a lot of questions, like "what is art?", but I think this is a great opportunity for me to slow down and reevaluate the way I interact with art. When I mindlessly scroll through instagram, am I fully appreciating the humanity and stories of the people who created the work? If I play music while I'm studying or at the gym, is that limiting my focus that should be directed at the musicians? My answer to these questions is *no*, as is probably the case for many who are reading this. The quality of a conversation isn't only dictated by the content of the speaker, it requires the attention and presence of the listener. To that end, I want to challenge myself moving forward to wrestle more with this question by taking more time to fully immerse myself in various arts. If AI were to take over art, it'll be when we stop connecting through the experiences. 
+I thought about this topic for a while before writing it up, and this is now my current response to any questions surrounding art and AI. Sure, it leaves open a lot of questions, like "what is art?", but I think this is a great opportunity for me to slow down and reevaluate the way I interact with art. When I mindlessly scroll through instagram, am I fully appreciating the humanity and stories of the people who created the work? If I play music while I'm studying or at the gym, is that limiting my focus that should be directed at the musicians? My answer to these questions is *no*, as is probably the case for many who are reading this. The quality of a conversation isn't only dictated by the dialogue of the speaker, it requires the presence and attention of the listener. To that end, I want to challenge myself moving forward to wrestle more with this question by taking more time to fully immerse myself in various arts. If AI were to take over art, it'll be when we stop connecting through the experiences. 
 
 
