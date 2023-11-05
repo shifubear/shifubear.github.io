@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Shion Fukuzawa">
-<meta name="dcterms.date" content="2022-12-20">
+<meta name="dcterms.date" content="2023-01-24">
 
-<title>Shion Fukuzawa - Counting with Quantum Computers</title>
+<title>Shion Fukuzawa - Optimal Amplitude Estimation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,6 +83,10 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="../../research.html">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
@@ -106,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Counting with Quantum Computers</h1>
+      <h1 class="title">Optimal Amplitude Estimation</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">research</div>
                 <div class="quarto-category">quantum</div>
@@ -127,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 20, 2022</p>
+        <p class="date">January 24, 2023</p>
       </div>
     </div>
     
@@ -145,38 +149,62 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>[This article is an overview of joint work with Sandy Irani, Chris Ho, and Jasen Zion: <a href="https://arxiv.org/abs/2208.14612">preprint</a>]</em></p>
-<p>(This post is organized into several levels. You can read through the post upto whatever level you desire, each adding a little more depth to the discussion of the topic. Level 1 is targeted at a general audience, requiring minimal knowledge of math, computer science, and physics. Level 2 is targeted towards undergraduates in related fields. Level 3 is targeted towards graduate students studying quantum computing.)</p>
-<section id="level-1-introduction" class="level1">
-<h1>Level 1: Introduction</h1>
-<p>Imagine a room full of boxes numbered from 1 through a very large number <span class="math inline">\(N\)</span>. You’re not allowed to go into this room, but you notice that there is someone inside. When you give the oracle a number, it goes and opens the box for you. After yelling out a few numbers, you notice that some boxes are empty, but some boxes are filled with treasure. Can you come up with an efficient way to approximate the number of boxes that are filled with treasure?</p>
-<p>This problem is called the “approximate counting” problem in computer science. It turns out that with a classical computer, you can’t do much better than opening each box one at a time. That is, if there are <span class="math inline">\(N\)</span> boxes, you’ll need about <span class="math inline">\(N\)</span> moves. This is a great problem to learn a little about the power of quantum computers, which can get a very good solution by only using <span class="math inline">\(\sqrt{N}\)</span> moves. The advantage of using quantum computers for this problem was demonstrated in 1998 in the paper by <a href="https://arxiv.org/pdf/quant-ph/9805082.pdf">Brassard, Høyer and Tapp</a> and their algorithm is taught in many introductory quantum computing courses. We won’t go into the details of that algorithm here, but the algorithm described here borrows some key techniques from that original work.</p>
-<p>The last decade has been an exciting time for quantum computing, as we have seen the first physical realizations of an idea which has been purely theoretical for several decades. You may have noticed something strange here: If quantum computers have been physically created only so recently, how did people like Brassard design algorithms for the technology? Well, since the development of quantum physics, many brilliant scientists had hopes that we could make use of the unusual phenomenon to help speed up certain computational tasks. With this goal in mind, many physicists and computer scientists constructed a theoretical framework for modeling computation that follows quantum mechanical rules. From these basic rules, many algorithms were designed which could be shown to require less computational resources than a traditional computer would. An example of this is the approximate counting problem that we will be studying here.</p>
-<p>Though we are seeing many physical devices, they are still very much in their infancy in terms of size and performance. The quantum computers we have today can only run on very small problems, and can’t fully take advantage of “quantum mechanical circuits” that many of the algorithms designed by theorists require. Because of this, we will still need to wait several years before seeing these algorithms in action. However, we still want to make use of the quantum computers that have been created. To supplement their weakness, there has been a lot of recent work on constructing hybrid algorithms. We know that quantum computers are very good at certain problems, but we also know that for many other problems, they can’t do much better than the computers we have today. Using this information, we can use quantum computers for exactly the part of the algorithm that they excel at, and let the classical computer do the rest of the work. We showed in our work a hybrid algorithm that is much easier for the quantum computer to run than Brassard et al.’s algorithm, but still has the <em>same scaling in terms of computational resources required</em>.</p>
-<section id="high-level-description" class="level2">
-<h2 class="anchored" data-anchor-id="high-level-description">High level description</h2>
-<p>Using a classical computer to solve this problem is like having one robot inside the room full of boxes. We can give it one instruction at a time, meaning if we want to check <span class="math inline">\(N\)</span> boxes, we need to give it <span class="math inline">\(N\)</span> instructions. One way to think of a quantum computer in this setting, is that our robot is able to split into smaller clones, and we can give one instruction for all of the clones to execute at the same time. A useful way to do this for this setting is to split the robot in a way where each clone is standing across a different box. Then we can give the single command, “open the box in front of you”. Often times conversations about quantum advantage ends here, claiming that this parallelization is how quantum computers speed up computation. The problem with this statement is that the hard part about designing quantum algorithms usually begins <em>after</em> this step.</p>
-<p>After we give the instruction to all the clones, we now need to check each clone to see what the result of their action was. So in a way, we transformed the problem of checking one box at a time, to now checking one clone at a time. The difference though, is that we are able to combine the information the clones have in useful ways to solve the problem, while the boxes could only be opened and closed.</p>
-<p>These types of problems have been very well studied, and what we know is that for problems like this is that quantum computers offer up to a <em>quadratic</em> speed up. This is pretty good, but no where near an <em>exponential speed up</em> which can be achieved for different problems. In the next section, I introduce some of the mathematical techniques we use, and give a more technical description of the algorithm.</p>
+<p>Suppose we are given a black box to evaluate some boolean function <span class="math inline">\(f\)</span> that takes <span class="math inline">\(n\)</span> bits as input. We would like to give an estimate as to how many of the possible input strings evaluate to 1. We will call an input that outputs 1 a success. Now it’s possible to take our function and go through all possible inputs, but this would require <span class="math inline">\(2^n\)</span> evaluations of the function.</p>
+<p>Let’s say we decide that it’s not worth going through all possibilities, and we can settle for an approximate estimate of how many input strings are successful. One strategy we might use to accomplish this is by picking a random bit string and checking if it’s successful or not. After some <span class="math inline">\(n\)</span> trials, we will have a record of how many of those were successful or not. What we’ve done here is model the original problem as estimating the success probability of a Bernoulli distribution, and asking how many samples we need to approximate this distribution well.</p>
+<p>To accomplish this we can use a tool called a Chernoff bound. There are many versions of Chernoff bounds, but the one that is relevant here is the following:</p>
+<p><span class="math display">\[\mathbb{P}[a \not \in [\hat{a}-\epsilon, \hat{a}+\epsilon]] \leq 2e^{-2N\epsilon^2}.\]</span></p>
+<p>Here, <span class="math inline">\(a\)</span> is the true success probability of our coin flip, <span class="math inline">\(\hat{a}\)</span> is our estimate for <span class="math inline">\(a\)</span> after <span class="math inline">\(N\)</span> trials, and <span class="math inline">\(\epsilon\)</span> is some target interval we want our estimate to lie between. Essentially what the equation is expressing is that as we take more trials, the probability that our estimate is off by more than <span class="math inline">\(\epsilon\)</span> decreases <em>exponentially</em>. Let’s say we want to say that there’s a 99 percent chance that our approximation of <span class="math inline">\(a\)</span> is within <span class="math inline">\(\epsilon\)</span> of the correct solution. Then we can set the right hand side to 0.01 (since it bounds the failure probability) and solve for <span class="math inline">\(N\)</span>:</p>
+<p><span class="math display">\[2e^{-2N\epsilon^2} = 0.01 \Rightarrow N = \frac{1}{2\epsilon^2} \log \frac{2}{0.01}.\]</span></p>
+<p>Can we do any better? It turns out that if we use a quantum computer the answer is yes! The first thing we need to do is to come up with a way to evaluate the function <span class="math inline">\(f\)</span> with our quantum computer.</p>
+<p>It turns out that if we can implement a function with a classical circuit, we can also do so using a quantum computer by encoding the effect of the function into a unitary <span class="math inline">\(U_f\)</span> with not too much overhead. The effect of applying this unitary can be described by the following equation:</p>
+<p><span class="math display">\[U_f\left|x\right&gt;_n\left|0\right&gt; = \left|x\right&gt;_n\left|f(x)\right&gt;.\]</span></p>
+<p>In words, we store the input string <span class="math inline">\(x\)</span> in the first register, and after applying our unitary the result of evaluating <span class="math inline">\(f\)</span> with input <span class="math inline">\(x\)</span> is stored in the second register.</p>
+<p>Now let’s see what happens when we apply this unitary when the first register is in uniform superposition, which we can accomplish by applying a Hadamard gate to each qubit we have.</p>
+<p><span class="math display">\[U_f H^{\otimes n} \left|0\right&gt;_n \left|0\right&gt; = \sum_{x\in \{0,1\}^n}U_f\left|x\right&gt;_n\left|0\right&gt; = \sum_{x\in \{0,1\}^n} \left|x\right&gt;_n\left|f(x)\right&gt;.\]</span></p>
+<p>Now we have all input output pairs of our function stored in superposition, which we were able to prepare with just one call to our unitary <span class="math inline">\(U_f\)</span>. There is still a small problem, namely that we need to measure from the quantum computer to get a result, and measuring will collapse our superposition state into the result we observe. If this was all we could do, we haven’t improved at all from the classical setting, we just made a more contrived Bernoulli sampling problem.</p>
+<p>In the remaining sections, I’ll describe one way to speed up the process with a quantum computer that came about through joint work with Sandy Irani, Chris Ho, and Jasen Zion. Currently, this is provably the most efficient way to solve the problem that is known.</p>
+<section id="problem-statement" class="level1">
+<h1>Problem Statement</h1>
+<p>Before getting into the details of the algorithm, it’ll be helpful to restate the problem a little more formally. The most common way this problem is presented in the literature is the following.</p>
+<p>Suppose we are given an unknown quantum operator <span class="math inline">\(A\)</span> that acts on <span class="math inline">\(n + 1\)</span> qubits as follows:</p>
+<p><span class="math display">\[A \left|0\right&gt;_n\left|0\right&gt; = \sqrt{1-a} \left|\psi_0\right&gt;_n\left|0\right&gt; + \sqrt{a}\left|\psi_1\right&gt;_n \left|1\right&gt;.\]</span></p>
+<p>The question is, how many times do we need to apply <span class="math inline">\(A\)</span> to have an estimate of <span class="math inline">\(a\)</span> within some target precision <span class="math inline">\(\epsilon\)</span>, with failure probability less than <span class="math inline">\(\alpha\)</span>.</p>
+<p>If we model the classical setting of this problem with a quantum computer, what we do is prepare the state described above and take a measurement right away. This requires <span class="math inline">\(O\left(\frac{1}{\epsilon^2} \log \frac{2}{\alpha}\right)\)</span> samples to solve the problem, as we showed using the Chernoff bounds above.</p>
+<p>Using a procedure called amplitude amplification, we can accomplish the same estimate with <span class="math inline">\(O\left(\frac{1}{\epsilon} \log \frac{2}{\alpha}\right)\)</span>, a quadratic improvement over the classical procedure.</p>
 </section>
+<section id="amplitude-amplification" class="level1">
+<h1>Amplitude Amplification</h1>
+<p>I’m going to rewrite our state as follows:</p>
+<p><span class="math display">\[A\left|0\right&gt;_n \left|0\right&gt; = \sqrt{1-a}\left|\psi_0\right&gt;\left|0\right&gt; + \sqrt{a}\left|\psi_1\right&gt;\left|1\right&gt;.\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p><span class="math display">\[A\left|0\right&gt;_n \left|0\right&gt; = \cos{\theta} \left|\psi_0\right&gt;\left|0\right&gt; + \sin{\theta} \left|\psi_1\right&gt;\left|1\right&gt;,\]</span></p>
+<p>where I’m defining <span class="math inline">\(\theta\)</span> as the angle such that <span class="math inline">\(\sin^2 \theta = a\)</span>. Since <span class="math inline">\(\left|\psi_0\right&gt;\left|0\right&gt;\)</span> and <span class="math inline">\(\left|\psi_1\right&gt;\left|1\right&gt;\)</span> are orthogonal subspaces, I can draw this state as follows:</p>
+<p><img src="figs/aa1.jpeg" class="img-fluid"></p>
+<p>An early result for this algorithm was that if we have our operator <span class="math inline">\(A\)</span>, it’s possible to construct a new operator <span class="math inline">\(Q\)</span> which is a combination of two actions: 1. Reflect the state across the <span class="math inline">\(x\)</span> axis, and 2. Reflect the state across the starting state.</p>
+<p><img src="figs/aa2.jpeg" class="img-fluid"> <img src="figs/aa3.jpeg" class="img-fluid"></p>
+<p>What’s neat about doing this is that now our success probability has increased from <span class="math inline">\(\sin^2(\theta)\)</span> to <span class="math inline">\(\sin^2(3\theta)\)</span>. More generally, if we apply this operator <span class="math inline">\(k\)</span> times we can boost the success probability up to <span class="math inline">\(\sin^2((2k+1)\theta)\)</span>.</p>
+<p>This technique is used quite often in quantum algorithms, and has been a key tool in many results that achieve a quadratic speedup over classical algorithms.</p>
 </section>
-<section id="level-2-technical-description-and-the-algorithm" class="level1">
-<h1>Level 2: Technical description and the algorithm</h1>
-<p>To describe the math behind the algorithm, we will need to introduce a slightly different version of the problem. I’ll explain how to use this method to solve the original counting problem later in this post.</p>
-<section id="amplitude-estimation" class="level2">
-<h2 class="anchored" data-anchor-id="amplitude-estimation">Amplitude estimation</h2>
-<p>Suppose that we have an unknown quantum gate <span class="math inline">\(A\)</span> that acts on <span class="math inline">\(n + 1\)</span> qubits that we can apply as many times as we want. Mathematically, we describe the action by</p>
-<p><span class="math display">\[A\left|0\right&gt;_n\left|0\right&gt; = \sqrt{1 - a}\left|\psi_0\right&gt;_n\left|0\right&gt; + \sqrt{a}\left|\psi_1\right&gt;_n\left|1\right&gt;.\]</span></p>
-<p>We will call the states whose last qubit are <span class="math inline">\(\left|1\right&gt;\)</span> as the <strong>marked</strong> states. Once this state is generated, we can measure it and will find a marked state with probability <span class="math inline">\(a\)</span>. At this point, the problem is basically approximating the probability a biased coin will be heads. In quantum computing, the square root of the probability is called the amplitude of a state, and so this general problem is referred to as the <strong>amplitude estimation problem</strong>.</p>
-<p>If we are able to precisely approximate the probability of finding a marked state, this probability corresponds to the density of marked states out of all possible states. This gives a simple way to convert between amplitude estimation and approximate counting.</p>
+<section id="algorithm" class="level1">
+<h1>Algorithm</h1>
+<p>We’re now ready to dive into the algorithm, which is actually quite simple once you followed everything up to here. There are two phases to the algorithm.</p>
+<section id="main-phase" class="level2">
+<h2 class="anchored" data-anchor-id="main-phase">Main phase</h2>
+<p>In the main phase, we maintain some guess of the interval we believe <span class="math inline">\(\theta\)</span> lies in. Initially, we know for certain that the angle lies somewhere between <span class="math inline">\(0\)</span> and <span class="math inline">\(\pi/2\)</span>, so that will be our starting interval. Recall that we defined <span class="math inline">\(\theta\)</span> such that <span class="math inline">\(\sin^2 \theta = a\)</span>. We can use this fact to take our interval containing <span class="math inline">\(\theta\)</span> and map it to an interval containing <span class="math inline">\(a\)</span>. Now we take samples from our quantum circuit to construct our approximation for <span class="math inline">\(a\)</span>, and we can use the Chernoff bound to shrink our confidence interval. Once we’ve shrinken the interval a certain amount, we can now take our new bounds for the interval containing <span class="math inline">\(a\)</span>, and construct an interval containing <span class="math inline">\(\theta\)</span>.</p>
+<p><img src="figs/miqae1.jpeg" class="img-fluid"> <img src="figs/miqae2.jpeg" class="img-fluid"> <img src="figs/miqae3.jpeg" class="img-fluid"> <img src="figs/miqae4.jpeg" class="img-fluid"></p>
+<p>What we don’t want to do is take samples until the interval has shrunk to the accuracy we want, since that would be identical to the classical algorithm. Instead, what we use is the fact that early samples help gain more information than later samples do. Once the returns of information gain from a single sample is lower than some threshold, we move on to the second phase.</p>
 </section>
-<section id="chernoff-bounds" class="level2">
-<h2 class="anchored" data-anchor-id="chernoff-bounds">Chernoff bounds</h2>
-<p>Let’s figure out how many times we would have to run our first circuit to determine what the probability of success <span class="math inline">\(a\)</span> is. First, we will formalize the problem a little more. We would like to approximate what <span class="math inline">\(a\)</span> is up to some precision which we will represent with the variable <span class="math inline">\(\epsilon\)</span>, which we are very confident about. To quantify our confidence, we introduce another variable <span class="math inline">\(\delta\)</span>. At the end of our algorithm, we want to be able to say that the probability that we are wrong is at most <span class="math inline">\(\delta\)</span> (or that the probability we are right is at least <span class="math inline">\(1 - \delta\)</span>).</p>
-<p>Ideally we want these two numbers to be as close to 0 as possible. Intuitively, it is not hard to imagine that the more times we flip our coin, the better idea of the probability we have with higher confidence.</p>
-<p>It turns out that this scenario is so ubiquitous, there is a well known tool to give us a very good approximation on how many times we need to flip the coin. The following equation is what is called a Chernoff bound, which does exactly what we need. I won’t derive it here, but there is a <a href="https://math.mit.edu/~goemans/18310S15/chernoff-notes.pdf">great reference</a> for those who want to learn more.</p>
-<p><span class="math display">\[\mathbb{P}[a \not \in [\hat{a}-\epsilon, \hat{a}+\epsilon]] \leq 2e^{-2N\epsilon}\]</span></p>
-<p>The equation may look intimidating at first, but we can break it down to understand it</p>
+<section id="findnextk" class="level2">
+<h2 class="anchored" data-anchor-id="findnextk">FindNextK</h2>
+<p>In the second phase of the algorithm, we use amplitude amplification to generate a new distribution, such that the information we gain from the samples increases again.</p>
+<p>The procedure is called FindNextK, since we are looking for the best number of times <span class="math inline">\(k\)</span> to apply our amplitude amplification operator <span class="math inline">\(Q\)</span>, so that we can gain useful information from our samples.</p>
+<p>Geometrically, all we are trying to do is to scale up our confidence interval for <span class="math inline">\(\theta\)</span> such that 1. it is as wide as possible, and 2. it is fully contained within one quadrant.</p>
+<p>We want 1 because the wider this interval is, the more information we can obtain using a small number of samples, and we want 2 because we need to be able to invert the function <span class="math inline">\(\sin^2\)</span> unambiguously.</p>
+<p>Once we’ve found the best next <span class="math inline">\(k\)</span> value, we simply run the main phase of the algorithm for this distribution until we decide we should find a new <span class="math inline">\(k\)</span> again.</p>
+<p><img src="figs/fnk1.jpeg" class="img-fluid"> <img src="figs/fnk2.jpeg" class="img-fluid"> <img src="figs/fnk3.jpeg" class="img-fluid"> <img src="figs/fnk4.jpeg" class="img-fluid"> <img src="figs/fnk5.jpeg" class="img-fluid"> <img src="figs/fnk6.jpeg" class="img-fluid"></p>
+<p>And that’s it! The following diagram describes the whole algorithm:</p>
+<p><img src="figs/MIQAE-algorithm1.png" class="img-fluid"></p>
+<p>The key technical challenge is figuring out the best time to start finding the next value of <span class="math inline">\(k\)</span>. One thing that we observed and used is that the circuit is much simpler for small values of <span class="math inline">\(k\)</span>, and the depth grows very fast throughout the algorithm. Because of this, we argued that it is optimal to try to spend a bit more time on early samples, so that a smaller number of samples is sufficient towards the end of the algorithm when the circuit is very expensive to prepare.</p>
 
 
 </section>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,6 +83,10 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link" href="../../research.html">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
@@ -149,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 <p>(This post is organized into several levels. You can read through the post upto whatever level you desire, each adding a little more depth to the discussion of the topic. Level 1 is targeted at a general audience, requiring minimal knowledge of math, computer science, and physics. Level 2 is targeted towards undergraduates in related fields. Level 3 is targeted towards graduate students studying quantum computing.)</p>
 <section id="level-1-introduction" class="level1">
 <h1>Level 1: Introduction</h1>
-<p>Imagine a room full of boxes numbered from 1 through a very large number <span class="math inline">\(N\)</span>. You’re not allowed to go into this room, but you notice that there is someone inside. When you give the oracle a number, it goes and opens the box for you. After yelling out a few numbers, you notice that some boxes are empty, but some boxes are filled with treasure. Can you come up with an efficient way to approximate the number of boxes that are filled with treasure?</p>
+<p>Imagine a room full of boxes numbered from 1 through a very large number <span class="math inline">\(N\)</span>. You’re not allowed to go into this room, but you can talk to a friend who is inside. When you tell your friend a number, they will open that box for you. After yelling out a few numbers, you notice that some boxes are empty, but some boxes are filled with treasure. Can you come up with an efficient way to approximate the number of boxes that are filled with treasure?</p>
 <p>This problem is called the “approximate counting” problem in computer science. It turns out that with a classical computer, you can’t do much better than opening each box one at a time. That is, if there are <span class="math inline">\(N\)</span> boxes, you’ll need about <span class="math inline">\(N\)</span> moves. This is a great problem to learn a little about the power of quantum computers, which can get a very good solution by only using <span class="math inline">\(\sqrt{N}\)</span> moves. The advantage of using quantum computers for this problem was demonstrated in 1998 in the paper by <a href="https://arxiv.org/pdf/quant-ph/9805082.pdf">Brassard, Høyer and Tapp</a> and their algorithm is taught in many introductory quantum computing courses. We won’t go into the details of that algorithm here, but the algorithm described here borrows some key techniques from that original work.</p>
 <p>The last decade has been an exciting time for quantum computing, as we have seen the first physical realizations of an idea which has been purely theoretical for several decades. You may have noticed something strange here: If quantum computers have been physically created only so recently, how did people like Brassard design algorithms for the technology? Well, since the development of quantum physics, many brilliant scientists had hopes that we could make use of the unusual phenomenon to help speed up certain computational tasks. With this goal in mind, many physicists and computer scientists constructed a theoretical framework for modeling computation that follows quantum mechanical rules. From these basic rules, many algorithms were designed which could be shown to require less computational resources than a traditional computer would. An example of this is the approximate counting problem that we will be studying here.</p>
 <p>Though we are seeing many physical devices, they are still very much in their infancy in terms of size and performance. The quantum computers we have today can only run on very small problems, and can’t fully take advantage of “quantum mechanical circuits” that many of the algorithms designed by theorists require. Because of this, we will still need to wait several years before seeing these algorithms in action. However, we still want to make use of the quantum computers that have been created. To supplement their weakness, there has been a lot of recent work on constructing hybrid algorithms. We know that quantum computers are very good at certain problems, but we also know that for many other problems, they can’t do much better than the computers we have today. Using this information, we can use quantum computers for exactly the part of the algorithm that they excel at, and let the classical computer do the rest of the work. We showed in our work a hybrid algorithm that is much easier for the quantum computer to run than Brassard et al.’s algorithm, but still has the <em>same scaling in terms of computational resources required</em>.</p>
