@@ -1,0 +1,158 @@
+---
+title: "How to Study for (More Than) Your Algorithms Midterm"
+author: "Shion Fukuzawa"
+date: "2023-11-04"
+categories: [education, blog]
+number-sections: true
+---
+
+Many students asked about this, so I thought I would write up my suggestions on how you should go about studying your midterms. This is only one suggestion, so make sure to tailor it better for where you are at right now and what you need. The cool thing about learning is that you can learn about it too! The more you experiment with how to learn, the better you will get at it. Don't settle for learning about algorithms, use this as an opportunity to learn how to learn better as well. 
+
+You can skip the Context section to the How to Study section (@sec-how-to-study) for a tl;dr of actionable steps I suggest, but I encourage you to read and think about the context as well! 
+
+# Context {#sec-context}
+In discussion, I brought up Bloom's Taxonomy. This is a hierarchical framework of cognitive skills educators use to talk about setting goals for learning. 
+![Bloom's Taxonomy](Pasted image 20231102121108.png)
+
+The name of this course is the Design and Analysis of Algorithms. At a minimum, we would like students to become proficient at analyzing algorithms, which you can see is the fourth hierarchy in the pyramid. Note that designing is higher up on the cognitive hierarchy, meaning that to get there you will need a good handle at analysis first. 
+
+One of the main tools computer scientists use for analyzing algorithms is Big O analysis. Let's think about how different concepts in the class would use Big O along Bloom's Taxonomy. So far, we've used Big O to primarily analyze sorting algorithms, so we will see how Big O plays a role in the context of sorting algorithms as well. 
+
+(There may be different ways to classify some of the expected abilities I placed in each stage, so if you have a different idea I am more than happy to discuss it!)
+
+### Level 1: Remember
+At this level, you should be able to *memorize* the *definition* of Big O. You are comfortable at reciting the definition. 
+
+### Level 2: Understand 
+At this level, you should be able to *classify* functions by their Big O relationships. If I gave you two functions, you are able to *explain* why f is in O(g). 
+
+### Level 3: Apply 
+At this level, you should be able to look at a new algorithm and correctly simulate an *execution* of the algorithm. After doing this, you can *apply* your knowledge of Big O to determine which class it is in.
+This is equivalent to *solving* the type of problems you've seen in your exams and homework.
+
+### Level 4: Analyze
+At this level, you can use your knowledge of the Big O time complexity of an algorithm and *compare and contrast* algorithms for solving the same problems. You can *differentiate* sorting algorithms by their running time. You may also *question* why we have multiple algorithms in the same time complexity (mergesort and quicksort), and *examine* them to identify key differences. 
+
+### Level 5: Evaluate
+If someone came to you asking which sorting algorithm they should implement, you are able to *weigh* the pros and cons of each algorithm for their use case, and make an *argument* for which is the best one. It is likely this argument is supported by Big O analysis, as well as differences you can detect at the analyze stage. 
+
+### Level 6: Create
+At this stage, you may realize that none of the sorting algorithms we know are fully taking advantage of particular use cases. You use this to *design* a new sorting algorithm that can beat all other known algorithms in that use case. (You may be surprised to hear that this happens! Here is an [example of your professor and TA doing exactly that](https://drops.dagstuhl.de/opus/volltexte/2023/18358/pdf/LIPIcs-SEA-2023-8.pdf) last year.)
+
+## My Suggestion
+As someone on your teaching staff, we would love if all of you can achieve level 6 proficiency. But of course this is a lofty expectation, and probably doesn't align with what **you** are hoping to get out of this course. I can identify two potential realistic and plausible goals that most students have: 
+1. Get a good (or even passing) grade so you can get your degree
+2. Gain familiarity with the concepts so you're well equipped for coding interviews. 
+I think for these purposes, shooting for level 4 is a great goal to have for most of the concepts covered in the course. 
+
+For this goal, I think it is critical that you are very good at level 3, and actively practice level 4 throughout the quarter. Fortunately, we live in a time where you have a lot of resources to get to level 3! Not only that, my suggestion is that you **start** at level 3! The way the hierarchy works, you will naturally be forced to pick up on lower level cognitive abilities as you practice higher levels. The caveat is that if you start too high up, you will be way too lost to even try anything! In that sense, level 3 is the sweet spot. 
+
+## Notes on Level 3 - Apply
+Like I mentioned above, level 3 for our purposes is the ability to correctly apply Big O analysis for new algorithms and problems you see. Lucky for you, this happens to align with what many coding interviews will ask of you as well! They will tell you a problem, have you propose a solution, then analyze your solution. 
+The reason I don't think this is a level 6 skill, is that most times the solution they have in mind is just some special version of one of the X number of algorithms they will test you on. Because of this, it's an *application* of your knowledge of those algorithms in a new setting. You will at least learn the names of most of these algorithms in this class. 
+
+I'll also give you an explicit example of the difference between level 2 and level 3. To get to level 2, you should be able to read a proof, and **verify** that it is correct. On the other hand, true level 3 mastery would mean that if suddenly the proof was not available anymore, you would be able to write the proof yourself! 
+
+Another example of the difference is a coding exercise. Level 2 mastery would involve looking at a solution to a leetcode problem, and **verifying** that it works correctly. On the other hand, level 3 mastery would be when you are able to write that solution on your own. The difference is subtle, but I hope you agree with me that we want to achieve level 3! 
+
+I think one wall many students face is that they don't recognize that these two actions are at different cognitive levels, and feel discouraged when they can't come up with a solution that looks so simple in hindsight.
+
+(SIDENOTE: If you find this difference between verifying and solving to be interesting... theoretical computer science may be exactly the field you want to explore!)
+
+## The Learning Cycle 
+There is a lot of research people have done to explore what it takes to achieve level 3 type mastery. To place it in context, this is things like 1) going from appreciating art to learning how to draw, 2) going from watching professional sports players and identifying good and bad plays to learning how to play the sport yourself, or 3) going from enjoying good food to learning how to cook. What many people are taught is that to get good at these things, you have to practice. Many of us have heard of the 10,000 hour rule, stating that to become proficient at something you have to practice it for 10,000 hours. There is a similar idiom in Japan from bonsai fans saying "Watering plants for three years", meaning that even for something that seems trivial like watering your plants, it takes 3 years to gain mastery of it. 
+
+What research has shown though, is that this is not the full picture! "Practice", is not sufficient, at least in the way we are used to thinking about it. What is required is **high quality practice**. This can be summarized by iterating through what I've seen called the learning cycle: 
+```
+while (not proficient)
+	1. Do
+	2. Reflect
+	3. Learn
+```
+Traditional ideas of practice only focused on repeating the "do" part, but what we know now is that it is critical to reflect, and reflect on our process of making decisions as well. The more times you go through this cycle, the better you will be at a subject! 
+
+## How to Cycle Effectively
+Here is an example of how you would do this for our class. 
+
+### 1. Do 
+The first thing you need to do is to *try* solving problems outside your comfort zone. Set a timer that forces you to spend only 20 minutes to solve the problem. Try to remember everything you can that seems related to the problem, see if you can combine them effectively to solve it. 
+
+As soon as the timer goes off, STOP! Our goal is not to mull over one question forever, it is to go through this cycle as many times as we can. 
+
+### 2. Reflect
+Look up a solution to the problem. Look through the steps you took and see *where* you made a mistake. Make sure you verbalize and identify one missing piece you had by saying it out loud or writing it down explicitly. 
+- "I didn't think of using a sorting algorithm as a subroutine"
+- "I didn't take into account the time complexity of printing all the leaves of the tree"
+- "I am misunderstanding big O notation, because their explanation for the time complexity doesn't match with what I said"
+- "I know the algorithm is O(n log n) because mergesort is the most expensive part of it, but I can't explain why mergesort is O(n log n)"
+- etc. 
+
+If you can't identify your mistake, this is the greatest way to take advantage of being at a university! You *could* post a question on stack overflow, but there are people around you who are willing to help! Discuss the problem and your solution with a peer, a TA, or professors. Reflection on your own is **hard**, and you'll get better as you go, but it can be accelerated significantly by having an expert chime in and guide you along this process. 
+Try to learn *how* the expert goes about identifying the issue, and what *kind* of advice they propose as a solution. 
+
+### 3. Learn
+Now that you know what your mistake was, this is the time to climb down Bloom's taxonomy and reinforce your memory (Level 1: definitions, theorem statements, etc.) or refresh on the pseudocode of algorithms (Level 2: understand, describe). 
+
+
+At the end of this process, make sure you identified 1 thing to cycle through! In fact, I encourage you to keep it at 1 thing so you really focus your attention on the given topic. 
+
+## Why this is a great time to learn
+We intuitively think of some things as easier to learn than others. It's easier to learn how to ride a bike than it is to bake a cake from scratch. We now have a tool to explain why this might be the case! 
+Activities like learning how to ride a bike have an almost ideal learning cycle. First, the space of actions is small (balance your torso, steer the handle, press the pedals), and second, the iterations are fast (you fall down, but it's quick to get up and try again). 
+The space of actions being small means that you don't have a hard time coming up with what your potential mistake was during reflection. Contrast this with something like baking, if your cake tastes bad, it could have been because you messed up the proportions of the ingredients (which has many possible combinations!), the temperature of the oven, etc.. 
+
+Proving mathematical statements is in a sense harder because the space of possibilities is HUGE! It is really hard to learn how to effectively navigate the space of possible actions. However, if we focus our attention on a single topic (algorithm design and analysis), we can constrain that space to a familiar set of tools, and significantly reduce the search space. 
+
+Furthermore, you have many different exercises to try from your textbooks, but also many great external resources about these topics! Leetcode is a great resource to quickly iterate through the learning cycle, because it is 1) focused in scope, and 2) you get quick feedback on correctness! Fortunately for us, there is a lot of overlap between the practice you get on websites like Leetcode and the content you learn in this class. 
+
+
+# How to Study {#sec-how-to-study}
+With all that in mind now, here is my suggestion on how to study for this class. 
+
+## Maintain a list of topics learned in this class
+The slides are a great place to refresh on the lectures, but you should actively try to create a new document that highlights the topics you learn in the class. This will give you a centralized place to refer to when trying to figure out what you have to study. The midterm 1 study guide is a great way to start this list! 
+
+## Pick a topic each day to practice
+We want to [focus our attention when learning](https://www.scotthyoung.com/blog/2020/05/04/do-the-real-thing/). Pick one or two topics from your list that you feel you need to practice, and find problems related to those. A good source from our class textbook is the "Creativity" section of the exercises. You could also go to leetcode and search from problems related to the selected topic. Leetcode problems have tags, for example the tag [greedy](https://leetcode.com/tag/greedy/) gives a list of problems related to greedy algorithms. Try to practice on problems that are level medium or higher. 
+
+If you are rusty on the math background, there are also many automated problem generators to serve as a source of practice for you too! [Khan academy](https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:logs/x2ec2f6f830c9fb89:log-intro/a/intro-to-logarithms) is a great one, but I'm sure there are many other ones too. If you struggled with the math prerequisites, I encourage you to spend a little bit of time practicing them too. 
+
+Another source of problems that you are forced to solve are the homework problems. Identify which topic we are trying to help you practice, and go through the steps below. 
+
+### Do! 
+Set a timer for 15 minutes and do your best to solve the problem. The first few times you try this, you **should not be able to do it**, so don't be discouraged if it is hard. Remember, our goal is to iterate through the learning cycle as many times as we can. 
+
+Once the timer goes off, 
+1. If you are close to a solution and feel confident, try for another 10 minutes. At the end of that 10 minutes, move on. 
+2. If you don't feel close to solving it, move on to the next step.
+
+### Reflect
+Find a solution to the problem, and try to compare what you did to what the solution did. Make sure that you understand the solution! This is a good step to spend time on. 
+
+- If you got it mostly correct, great job! It's time to try another problem. 
+
+- If you didn't get it right, don't worry! That's what this whole process is for anyways. For the reflection to be effective, you need to be quite diligent in the do step with recording what you are trying! Identify one key issue between your process and the solution, and explicitly say it out loud of write it down. Verbalize what you are missing so you can really pinpoint what knowledge you were missing. 
+	- If you really can't identify where you went wrong, feel free to ask us! Table it for your study session, and bring the problem to an office hour. We can try to figure it out together. 
+
+* For a homework problem, you may need to wait to do this until the next week. Feel free to ask us about your process though! We are happy to identify what you are doing correctly and what you may need to fix. 
+
+### Learn
+Now that you've identified what knowledge you were missing (level 1) or concept you were misunderstanding (level 2), spend some time to make sure that doesn't happen again. Review those missing pieces so you don't have to repeat this step for the same topic more than 2 times. 
+
+### Wrap Up
+I would say doing this every day for a total of 1.5 hours is a realistic goal. Once you finish, go to your list of topics and put a checkmark next to the topics you practiced that day. 
+
+## Identify connections in your learning
+Once you have about 5 checkmarks next to multiple topics, start doing this step too. Go through the list of things you have 5 checkmarks on, and see if those are related in anyway. Do they use similar ideas? Do you like one more than the other? If so, why? Does one of them depend on another idea? 
+
+Ideally at the end of the course, you'll have something like a mind map of the topics we cover in this course. This step of relating and synthesizing information you learned is a level 4 cognitive task! 
+
+
+# Final Note on Learning
+Some may argue that this document was a bit longer than it should be. In this last section I hope to convince you otherwise. 
+
+A secondary goal of this document was to walk through an example of **applying** Bloom's taxonomy so we can learn better! Note that we started with a level 1 introduction to Bloom's taxonomy (a picture explaining what it is), to understanding how it might work in action (level 2 understanding). For me, this was a level 3 exercise on Bloom's taxonomy, because I had to think of how to apply it to our particular context. 
+
+I encourage you to do something similar for your future learning as well, not just in school, but for anything you may want to learn more about. Try to see how to apply Bloom's taxonomy to the context of what you are trying to learn, and use it as a way to identify effective ways to develop a learning cycle for that topic. 
+
+Good luck on the remaining quarter and as always feel free to ask more questions about this if you need! 
