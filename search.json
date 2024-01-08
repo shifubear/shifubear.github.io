@@ -1,10 +1,24 @@
 [
   {
+    "objectID": "research/stoqma.html",
+    "href": "research/stoqma.html",
+    "title": "The Living StoqMA Page",
+    "section": "",
+    "text": "The introduction of the theory of quantum computation has added many new questions in complexity which may have not risen naturally in the classical realm. Many who study quantum computing may encounter the classes without reference to their source, and be quite confused to why such definitions are necessary or even arose in the first place. However, when examined more closely, we find that the sources of these classes are quite natural questions to ask about quantum computation, and known results and hypotheses give new ways to understand these questions. StoqMA is one such class, whose definition as a complexity class looks quite nonsensical at first, but has led to answering some interesting questions about quantum computing and complexity theory.\n\nDefinition\nThe class StoqMA is defined by the use of a stoquastic verifier. A stoquastic verifier is a verifier which can be modeled as a classical reversible circuit, which is a essentially a quantum circuit that only uses X, CNOT, and Toffoli gates. The verifier takes as input a classical string \\(x\\) along with a quantum witness which are passed to the circuit.\nA stoquastic verifier is a tuple \\(V = (n, n_w, n_0, n_+, U)\\), where \\(n\\) is the number of input bits, \\(n_w\\) the number of input witness qubits, \\(n_0\\) the number of input auxiliary qubits \\(\\ket{0}\\), \\(n_+\\) the number of input auxiliary qubits \\(\\ket{+}\\) and \\(U\\) is a quantum circuit on \\(n + n_w + n_0 + n_+\\) qubits with NOT, CNOT, and Toffoli gates (classical reversible circuit). The acceptance probability of a stoquastic verifier \\(V\\) on input string \\(x \\in \\{0, 1\\}^n\\) and \\(n_w\\)-qubit witness state \\(\\ket{\\psi}\\) is defined as \\(\\text{Pr}[V \\text{ accepts } (x, \\ket{\\psi})] = \\bra{\\psi_{in}}U^\\dagger \\Pi_{out} U \\ket{\\psi_{in}}\\). Here, \\(\\ket{\\psi_{in}} = \\ket{x} \\otimes \\ket{\\psi} \\otimes \\ket{0}^{\\otimes n_0} \\otimes \\ket{+}^{\\otimes n_+}\\) is the initial state and \\(\\Pi_{out} = \\ket{+}\\bra{+}_1 \\otimes I_{else}\\) projects the first qubit onto the state \\(\\ket{+}\\).\nA promise problem \\(L = (L_{yes}, L_{no}) \\in {StoqMA}(a,b)\\) iff there exists a uniform family of stoquastic verifiers, such that for any fixed number of input bits \\(n\\) the corresponding verifier \\(V\\) uses at most \\(p_1(n)\\) qubits, \\(p_2(n)\\) gates where both \\(p_1\\) and \\(p_2\\) are polynomials; and obeys the following: - Completeness: If \\(x \\in L_{yes}\\), then there is some \\(\\ket{\\psi}\\) s.t. \\(\\text{Pr}[V \\text{ accepts } (x, \\ket{\\psi})] \\geq a\\); - Soundness: If \\(x \\in L_{no}\\), then for any \\(\\ket{\\psi}\\), \\(\\text{Pr}[V \\text{ accepts } (x, \\ket{\\psi})] \\leq b\\)."
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "CS 166: Intro to Quantum Computing (Winter 2024)"
+  },
+  {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Currently I’m interested in questions regarding state and unitary synthesis. In the classical setting, computer scientists like to study decision problems, which are questions which have a yes or no question (e.g. can I choose numbers from this list so they sum to 0? can I solve this maze? Is 2384973874927 a prime number?), since we have a good idea of how to use the answer to the decision problem to find a solution we are interested in. Quantumly, this is much more difficult. The structure of quantum states is much more complex, and it’s not clear how to go from the answer of a decision problem to finding a certain state that we want (My advisor Sandy wrote a paper on this). This inspired a new line of research asking a new question, how hard is it to synthesize an arbitrary state? It’s surprising that the language around this question is just being formalized, even though it seems like a very natural question to ask. An extension to this question that is also developing is asking how hard it is to implement some desired operations on quantum states."
+    "text": "Currently I’m interested in questions regarding state and unitary synthesis. In the classical setting, computer scientists like to study decision problems, which are questions which have a yes or no question (e.g. can I choose numbers from this list so they sum to 0? can I solve this maze? Is 2384973874927 a prime number?), since we have a good idea of how to use the answer to the decision problem to find a solution we are interested in. Quantumly, this is much more difficult. The structure of quantum states is much more complex, and it’s not clear how to go from the answer of a decision problem to finding a certain state that we want (My advisor Sandy wrote a paper on this). This inspired a new line of research asking a new question, how hard is it to synthesize an arbitrary state? It’s surprising that the language around this question is just being formalized, even though it seems like a very natural question to ask. An extension to this question that is also developing is asking how hard it is to implement some desired operations on quantum states.\nSome recent results have shown evidence that perhaps the hardness of quantum problems comes from the measurement problem. This problem can roughly be stated as finding the best way to measure a quantum state to extract the most information. The evidence of the hardness of this problem is highlighting what we are missing in classical complexity theory, and may be the way to generalize the problem setting in order to solve many unexplored problems."
   },
   {
     "objectID": "posts/21-08-14-cassava/index.html",
@@ -291,7 +305,7 @@
     "href": "index.html#now",
     "title": "Shion Fukuzawa",
     "section": "Now",
-    "text": "Now\nI am currently visiting the Simons Institute for their Summer cluster on quantum computing. I’ll be here until August 6, and will be flying back home to Tokyo for a month before returning for the Fall quarter."
+    "text": "Now\nI am back at UC Irvine, starting my fourth year. I can’t believe it’s my fourth year already, but it’s also cool to see how much I’ve learned. I’m now working on - Unitary synthesis and quantum complexity theory - Preparing for teaching my first undergraduate course in the Winter, Introduction to Quantum Computing."
   },
   {
     "objectID": "index.html#education",
@@ -306,6 +320,13 @@
     "title": "Shion Fukuzawa",
     "section": "Publications",
     "text": "Publications\n\nModified Iterative Quantum Amplitude Estimation is Asymptotically Optimal with Chris Ho, Sandy Irani, and Jasen Zion to appear in ALENEX2023\nDiamonds are Forever in the Blockchain: Geometric Polyhedral Point-Set Pattern Matching with Gill Barequet, Michael Goodrich, David Mount, Martha Osegueda, and Evrim Ozel CCCG2022"
+  },
+  {
+    "objectID": "courses/166wi24.html",
+    "href": "courses/166wi24.html",
+    "title": "Introduction to Quantum Information and Computing",
+    "section": "",
+    "text": "Announcements\n\n(January 6) Welcome to the course!\n\n\n\nKey Documents and Pages for the Course\n\nMake sure to read through the syllabus. I have outlined the expectations for myself and for you for this quarter amongst other things.\n\n\n\nCourse Outline\nThe following is the breakdown of the three modules we will divide the class into.\n\nModule 1: Math Foundations\n\nProbability and Complex numbers\nLinear algebra\nQuantum circuits\nComplexity\n\nModule 2: Quantum Information\n\nNo cloning theorem and quantum money\nQuantum teleportation\nCHSH game\nHidden variable theory\nError correction\n\nModule 3: Quantum Computing\n\nQuery algorithms: Deutsch-Josza, Bernstein-Vazirani, Simon’s\nQuantum Fourier Transform\nShor’s algorithm\nGrover’s algorithm\nPhase estimation\n\n\n\n\nLecture notes\nThe following are digital copies of the lecture notes. I will post annotated versions as we progress through the course as well.\n\nWeek 1 (unannotated notes, annotated notes)\n\nProbability and complex numbers, linear algebra A, quantum circuits A\n\n\n\n\nProblem Sets\nPlease submit your problem sets to gradescope. If you do not have access to gradescope, let me know ASAP.\n\nNothing here yet…\n\n\n\nExtra practice and references\n\nNothing here yet…\n\n\n\nDiagnostic Exams\n\nNothing here yet…"
   },
   {
     "objectID": "blog.html",

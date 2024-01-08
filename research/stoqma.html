@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shion Fukuzawa">
-<meta name="dcterms.date" content="2022-11-26">
 
-<title>Shion Fukuzawa - Hall LGLAR Chapter 3: The Matrix Exponential</title>
+<title>Shion Fukuzawa - The Living StoqMA Page</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,17 +61,17 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shion Fukuzawa</span>
     </a>
   </div>
@@ -83,15 +81,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html">
+    <a class="nav-link" href="../teaching.html">
  <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html">
+    <a class="nav-link" href="../research.html">
  <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
@@ -100,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -111,53 +109,36 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Hall LGLAR Chapter 3: The Matrix Exponential</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">notes</div>
-                <div class="quarto-category">math</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Shion Fukuzawa </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 26, 2022</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Living StoqMA Page</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p>This is a collection of my notes from chapter 3 of Brian Hall’s “Lie Groups, Lie Algebras, and Representations”. In this chapter we are finally introduced to the definition of a Lie algebra, and learn how they are related to Lie groups. In the literature, Lie algebras are often expressed using lowercase Gothic (Fraktur) characters. In latex, these characters can be written using the command “\mathfrak”.</p>
-<section id="definitions-and-first-examples" class="level2">
-<h2 class="anchored" data-anchor-id="definitions-and-first-examples">Definitions and First Examples</h2>
-<p><strong>Definition 1</strong>: A <strong>finite-dimensional real or complex Lie algebra</strong> is a finite-dimensional real or complex vector space <span class="math inline">\(\frak{g}\)</span>, together with a map <span class="math inline">\([\cdot, \cdot]\)</span> from <span class="math inline">\(\frak{g} \times \frak{g}\)</span> into <span class="math inline">\(\frak{g}\)</span>, with the following properties: 1. <span class="math inline">\([\cdot, \cdot]\)</span> is bilinear. 2. <span class="math inline">\([\cdot, \cdot]\)</span> is skew-symmetric: <span class="math inline">\([X, Y] = - [Y, X]\)</span> for all <span class="math inline">\(X, Y \in \frak{g}\)</span>. 3. The <strong>Jacobi identity</strong> holds: <span class="math display">\[[X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0\]</span> for all <span class="math inline">\(X, Y, Z \in \frak{g}\)</span>.</p>
-<p>Two elements <span class="math inline">\(X, Y\)</span> of a Lie algebra $ $ <strong>commute</strong> if <span class="math inline">\([X, Y] = 0\)</span>. A Lie algebra <span class="math inline">\(\frak{g}\)</span> is <strong>commutative</strong> if <span class="math inline">\([X, Y] = 0\)</span> for all <span class="math inline">\(X, Y \in \frak{g}\)</span>.</p>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The introduction of the theory of quantum computation has added many new questions in complexity which may have not risen naturally in the classical realm. Many who study quantum computing may encounter the classes without reference to their source, and be quite confused to why such definitions are necessary or even arose in the first place. However, when examined more closely, we find that the sources of these classes are quite natural questions to ask about quantum computation, and known results and hypotheses give new ways to understand these questions. StoqMA is one such class, whose definition as a complexity class looks quite nonsensical at first, but has led to answering some interesting questions about quantum computing and complexity theory.</p>
+<section id="definition" class="level1">
+<h1>Definition</h1>
+<p>The class StoqMA is defined by the use of a <strong>stoquastic verifier</strong>. A stoquastic verifier is a verifier which can be modeled as a classical reversible circuit, which is a essentially a quantum circuit that only uses X, CNOT, and Toffoli gates. The verifier takes as input a classical string <span class="math inline">\(x\)</span> along with a quantum witness which are passed to the circuit.</p>
+<p>A stoquastic verifier is a tuple <span class="math inline">\(V = (n, n_w, n_0, n_+, U)\)</span>, where <span class="math inline">\(n\)</span> is the number of input bits, <span class="math inline">\(n_w\)</span> the number of input witness qubits, <span class="math inline">\(n_0\)</span> the number of input auxiliary qubits <span class="math inline">\(\ket{0}\)</span>, <span class="math inline">\(n_+\)</span> the number of input auxiliary qubits <span class="math inline">\(\ket{+}\)</span> and <span class="math inline">\(U\)</span> is a quantum circuit on <span class="math inline">\(n + n_w + n_0 + n_+\)</span> qubits with NOT, CNOT, and Toffoli gates (classical reversible circuit). The acceptance probability of a stoquastic verifier <span class="math inline">\(V\)</span> on input string <span class="math inline">\(x \in \{0, 1\}^n\)</span> and <span class="math inline">\(n_w\)</span>-qubit witness state <span class="math inline">\(\ket{\psi}\)</span> is defined as <span class="math inline">\(\text{Pr}[V \text{ accepts } (x, \ket{\psi})] = \bra{\psi_{in}}U^\dagger \Pi_{out} U \ket{\psi_{in}}\)</span>. Here, <span class="math inline">\(\ket{\psi_{in}} = \ket{x} \otimes \ket{\psi} \otimes \ket{0}^{\otimes n_0} \otimes \ket{+}^{\otimes n_+}\)</span> is the initial state and <span class="math inline">\(\Pi_{out} = \ket{+}\bra{+}_1 \otimes I_{else}\)</span> projects the first qubit onto the state <span class="math inline">\(\ket{+}\)</span>.</p>
+<p>A promise problem <span class="math inline">\(L = (L_{yes}, L_{no}) \in {StoqMA}(a,b)\)</span> iff there exists a uniform family of stoquastic verifiers, such that for any fixed number of input bits <span class="math inline">\(n\)</span> the corresponding verifier <span class="math inline">\(V\)</span> uses at most <span class="math inline">\(p_1(n)\)</span> qubits, <span class="math inline">\(p_2(n)\)</span> gates where both <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> are polynomials; and obeys the following: - <strong>Completeness:</strong> If <span class="math inline">\(x \in L_{yes}\)</span>, then there is some <span class="math inline">\(\ket{\psi}\)</span> s.t. <span class="math inline">\(\text{Pr}[V \text{ accepts } (x, \ket{\psi})] \geq a\)</span>; - <strong>Soundness:</strong> If <span class="math inline">\(x \in L_{no}\)</span>, then for any <span class="math inline">\(\ket{\psi}\)</span>, <span class="math inline">\(\text{Pr}[V \text{ accepts } (x, \ket{\psi})] \leq b\)</span>.</p>
 
 
 </section>
