@@ -305,7 +305,7 @@
     "href": "index.html#now",
     "title": "Shion Fukuzawa",
     "section": "Now",
-    "text": "Now\nI am teaching CS166 Intro to quantum information and quantum computing. It’s my first time teaching a full course so I am really excited! Check out the course page here.\nResearch wise I have started exploring the class StoqMA more. I am interested to see if there is a search-to-decision reduction in this class, which should exist given the hypothesis that StoqMA = MA."
+    "text": "Now\nResearch wise I have put down StoqMA to the side for a bit while I focus on some other projects. I am still interested to see if there is a search-to-decision reduction in this class, so would love to discuss this with anyone interested.\nI am now working on searching for constructive proofs for the containment of 2D commuting local Hamiltonian problem on qutrits in NP. Sandy Irani and Jiaqing Jiang showed this fact in this QIP paper, albeit non-constructively.\nI am also working on characterizing the monogamy of entanglement with some of my undergraduate students who were in my quantum computing course. We hope to also develop a simple webapp where we can have students in a classroom play through a quantum game.\nTeaching wise, I am working as a TA for the graduate data structures course at UCI taught by David Eppstein (CS 261), and am preparing to teach introduction to analysis of algorithms (CS 161) during the summer quarter."
   },
   {
     "objectID": "index.html#education",
