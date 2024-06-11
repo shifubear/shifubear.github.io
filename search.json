@@ -11,7 +11,7 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "CS 166: Intro to Quantum Computing (Winter 2024)"
+    "text": "CS 166: Intro to Quantum Computing (Winter 2024) CS 161: Design and Analysis of Algorithms (Summer 2024)"
   },
   {
     "objectID": "research.html",
@@ -320,6 +320,13 @@
     "title": "Shion Fukuzawa",
     "section": "Notable Publications",
     "text": "Notable Publications\n\nModified Iterative Quantum Amplitude Estimation is Asymptotically Optimal with Chris Ho, Sandy Irani, and Jasen Zion ALENEX2023\nDiamonds are Forever in the Blockchain: Geometric Polyhedral Point-Set Pattern Matching with Gill Barequet, Michael Goodrich, David Mount, Martha Osegueda, and Evrim Ozel CCCG2022"
+  },
+  {
+    "objectID": "courses/161su24.html",
+    "href": "courses/161su24.html",
+    "title": "Design and Analysis of Algorithms",
+    "section": "",
+    "text": "Announcements\n\n(June 11) Welcome to the course! As state in canvas, this will be the place where most content will be hosted. I will post material that is relevant to this summer session in the Canvas page, and this will be announced as it happens.\n\n\n\nKey Documents and Pages for the Course\n\nComing soon \n\n\n\nStaff and Contact Info\n\nComing soon \n\n\n\nCourse Outline\n\nComing soon \n\n\n\nLecture notes\n\nComing soon  \n\n\n\nProblem Sets\n\nComing soon \n\n\n\nPractice midterms\n\nComing soon"
   },
   {
     "objectID": "courses/166wi24.html#test-rules",

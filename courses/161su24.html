@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Shion Fukuzawa - Design and Analysis of Algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Shion Fukuzawa</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../teaching.html">
+ <span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shifubear"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Design and Analysis of Algorithms</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- ![](./166wi24files/frankie.jpg) -->
+<section id="announcements" class="level1">
+<h1>Announcements</h1>
+<ul>
+<li>(June 11) Welcome to the course! As state in canvas, this will be the place where most content will be hosted. I will post material that is relevant to this summer session in the Canvas page, and this will be announced as it happens.</li>
+</ul>
+</section>
+<section id="key-documents-and-pages-for-the-course" class="level1">
+<h1>Key Documents and Pages for the Course</h1>
+<ul>
+<li>Coming soon <!-- - Make sure to read through the [syllabus](./166wi24files/syllabus.pdf). I have outlined the expectations for myself and for you for this quarter amongst other things. --></li>
+</ul>
+</section>
+<section id="staff-and-contact-info" class="level1">
+<h1>Staff and Contact Info</h1>
+<ul>
+<li>Coming soon <!-- If you need assistance, please use the Ed discussion board. For personal accommodations you may email me directly. 
+
+Instructor:
+
+- Shion Fukuzawa
+  - fukuzaws at uci dot edu
+  - Office hours: M 1-2pm @ ICS458B, WF 2-3pm @ ICS458C
+  - [PollEv link](https://PollEv.com​/shionfukuzawa524)
+
+TAs:
+
+- Fan Wang
+  - Office hours: F 330-5pm @ ICS458A
+- Kourosh Mirsohi 
+  - Office hours: Th 2-3pm @ Location TBD --></li>
+</ul>
+</section>
+<section id="course-outline" class="level1">
+<h1>Course Outline</h1>
+<ul>
+<li>Coming soon <!-- The following is the breakdown of the three modules we will divide the class into. 
+
+- Module 1: Math Foundations
+  - [done!] Probability and Complex numbers
+  - [done!] Quantum circuits
+  - [done!] Linear algebra
+  - Complexity
+- Module 2: Quantum Information 
+  - [done!] No cloning theorem and quantum money
+  - [done!] Quantum teleportation and superdense coding
+  - [done!] Hidden variable theories, monogamy of entanglement, and the CHSH game
+  - [done!] Quantum circuits and complexity 
+  - Error correction (Not covered this quarter)
+- Module 3: Quantum Computing
+  - [Done!] Query algorithms: Deutsch-Josza, Bernstein-Vazirani, Simon's
+  - [Done!] Quantum Fourier Transform 
+  - [Done!] Shor's algorithm
+  - [Done!] Grover's algorithm
+  - Phase estimation (Not covered this quarter) --></li>
+</ul>
+</section>
+<section id="lecture-notes" class="level1">
+<h1>Lecture notes</h1>
+<ul>
+<li>Coming soon <!-- The following are digital copies of the lecture notes. I will post annotated versions as we progress through the course as well. 
+
+- Week 1 ([unannotated notes](./166wi24files/week-1-notes.pdf), [annotated notes](./166wi24files/week-1-notes-annotated.pdf))
+  - Probability and complex numbers, linear algebra A, quantum circuits A
+- Week 2 and 3 ([unannotated notes](./166wi24files/week-2-notes.pdf), [annotated notes](./166wi24files/week-2-notes-annotated.pdf))
+  - Quantum circuits B
+- Week 4-6: 
+  - Information 1 - No cloning and quantum money ([unannotated notes](./166wi24files/week-3-notes-nocloning.pdf), [annotated notes](./166wi24files/week-3-notes-nocloning-annotated.pdf))
+  - Information 2 - Teleportation and superdense coding ([unannotated notes](./166wi24files/information-2-teleportation.pdf), [annotated notes](./166wi24files/information-2-teleportation-annotated.pdf))
+  - Information 3 - Hidden Variables and the CHSH Game ([unannotated notes](./166wi24files/information-3-chsh.pdf), [annotated notes](./166wi24files/information-3-chsh-annotated.pdf))
+  - Information 4 - Circuits and Complexity ([unannotated notes](./166wi24files/information-4-circuits.pdf), [annotated notes](./166wi24files/information-4-circuits-annotated.pdf))
+<!-- , [annotated notes](./166wi24files/information-2-teleportation-annotated.pdf) --> <!-- - Week 7-10:
+  - Computation 1 - Query based algorithms ([unannotated notes](./166wi24files/computation-1-query-algorithms.pdf), [annotated notes](./166wi24files/computation-1-query-algorithms-annotated.pdf))
+  - Computation 2 - Quantum Fourier Transform and Shor's Algorithm 
+    - Quantum Fourier Transform ([unannotated notes](./166wi24files/computation-2-a.pdf), [annotated notes](./166wi24files/computation-2-a-annotated.pdf))
+    - Properties of QFT and Period Finding ([unannotated notes](./166wi24files/computation-2-b.pdf), [annotated notes](./166wi24files/computation-2-b-annotated.pdf))
+    - RSA and Shor's algorithm ([unannotated notes](./166wi24files/computation-2-c.pdf), [annotated notes](./166wi24files/computation-2-c-annotated.pdf))
+  - Computation 3 - Grover's Algorithm ([unannotated notes](./166wi24files/computation-3.pdf), [annotated notes](./166wi24files/computation-3-annotated.pdf)) --></li>
+</ul>
+</section>
+<section id="problem-sets" class="level1">
+<h1>Problem Sets</h1>
+<ul>
+<li>Coming soon <!-- Please submit your problem sets to gradescope. If you do not have access to gradescope, let me know ASAP. Solutions will be posted to Canvas. 
+
+Assignments submitted by the due date will be graded and returned to you! 
+
+- [Homework 1](./166wi24files/hw-1.pdf): Due Tuesday January 16 11:59pm. 
+- [Homework 2](./166wi24files/hw-2.pdf): Due Wednesday January 24 16:00pm.
+- [Homework 3](./166wi24files/hw-3.pdf): Due Tuesday February 6 11:59pm. 
+- [Homework 4](./166wi24files/hw-4.pdf): Due Tuesday February 13 11:59pm. 
+- [Homework 5](./166wi24files/hw-5.pdf): Due Friday March 1 11:59pm. 
+- [Homework 6](./166wi24files/hw-6.pdf) (I will add one more problem later): Due Monday March 11 11:59pm.  --></li>
+</ul>
+</section>
+<section id="practice-midterms" class="level1">
+<h1>Practice midterms</h1>
+<ul>
+<li>Coming soon <!-- - Midterm 1: Foundations (Jan 26)
+  - Content: First two sets of notes, first two homework assignments. 
+  - [Example midterm](./166wi24files/practice_test.pdf)
+- Midterm 2: Information (Feb 16)
+  - Content: Problems based on Information 1-4. Select three during the midterm to attempt. 
+  - [Example midterm](./166wi24files/midterm-2-practice-v4.pdf)
+- Midterm 3: Computation (Mar 15)
+  - Content: Problems based on Computation 1-3. 
+  - [Example midterm](./166wi24files/midterm-3-example.pdf) [Annotated version](./166wi24files/midterm-3-example-annotated.pdf)
+  - [Midterm 3 Reference Sheet](./166wi24files/midterm-3-reference-sheet.pdf) --></li>
+</ul>
+<!-- # Test information
+
+## Midterm 2
+No cloning + quantum money: 
+- Understand the statement of the no cloning theorem, and be able to identify scenarios where it doesn’t apply. 
+- Be able to construct circuits to clone simple states. 
+- Understand the Weisner’s quantum money scheme. 
+    - This can be demonstrated by correctly simulating different portions of the quantum money protocol. 
+    - Be able to analyze the probability that the scheme succeeds or fails. 
+
+Teleportation and superdense coding
+- Successfully create a protocol for quantum teleportation, given any Bell pair shared between Alice and Bob and measurements by Alice. 
+- Successfully create a protocol for superdense coding, given any Bell pair shared between Alice and Bob. 
+
+Hidden Variables and CHSH 
+- Demonstrate saturation of Bell inequalities, and correctly analyze cases where the inequality gets violated with the introduction of entanglement. 
+
+Circuits and Complexity
+- Correctly categorize problems into P or NP
+- Have an idea of the necessary conditions for universality of quantum gates
+- Be able to simulate classical circuits using quantum circuits -->
+<!-- 
+## Test rules: 
+
+
+- The tests are closed note and closed book. However, you may bring a 3 by 5 inch index card with notes you have written. If you need an index card please let me know before or after class on exam week and I can give you one. 
+- You are not allowed to use a calculator, cell phone, smart watch, or other electronic device during the tests.
+- No talking during the tests.
+- You will be assigned a seat posted online. 
+- Do not start writing on the test until told to do so.
+- When the test period ends, we will tell you to stop writing. Please do so.
+- Please remember to bring a writing implement. We recommend you have a backup writing emplement just in case: pens can run out of ink, pencils can break or become too dull to write legibly, etc.
+- If you think that a question on the test is ambiguous, rather than ask a question, we recommend that you do the following on your answer sheet:
+  - List the different interpretations of the question
+  - State which interpretation you are using
+  - Give an answer consistent with that interpretation.
+  - To the extent that we can, we will try to grade your answer consistent with your interpretation. However, if your interpretation trivializes the question, you may lose points.
+I will provide you a copy of the following "Reference sheet" and scratch paper. Please use it as a guide during your midterm, and use the space as you need.
+- [Reference sheet](./166wi24files/exam-reference-sheet.pdf) -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="shifubear/shifubear.github.io" data-repo-id="R_kgDOIgiXHw" data-category="General" data-category-id="DIC_kwDOIgiXH84CS3yH" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
