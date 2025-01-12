@@ -382,7 +382,21 @@
     "href": "courses/166wi25pages/hw1/bonus-problems.html",
     "title": "HW1 - Bonus Problems",
     "section": "",
-    "text": "Wow already here! Give me a little bit more time, I’m still putting this page together."
+    "text": "Draw the following complex numbers and their complex conjugates in the complex plane. If they are in the standard representation, convert them to the phase representation and vice versa.\n\n\\(w = 1/2 + i\\)\n\\(z = \\frac{5}{2} - i\\frac{5\\sqrt{3}}{2}\\)\n\\(\\beta = 6(\\cos(\\pi/4) + i\\sin(\\pi/4))\\)\n\\(\\xi = 0.01(\\cos(4\\pi/3) + i\\sin(4\\pi/3))\\)"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw1/bonus-problems.html#problem-2",
+    "href": "courses/166wi25pages/hw1/bonus-problems.html#problem-2",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 2",
+    "text": "Problem 2\nFor each pair of vectors below, compute their tensor product, \\(\\left<\\phi|\\psi\\right>\\) and \\(\\left<\\psi|\\phi\\right>\\).\n\n\\(\\left|\\psi\\right> = \\begin{bmatrix}7 \\\\ 4i\\end{bmatrix}\\) and \\(\\left|\\phi\\right> = \\begin{bmatrix}3i \\\\ 2\\end{bmatrix}\\)\n\n\\(\\left|\\psi\\right> = \\begin{bmatrix}3 + 2i \\\\ -2\\end{bmatrix}\\) and \\(\\left|\\phi\\right> = \\begin{bmatrix}1 - 3i \\\\ 4 + i\\end{bmatrix}\\)?"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw1/bonus-problems.html#problem-3",
+    "href": "courses/166wi25pages/hw1/bonus-problems.html#problem-3",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 3",
+    "text": "Problem 3\nWrite down a function is_qubit() in a language of choice that takes as input a list of length 2 and returns True if the input represents a qubit, and False otherwise."
   },
   {
     "objectID": "courses/166wi25pages/hw1/4-problem.html",
