@@ -305,7 +305,7 @@
     "href": "index.html#now",
     "title": "Shion Fukuzawa",
     "section": "Now",
-    "text": "Now\nResearch wise I have put down StoqMA to the side for a bit while I focus on some other projects. I am still interested to see if there is a search-to-decision reduction in this class, so would love to discuss this with anyone interested.\nI am now working on searching for constructive proofs for the containment of 2D commuting local Hamiltonian problem on qutrits in NP. Sandy Irani and Jiaqing Jiang showed this fact in this QIP paper, albeit non-constructively.\nI am also working on characterizing the monogamy of entanglement with some of my undergraduate students who were in my quantum computing course. We hope to also develop a simple webapp where we can have students in a classroom play through a quantum game.\nTeaching wise, I am working as a TA for the graduate data structures course at UCI taught by David Eppstein (CS 261), and am preparing to teach introduction to analysis of algorithms (CS 161) during the summer quarter."
+    "text": "Now\nI am teaching UCI’s undergraduate quantum computing course for my second time this quarter. I feel a lot more comfortable going into it a second time, and have had some time to implement improvements I was considering after the first offering."
   },
   {
     "objectID": "index.html#education",
@@ -397,6 +397,20 @@
     "title": "HW1 - Bonus Problems",
     "section": "Problem 3",
     "text": "Problem 3\nWrite down a function is_qubit() in a language of choice that takes as input a list of length 2 and returns True if the input represents a qubit, and False otherwise."
+  },
+  {
+    "objectID": "courses/166wi25pages/hw1/bonus-problems.html#problem-4",
+    "href": "courses/166wi25pages/hw1/bonus-problems.html#problem-4",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 4",
+    "text": "Problem 4\nWrite down a function random_qubit() in a language of choice that randomly generates a qubit state. The output of this should pass the is_qubit() test from the previous problem."
+  },
+  {
+    "objectID": "courses/166wi25pages/hw1/bonus-problems.html#problem-5",
+    "href": "courses/166wi25pages/hw1/bonus-problems.html#problem-5",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 5",
+    "text": "Problem 5\nWrite down a function inner_product(q1, q2) in a language of choice that takes two qubit states and returns their inner product. Try running this function with the vectors in problem 2 and compare your solution against the output of the code."
   },
   {
     "objectID": "courses/166wi25pages/hw1/4-problem.html",
