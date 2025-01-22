@@ -1,0 +1,1525 @@
+% --- LaTeX Lecture Notes Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 12pt]{article}
+
+% --- Package imports ---
+
+% Extended set of colors
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{
+  amsmath, amsthm, amssymb, mathtools, dsfont, units,          % Math typesetting
+  graphicx, wrapfig, float, caption, subcaption,       % Figures and graphics formatting
+  listings, color, inconsolata, pythonhighlight,               % Code formatting
+  fancyhdr, sectsty, hyperref, enumerate, enumitem, framed,    % Headers/footers, section fonts, links, lists
+  braket, tikz}
+  
+\usetikzlibrary{quantikz2}
+
+% lipsum is just for generating placeholder text and can be removed
+\usepackage{hyperref, lipsum} 
+
+% --- Fonts ---
+
+\usepackage{newpxtext, newpxmath, inconsolata}
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=1in, right=1in, top=1.0in, bottom=.9in, headsep=.2in, footskip=0.35in]{geometry}
+
+% Anchor footnotes to the bottom of the page
+\usepackage[bottom]{footmisc}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% Set spacing between paragraphs
+\setlength{\parskip}{1.3mm}
+
+% Allow multi-line equations to break onto the next page
+\allowdisplaybreaks
+
+% --- Page formatting settings ---
+
+% Set image captions to be italicized
+\usepackage[font={it,footnotesize}]{caption}
+
+% Set link colors for labeled items (blue), citations (red), URLs (orange)
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, citecolor=RedOrange, urlcolor=ForestGreen}
+
+% Set font size for section titles (\large) and subtitles (\normalsize) 
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{{\fontsize{19}{19}\selectfont\textreferencemark}\;\; }{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\selectfont}{\thesubsection\;\;\;}{0em}{}
+
+% Enumerated/bulleted lists: make numbers/bullets flush left
+%\setlist[enumerate]{wide=2pt, leftmargin=16pt, labelwidth=0pt}
+\setlist[itemize]{wide=0pt, leftmargin=16pt, labelwidth=10pt, align=left}
+
+% --- Table of contents settings ---
+
+\usepackage[subfigure]{tocloft}
+
+% Reduce spacing between sections in table of contents
+\setlength{\cftbeforesecskip}{.9ex}
+
+% Remove indentation for sections
+\cftsetindents{section}{0em}{0em}
+
+% Set font size (\large) for table of contents title
+\renewcommand{\cfttoctitlefont}{\large\bfseries}
+
+% Remove numbers/bullets from section titles in table of contents
+\makeatletter
+\renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftsecaftersnum}{\end{lrbox}}
+\makeatother
+
+% --- Set path for images ---
+
+\graphicspath{{Images/}{../Images/}}
+
+% --- Math/Statistics commands ---
+
+% Add a reference number to a single line of a multi-line equation
+% Usage: "\numberthis\label{labelNameHere}" in an align or gather environment
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Shortcut for bold text in math mode, e.g. $\b{X}$
+\let\b\mathbf
+
+% Shortcut for bold Greek letters, e.g. $\bg{\beta}$
+\let\bg\boldsymbol
+
+% Shortcut for calligraphic script, e.g. %\mc{M}$
+\let\mc\mathcal
+
+% \mathscr{(letter here)} is sometimes used to denote vector spaces
+\usepackage[mathscr]{euscript}
+
+% Convergence: right arrow with optional text on top
+% E.g. $\converge[p]$ for converges in probability
+\newcommand{\converge}[1][]{\xrightarrow{#1}}
+
+% Weak convergence: harpoon symbol with optional text on top
+% E.g. $\wconverge[n\to\infty]$
+\newcommand{\wconverge}[1][]{\stackrel{#1}{\rightharpoonup}}
+
+% Equality: equals sign with optional text on top
+% E.g. $X \equals[d] Y$ for equality in distribution
+\newcommand{\equals}[1][]{\stackrel{\smash{#1}}{=}}
+
+% Normal distribution: arguments are the mean and variance
+% E.g. $\normal{\mu}{\sigma}$
+\newcommand{\normal}[2]{\mathcal{N}\left(#1,#2\right)}
+
+% Uniform distribution: arguments are the left and right endpoints
+% E.g. $\unif{0}{1}$
+\newcommand{\unif}[2]{\text{Uniform}(#1,#2)}
+
+% Independent and identically distributed random variables
+% E.g. $ X_1,...,X_n \iid \normal{0}{1}$
+\newcommand{\iid}{\stackrel{\smash{\text{iid}}}{\sim}}
+
+% Sequences (this shortcut is mostly to reduce finger strain for small hands)
+% E.g. to write $\{A_n\}_{n\geq 1}$, do $\bk{A_n}{n\geq 1}$
+\newcommand{\bk}[2]{\{#1\}_{#2}}
+
+% Math mode symbols for common sets and spaces. Example usage: $\R$
+\newcommand{\R}{\mathbb{R}}	% Real numbers
+\newcommand{\C}{\mathbb{C}}	% Complex numbers
+\newcommand{\Q}{\mathbb{Q}}	% Rational numbers
+\newcommand{\Z}{\mathbb{Z}}	% Integers
+\newcommand{\N}{\mathbb{N}}	% Natural numbers
+\newcommand{\F}{\mathcal{F}}	% Calligraphic F for a sigma algebra
+\newcommand{\El}{\mathcal{L}}	% Calligraphic L, e.g. for L^p spaces
+
+% Math mode symbols for probability
+\newcommand{\pr}{\mathbb{P}}	% Probability measure
+\newcommand{\E}{\mathbb{E}}	% Expectation, e.g. $\E(X)$
+\newcommand{\var}{\text{Var}}	% Variance, e.g. $\var(X)$
+\newcommand{\cov}{\text{Cov}}	% Covariance, e.g. $\cov(X,Y)$
+\newcommand{\corr}{\text{Corr}}	% Correlation, e.g. $\corr(X,Y)$
+\newcommand{\B}{\mathcal{B}}	% Borel sigma-algebra
+
+% Other miscellaneous symbols
+\newcommand{\tth}{\text{th}}	% Non-italicized 'th', e.g. $n^\tth$
+\newcommand{\Oh}{\mathcal{O}}	% Big-O notation, e.g. $\O(n)$
+\newcommand{\1}{\mathds{1}}	% Indicator function, e.g. $\1_A$
+
+% Additional commands for math mode
+\DeclareMathOperator*{\argmax}{argmax}		% Argmax, e.g. $\argmax_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\argmin}{argmin}		% Argmin, e.g. $\argmin_{x\in[0,1]} f(x)$
+\DeclareMathOperator*{\spann}{Span}		% Span, e.g. $\spann\{X_1,...,X_n\}$
+\DeclareMathOperator*{\bias}{Bias}		% Bias, e.g. $\bias(\hat\theta)$
+\DeclareMathOperator*{\ran}{ran}			% Range of an operator, e.g. $\ran(T) 
+\DeclareMathOperator*{\dv}{d\!}			% Non-italicized 'with respect to', e.g. $\int f(x) \dv x$
+\DeclareMathOperator*{\diag}{diag}		% Diagonal of a matrix, e.g. $\diag(M)$
+\DeclareMathOperator*{\trace}{trace}		% Trace of a matrix, e.g. $\trace(M)$
+\DeclareMathOperator*{\supp}{supp}		% Support of a function, e.g., $\supp(f)$
+
+% Numbered theorem, lemma, etc. settings - e.g., a definition, lemma, and theorem appearing in that 
+% order in Lecture 2 will be numbered Definition 2.1, Lemma 2.2, Theorem 2.3. 
+% Example usage: \begin{theorem}[Name of theorem] Theorem statement \end{theorem}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}{Question}
+
+% Un-numbered theorem, lemma, etc. settings
+% Example usage: \begin{lemma*}[Name of lemma] Lemma statement \end{lemma*}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem*{remark*}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{question*}{Question}
+
+% --- Left/right header text (to appear on every page) ---
+
+% Do not include a line under header or above footer
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+
+% Right header text: Lecture number and title
+\renewcommand{\sectionmark}[1]{\markright{#1} }
+\fancyhead[R]{\small\textit{\nouppercase{\rightmark}}}
+
+% Left header text: Short course title, hyperlinked to table of contents
+\fancyhead[L]{\hyperref[sec:contents]{\small Foundations}}
+
+% --- Document starts here ---
+
+\begin{document}
+
+% --- Main title and subtitle ---
+
+\title{Foundations \\[1em]
+\normalsize CS166 WI24}
+
+% --- Author and date of last update ---
+
+\author{\normalsize Shion Fukuzawa}
+\date{\normalsize\vspace{-1ex} Last updated: \today}
+
+% --- Add title and table of contents ---
+
+% \maketitle
+% {\Large\textbf{Module 1: Foundations}}
+
+% \tableofcontents\label{sec:contents}
+
+% % --- Main content: import lectures as subfiles ---
+
+% % First argument to \section is the title that will go in the table of contents. Second argument is the title that will be printed on the page.
+% \newpage 
+
+\section[Foundations 1 -- {\it Probability and Complex Numbers}]{Foundations 1: Probability and Complex Numbers (1/8)}
+
+\textit{Humor is the ability to see three sides to one coin} \small{- Ned Rorem}
+
+
+\subsection{A single coin}
+
+You may be familiar with the concept of a \textbf{sample space} from probability. This is simply the collection of possible outcomes given a probabilistic procedure. In this course, we will often discuss \textbf{state spaces} instead, which are the set of possible states some system can be in. The distinction is that a state represents a dynamic system, where the state is expected to change as time progresses due to some external force applied to it. In our case, this force will be modeled using computational gates, but more on that later. 
+
+Suppose we have a biased coin that lands on heads with probability $p$. 
+
+\begin{question}
+    What are the possible states that the coin can be in?
+\end{question}
+\vspace{20mm} %5mm vertical space
+
+An important thing to note is that when we say "state", this corresponds to our best representation of the object, not necessarily the true physical state of the object. Think of it as a mental model for our prediction of the state of the coin. Critically, this means that our mental representation of the coin can change depending on whether we are \textit{looking} at the coin or not. % Observation example. 
+
+\begin{question}
+    Suppose we took the coin and place it in a box, close it, then give it a good shake. How can we mathematically model and represent the action of shaking the box? 
+\end{question}
+\vspace{35mm} %5mm vertical space
+
+The above examples were instances of some important mathematical tools we will be using. 
+
+\begin{definition}[Probability Vector]
+    A \textbf{probability vector} is a vector containing nonnegative real entries that sum to 1. The entries store the probability of seeing the event corresponding to the index. 
+\end{definition}
+
+\begin{definition}[Stochastic Matrix]
+    A \textbf{stochastic matrix} is a matrix with nonnegative elements whose columns add up to 1. 
+\end{definition}
+
+\begin{question}
+    Show that multiplying a probability vector by a stochastic matrix always results in another probability vector. 
+\end{question}
+\vspace{40mm}
+
+\begin{question}
+    Describe the stochastic matrix representing the action of turning the box upside down. Think of it as flipping the coin regardless of its face. 
+\end{question}
+\vspace{40mm} %5mm vertical space
+
+
+\begin{question}
+    Consider the following coin game using a fair coin (probability of heads is 1/2), where the action will change depending on the state. The action during a single turn is the following:
+    \begin{itemize}
+        \item If the current state is HEADS: Do a fair coin flip. 
+        \item If the current state is TAILS: Turn the coin over. 
+    \end{itemize}
+    Describe the stochastic matrix corresponding to this game. 
+
+    \textit{Challenge}: If I had someone play this game for me for 100 turns, how would I represent the state of the coin? 1000 turns? Infinite turns? Is there a state the coin will converge to? 
+\end{question}
+\vspace{35mm} %5mm vertical space
+
+\newpage 
+\begin{example}
+    In general, we can describe the entries of a stochastic matrix for a coin by the following: 
+
+    \begin{equation}\begin{bmatrix}
+        \pr (T_{\text{after}}|T_{\text{before}}) & \pr (T_{\text{after}}|H_{\text{before}}) \\ 
+        \pr (H_{\text{after}}|T_{\text{before}}) & \pr (H_{\text{after}}|H_{\text{before}})
+    \end{bmatrix}
+    \end{equation}
+    This is consistent with our definition, as the columns correspond to conditioned probability distributions implying that the entries are nonnegative and do sum to 1. 
+\end{example}
+
+\subsection{Two coins}
+
+How can we extend this mathematical model to a system of two coins? Suppose we have two biased coins, where the state of the first coin is represented by the vector $\begin{bmatrix}
+    a \\ b
+\end{bmatrix}$ and the state of the second coin is represented by the vector $\begin{bmatrix}
+    c \\ d
+\end{bmatrix}$. Then, 
+\begin{equation}
+    \begin{bmatrix}
+        \pr[TT] \\ \pr[TH] \\ \pr[HT] \\ \pr[HH] 
+    \end{bmatrix} = \begin{bmatrix}
+        ac \\ ad \\ bc \\ bd
+    \end{bmatrix} = \begin{bmatrix}
+        a \\ b
+    \end{bmatrix} \otimes \begin{bmatrix}
+        c \\ d
+    \end{bmatrix} = \begin{bmatrix}
+        a \begin{bmatrix}
+            c \\ d
+        \end{bmatrix} \\  b \begin{bmatrix}
+            c \\ d
+        \end{bmatrix}
+    \end{bmatrix}
+\end{equation}
+In the above equation, the symbol "$\otimes$" is called the \textbf{tensor product} or Kronecker product and will be the standard way we combine two state spaces. 
+
+\begin{question}
+    Suppose someone flipped two fair coins (probability of seeing heads is 1/2). How would we represent the full system of the two coins?
+\end{question}
+\vspace{40mm} %5mm vertical space
+
+\newpage 
+Two coins introduces some complexity to our model. It turns out that not all probability vectors with four elements can be described by simply taking the tensor product between two probability vectors with two elements! We will prove this is the case by taking a special example in the following question.  
+
+\begin{question}
+    Consider the following probability vector:
+    \begin{equation}\label{eq:notes-1-1-bell-state}
+        B = \begin{bmatrix}
+            1/2 \\ 0 \\ 0 \\ 1/2
+        \end{bmatrix}
+    \end{equation}
+    Prove that this vector cannot be constructed by taking the tensor product between two probability vectors representing coins. 
+\end{question}
+\vspace{50mm} %5mm vertical space
+
+
+\begin{question}
+    Suppose both of the coins begin in the state tails. Is there a sequence of actions on the individual coins (think stochastic matrices) such that the final state of the two coins will be $B$ defined in equation (\ref{eq:notes-1-1-bell-state})? 
+\end{question}
+\vspace{50mm} %5mm vertical space
+
+We will call states that can't be decomposed into a tensor product of smaller states a \textbf{correlated state}. Why correlated? If I told you what the state of the first coin, this will tell you something about the state of the second coin! 
+
+% \subsection{Extra Resources}
+
+
+\newpage
+\subsection{Complex Numbers and Trigonometry}
+
+\textit{The shortest path between two truths in the real domain passes through the complex domain.} 
+
+\small{- Jacques Hadamard}
+
+Before diving into our exploration of quantum states, it'll be helpful to review some important definitions and properties about complex numbers, as well as the vectors and matrices that have complex entries. We will also observe the versatility of linear algebra, as it gives us a handle on describing states \textit{and} complex numbers. 
+
+\begin{definition}[Complex Number (Standard Representation)]
+    A \textbf{complex number} $\alpha$ is a number that can be written as 
+    \begin{equation}
+        \alpha = a + bi
+    \end{equation}
+    for two real numbers $a$ and $b$, and $i$ is defined to be the constant satisfying $i^2 = -1$. This is the \textbf{standard representation} (or \textbf{standard form}) of expressing a complex number. The set of all complex numbers will be written as $\C$. 
+
+    Every complex number has a \textbf{complex conjugate}. The complex conjugate of $\alpha = a + bi$ is 
+    \begin{equation}
+        \alpha^* = a - bi.
+    \end{equation}
+\end{definition}
+
+A single complex number can be described as a vector in the \textbf{complex plane} where the x-axis corresponds to the real component $a$ and the y-axis corresponds to the imaginary component $b$. We could rewrite a complex number as a column vector using its "coordinates" as $\begin{bmatrix}
+    a \\ b
+\end{bmatrix}$.
+
+\begin{figure}[h]
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figs/complex_plane.png}
+         \label{fig:complex-plane-1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figs/complex_plane.png}
+         \label{fig:complex-plane-2}
+     \end{subfigure}
+\end{figure}
+
+\begin{question}
+    Draw the vector representing the complex number $w = 0.5 - 0.3i$ and $w^*$ in the left figure. In the right figure, draw $z = \sqrt{\frac{3}{4}} + i\sqrt{\frac{1}{4}}$ and $z^*$.
+\end{question}
+
+\begin{definition}[Norm of Complex Number]
+    The \textbf{norm} $|\alpha|$ of a complex number $\alpha$ is defined as 
+    \begin{equation}
+        |\alpha| = \sqrt{a^2 + b^2}.
+    \end{equation}
+    This is the "size" of the complex number, and we can see why this is true by looking at the complex plane. Because of this, $|\alpha| > 0$ for any complex number, and the only time $|\alpha| = 0$ is when $\alpha = 0$.     
+\end{definition}
+
+\begin{question}
+    Find the norm of $w$ and $z$ from the previous problem. 
+\end{question}
+\vspace{30mm}
+
+What can we say about a right triangle with hypotenuse of 1? 
+
+\vspace{30mm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figs/midterm2/unit-circle.jpg}
+    \label{fig:enter-label}
+\end{figure}
+\newpage 
+
+Another way to represent a complex number is by its phase representation. 
+
+\begin{definition}[Complex Number (Phase Representation)]
+    On the complex plane, we can also represent the number using the counterclockwise angle $\theta$ from $1 + 0i$, and its norm $|\alpha|$. That is, 
+    \begin{equation}
+        \alpha = |\alpha| ( \cos \theta + i \sin \theta) = |\alpha|e^{i\theta}
+    \end{equation}
+    where the last equality uses the identity $e^{i\theta} = \cos \theta + i \sin \theta$. 
+\end{definition}
+
+\begin{question}
+    Write the complex number $\alpha = \frac{3}{\sqrt{2}} - \frac{3}{\sqrt{2}}i$ in its phase representation. What can you say about its complex conjugate $\alpha^*$? 
+\end{question}
+\vspace{50mm}
+
+% \begin{question}
+%     What is the complex conjugate of $\alpha = |\alpha|e^{i\theta}$ in the phase representation? 
+% \end{question}
+% \vspace{15mm} %5mm vertical space
+
+
+% \begin{question}
+%     Compute the norm of $\alpha = 3 + 7i$, $\beta = -2 -3i$, $\gamma = \frac{1}{\sqrt{3}} - \sqrt{\frac{2}{3}}i$.
+% \end{question}
+% \vspace{15mm}
+
+\begin{question}
+    Show that $|\alpha| = \sqrt{\alpha^* \alpha} = \sqrt{\alpha \alpha^*}$. Try computing the norm of $\alpha$ from the above example using this method.
+\end{question}
+\vspace{30mm}
+
+
+% \begin{question}
+%     Express the complex number with phase representation $7 \cdot e^{i5\pi/6}$ in the standard representation. 
+% \end{question}
+\newpage
+\subsection{Summary and future directions}
+
+We defined a probability vector to be a vector that models a distribution over states. We did this by assigning two quite natural constraints, 
+\begin{enumerate}
+    \item the entries must sum to 1, and 
+    \item the entries must be nonnegative real numbers.
+\end{enumerate}
+As mathematicians, we like to generalize requirements on interesting objects. How would we generalize the above definition? 
+
+The first constraint is equivalent to saying that the $L1$-norm of the vector must be 1 (we will review norms, but if this doesn't ring a bell you should do a quick google search on the definition). 
+
+\vspace{30mm}
+
+\begin{question}
+    Draw the set of points in the 2D plane whose $L1$-norm is 1. 
+\end{question}
+
+\vspace{30mm}
+
+This, however, is not the standard norm we study in linear algebra! We are more familiar with measuring the length of a vector by the $L2$-norm. Maybe we can require the vectors to be unit vectors in the standard $L2$-norm. 
+
+Once we begin considering $L2$-norms, the entries don't need to be nonnegative real numbers, since we will be squaring them anyways. Maybe we can use negative numbers, or even complex numbers! 
+
+It turns out that these two generalizations for a probability vector are exactly what physicists use to describe quantum states, and more importantly what we will be using to represent the states of quantum computers. We will show that this is a good generalization as many of the questions we answered here will work for quantum states as well. 
+
+\newpage 
+
+\section{Homework 1 Cover Sheet}
+
+Submit this document along with your completed homework to receive credit for completing homework 1. The homework problems are on the course website. Make sure to spend some time reviewing the content before starting your one hour timer for each problem. Do not spend more than an hour per problem. If you want guidance after your hour before the solutions are released, come find us in office hours and we are more than happy to help out. 
+
+\subsection{Problem 1}
+
+\begin{itemize}
+    \item Time taken: 
+    \item Self-graded score: 
+\end{itemize}
+
+\subsection{Problem 2}
+
+\begin{itemize}
+    \item Time taken: 
+    \item Self-graded score: 
+\end{itemize}
+
+\subsection{Problem 3}
+
+\begin{itemize}
+    \item Time taken: 
+    \item Self-graded score: 
+\end{itemize}
+
+\subsection{Problem 4}
+
+\begin{itemize}
+    \item Time taken: 
+    \item Self-graded score: 
+\end{itemize}
+
+
+\newpage 
+
+% \newpage 
+
+
+\section[Foundations 2a -- {\it Introduction to Qubits}]{Foundations 2a: Introduction to Qubits (1/10)}
+
+\subsection{A Single Qubit}
+
+We are now ready to begin our discussion of quantum states. Let's start by defining a quantum bit or qubit which is a quantum state that can model a binary system. 
+
+\begin{definition}
+    A \textbf{qubit} is an object which can be represented using a \textit{unit vector} with complex \textbf{amplitudes} $\alpha_0$ and $\alpha_1$ as 
+    \begin{equation}\label{eq:notes-1-3-qubit}
+        \ket{\psi} = \begin{bmatrix}
+            \alpha_0 \\ \alpha_1
+        \end{bmatrix},
+    \end{equation}
+    where we say that $\alpha_i$ is the amplitude corresponding to the event $i$ for $i \in \{0, 1\}$. The notation $\ket{\psi}$ is read as "ket" "psi". 
+\end{definition}
+
+A unit vector is a vector with length 1. The length of a vector can be found by calculating 
+\begin{equation}
+    ||\ket{\psi}|| = \sqrt{|\alpha_0|^2 + |\alpha_1|^2}
+\end{equation}
+
+\begin{question}
+    Which of the following represents a qubit? 
+
+    \begin{equation}
+        \ket{\psi_1} = \begin{bmatrix}
+            \frac{1}{\sqrt{3}} \\ \sqrt{\frac{2}{3}}
+        \end{bmatrix} \;\;\;\; 
+        \ket{\psi_2} = \begin{bmatrix}
+            \frac{1}{2} \\ \frac{1}{2}
+        \end{bmatrix} \;\;\;\; 
+        \ket{\psi_3} = \begin{bmatrix}
+            \cos\theta \\ \sin \theta
+        \end{bmatrix}
+    \end{equation}
+\end{question}
+
+\newpage 
+
+Two of the most important states that we will be using throughout the course are the \textbf{standard basis states}, defined as 
+\begin{equation}
+    \ket{0} = \begin{bmatrix}
+        1 \\ 0
+    \end{bmatrix}, \;\;\; \ket{1} = \begin{bmatrix}
+        0 \\ 1
+    \end{bmatrix}.
+\end{equation}
+These are the vectors corresponding to the two primary states that the system can be in. We can use linearity of vectors to write equation (\ref{eq:notes-1-3-qubit}) as a linear combination of the standard basis states:
+
+\vspace{20mm}
+
+When both coefficients are nonzero, we say that the state $\ket{\psi}$ is in \textbf{superposition}. 
+
+We are now equipped with the language to represent the state of a qubit. How do we interpret this state? A crucial operation in quantum computing is measurement, which, for our purposes is the way we read out the result of a quantum algorithm. If we measure $\ket{\psi}$ in the standard basis, 
+\begin{itemize}
+    \item with probability $|\alpha_0|^2$: we \textit{observe} the outcome $\ket{0}$, and the qubit \textit{collapses} to $\ket{0}$.
+    \item with probability $|\alpha_1|^2$: we \textit{observe} the outcome $\ket{1}$, and the qubit \textit{collapses} to $\ket{1}$.
+\end{itemize}
+Similar to the case of the probability vector, \textit{observation} collapses the state to the one that we observe. The key difference that makes quantum states special is the fact that there are physical particles which can truly represent superposition, whereas our discussion around probability vectors was slightly superficial. 
+
+\begin{question}
+    Suppose we have the state 
+    \begin{equation}
+        \ket{\phi} = \left( \frac{1}{\sqrt{6}} - i \frac{1}{\sqrt{6}} \right)\ket{0} + \left( \frac{1}{\sqrt{3}} + i \frac{1}{\sqrt{3}}\right)\ket{1}.
+    \end{equation}
+    What is the probability of measuring $\ket{0}$, and what is the state after the measurement?
+\end{question}
+
+\newpage 
+
+\subsection{Multiple Qubits Sneak Peek}
+
+To represent a probability distribution over more than two states, we simply use a probability vector with the number of states we need. 
+
+\begin{question}
+Suppose we had $n$ bits available. How many states can we represent? 
+\end{question}
+\vspace{15mm}
+
+
+We can extend our system to multiple qubits the same way we did for probability vectors. Instead of probabilities for events occurring, each event $x$ has an associated complex number $\alpha_x$ called its \textbf{amplitude}. As a vector, this would look like
+\begin{equation}
+    \ket{\psi} = \begin{bmatrix}
+        \alpha_0 \\ \alpha_1 \\ \vdots \\ \alpha_{2^n - 1}
+    \end{bmatrix}.
+\end{equation}
+
+We use the tensor product notation again to combine systems of states. For example, a system of two qubits in the $\ket{0}$ would be written as 
+\begin{equation}
+    \ket{0} \otimes \ket{0} = \begin{bmatrix}
+        1\\0\\0\\0
+    \end{bmatrix}.
+\end{equation}
+Again, we require that the vector is a unit vector: $\sum_{i=0}^{2^n - 1} |\alpha_i|^2 = 1$. This ensures that the squared norm of the amplitudes form a probability distribution. 
+
+\begin{question}
+    Write down a 2-qubit state where the probability of measuring each qubit is equal. 
+\end{question}
+\newpage 
+
+\subsection{Transformations}
+
+Quantum algorithms have three main components: 
+\begin{enumerate}
+    \item Store quantum information (statevector)
+    \item Manipulate quantum information (unitary transformations)
+    \item Extract some output (quantum measurement)
+\end{enumerate}
+
+We've seen examples of what 1 and 3 look like, so here we will briefly discuss 2. The manipulation of quantum information can be thought of as a transformation from one quantum state to a new quantum state, which can be expressed in vector form as 
+\begin{equation}
+    \begin{bmatrix}
+        \alpha_0 \\ \alpha_1 \\ \vdots \\ \alpha_{N-1}
+    \end{bmatrix} \rightarrow \begin{bmatrix}
+        \beta_0 \\ \beta_1 \\ \vdots \\ \beta_{N-1}
+    \end{bmatrix}.
+\end{equation}
+
+One requirement we have for these transformations is that they be linear. This means that if we know what a transformation does for all basis vectors, we will know how \textit{any} vector will be transformed. We will review this more carefully in the next section, so here we explore an example for single qubit states. 
+
+\begin{question}
+    Suppose we have a linear transformation $T$ that acts as follows on the standard basis states: 
+    \begin{align}
+        T\ket{0} = T\begin{bmatrix}
+            1 \\ 0
+        \end{bmatrix} = \begin{bmatrix}
+            a_0 \\ b_0
+        \end{bmatrix} &\;\;\;\;\;\;\;\;\;\;\;\; T\ket{1} = T\begin{bmatrix}
+            0 \\ 1
+        \end{bmatrix} = \begin{bmatrix}
+            a_1 \\ b_1
+        \end{bmatrix}
+    \end{align}
+    What is the action of $T$ on the state $\ket{\psi} := \gamma_0\ket{0} + \gamma_1 \ket{1}$?
+\end{question}
+\newpage 
+
+% We can always represent linear transformation with matrices. In our case, we further have the requirement that the transformation should map unit vectors to unit vectors. This property is satisfied by the family of \textbf{unitary matrices}. 
+
+% \begin{definition}[Unitary Transformation]
+%     Any linear transformation that preserves $L2$-norm is \textbf{unitary} (think takes unit vectors to unit vectors), and a matrix that represents such a transformation is a \textbf{unitary matrix}.
+% \end{definition}
+
+\section[Foundations 3a -- {\it Linear Algebra}]{Foundations 3a: Linear Algebra (1/12)}
+
+\textit{Hilbert space is a big place.}
+
+{\small{- Carlton Caves}}
+
+\subsection{Vector Spaces}
+
+In linear algebra, we are interested in studying vector spaces.
+
+\begin{definition}[Vector Space]
+    A \textbf{vector space} is a set of elements that is closed under linear combinations. A \textbf{linear combination} is a combination of vectors via vector addition and scalar multiplication. 
+\end{definition}
+
+The primary focus of this course will be the \textbf{complex vector space} of $N$ dimensions, which will be referred to via the short hand $\C^N$. You may also see me (and others) refer to the "Hilbert space" of quantum states. These are the same thing, as a Hilbert space can be thought of as a vector space where you can take inner products. Elements of $\C^N$ are vectors of the form 
+\begin{equation}
+    \ket{v} = \begin{bmatrix}
+    \alpha_0 \\ \alpha_1 \\ \vdots \\ \alpha_N
+\end{bmatrix}.
+\end{equation}
+You may be familiar with using $\Vec{v}$ to represent vectors, but here we will use $\ket{v}$ to represent column vectors.
+
+\begin{question}
+    Verify that $\C^N$ is indeed a vector space. I.e., are the elements closed under linear combinations.
+\end{question}
+\vspace{40mm}
+\newpage
+
+\subsection{Span and Linear Independence}
+
+\begin{definition}[Span]
+    The \textbf{span} of a set of $N$ vectors $\{\ket{\psi_1}, \ldots, \ket{\psi_N}\}$ is the set of all linear combinations of $\ket{\psi_1}, \ldots, \ket{\psi_N}$, i.e. the set of all states that can be written as 
+    \begin{equation}
+        c_1 \ket{\psi_1} + \cdots + c_N \ket{\psi_N}
+    \end{equation}
+    for all complex scalars $c_1, \ldots, c_N \in \C$. 
+\end{definition}
+\vspace{35mm}
+
+\begin{question}
+    If the following statement is true, prove it. If not, provide a counterexample:
+
+    For any pair of length two vectors with real entries $\ket{v}, \ket{w}$, the span of $\ket{v}$ and $\ket{w}$ is all of $\R^2$. In other words, any two pair of vectors spans the entire space. 
+\end{question}
+\vspace{35mm}
+
+\begin{definition}[Linearly Independent Set of Vectors]
+    Let $B = \{\ket{\psi_1}, \ldots, \ket{\psi_N}\}$ be a set of vectors in $\C^N$. We say that this set of vectors is \textbf{linearly independent} if 
+    \begin{equation}
+        c_1 \ket{\psi_1} + \cdots + c_N\ket{\psi_N} = 0
+    \end{equation}
+    if and only if $c_i = 0$ for all $i$. 
+\end{definition}
+
+The above definition is equivalent to saying that no basis vector can be written as a linear combination of the other basis vectors. Equivalently, we say that a set of vectors is independent if for any $\ket{\phi} \in \C^N$, there is a \textit{unique} set of scalars $c_1, \ldots, c_N \in \C^N$ such that 
+\begin{equation}
+    c_1\ket{\psi_1} + \cdots + c_N \ket{\psi_N} = \ket{\phi}.
+\end{equation}
+\vspace{35mm}
+
+\subsection{Inner Products and Bases}
+
+We can equip a vector space with an inner product, which is an operation that maps two vectors to a scalar value. We will refer to a vector space with an inner product a \textbf{Hilbert space}. 
+
+\begin{definition}[Inner Product ($\C^N$)]
+    Let $\ket{\psi} = \begin{bmatrix}
+        \alpha_1 \\ \vdots \\ \alpha_N
+    \end{bmatrix}$ and $\ket{\phi} = \begin{bmatrix}
+        \beta_1 \\ \vdots \\ \beta_N
+    \end{bmatrix}$ be elements of $\C^N$. Then the \textbf{inner product} between $\ket{\psi}$ and $\ket{\phi}$ is $\sum_i \alpha_i^* \beta_i$. In matrix product form, an equivalent way to write this is 
+    \begin{equation}
+        \begin{bmatrix}
+            \alpha_1^* & \cdots & \alpha_N^*
+        \end{bmatrix} \begin{bmatrix}
+            \beta_1 \\ \vdots \\ \beta_N
+        \end{bmatrix} = \sum_i \alpha_i^* \beta_i.
+    \end{equation}
+    In ket notation, we write the \textbf{dual} of a complex vector $\ket{\psi}$ as $\bra{\psi} := \begin{bmatrix}
+            \alpha_1^* & \cdots & \alpha_N^*
+    \end{bmatrix}$, read as \textbf{bra} psi. Using this notation, the inner product is often written as $\braket{\psi|\phi}$. We refer to the notation of writing vectors with these angle brackets as \textbf{bra-ket notation}. 
+\end{definition}
+
+\begin{question}
+    Let $\ket{\phi} = \begin{bmatrix}
+        i/\sqrt{3} \\ \sqrt{\frac{2}{3}}
+    \end{bmatrix}$ and $\ket{\psi} = \begin{bmatrix}
+        \frac{1}{\sqrt{2}} \\ -\frac{i}{\sqrt{2}}
+    \end{bmatrix}$. Calculate $\braket{\psi|\phi}$ and $\braket{\phi|\psi}$. 
+\end{question}
+\vspace{45mm}
+
+\begin{question}
+    What happens when we take the inner product of a vector with itself? Does it relate to a quantity about vectors you've seen before? 
+\end{question}
+\vspace{45mm}
+
+\begin{definition}[L2-norm]
+    For a vector $\ket{\psi} \in \C^N$, the \textbf{L2-norm} of $\ket{\psi}$ denoted is 
+    \begin{equation}
+        ||\ket{\psi} || := \sqrt{\braket{\psi|\psi}}.
+    \end{equation}
+    In this course, when we say norm, we will be referring to the L2-norm of the vector unless otherwise stated. If the norm of a vector is 1, we say that vector is a \textbf{unit vector}. 
+\end{definition}
+
+\begin{question}
+    What is the norm of $\ket{\psi} = (2+i)\ket{0} + (3 - 2i)\ket{1}$?
+\end{question}
+\vspace{60mm}
+
+\begin{definition}[Orthogonality]
+    Given two vectors $\ket{\psi}$ and $\ket{\phi}$ in $\C^N$, we say that they are \textbf{orthogonal} if $\braket{\psi|\phi} = 0$.
+\end{definition}
+
+The inner product is a useful metric in defining a notion of similarity between two vectors. We roughly say a high inner product between two vectors means they have high overlap, and they point in similar directions. 
+\vspace{40mm}
+
+\begin{definition}[Orthogonal Basis]
+    If a set of $N$ vectors $B = \ket{\psi_1},\ldots,\ket{\psi_N}$ in $\C^N$ is mutually orthogonal (i.e., if $i \neq j$ then $\braket{\psi_i|\psi_j} = 0$), we say that $B$ forms an \textbf{orthogonal basis} for $\C^N$.
+
+    Furthermore, if every vector $\ket{\psi_i}$ is also a unit vector, we call it an \textbf{orthonormal basis}.
+\end{definition}
+
+\newpage 
+
+\begin{question}
+    Write a set of orthonormal basis vectors for $\R^2$ besides the standard basis and draw it on the plane. Find an orthonormal basis for $\C^4$ where one of the vectors is $\frac{1}{\sqrt{2}}(\ket{00} + \ket{11})$
+\end{question}
+\vspace{100mm}
+
+\subsection{Summary}
+
+We have now covered the main foundational mathematical concepts we will be using to build our understanding of quantum computing. One thing I have really enjoyed about quantum computing is that it gave me a new way to visualize and understand the above tools, which you may have felt were quite abstract in your preliminary courses. I hope this new angle will give you a new appreciation and understanding of these tools. Next week we will start looking at small quantum systems and get familiar with the circuits we will use to prove ideas about the limits of information and construct algorithms. 
+
+\newpage 
+
+\section[Foundations 2b -- {\it Single Qubit Systems}]{Foundations 2b: Single Qubit Systems (1/15)}
+
+\textit{"Truth is simple yet purposely complex."
+}
+
+{\small{- Wald Wassermann}}
+
+A quantum algorithm comprises of three main components. 
+\begin{enumerate}
+    \item Storing quantum information (statevector)
+    \item Manipulating the stored quantum information (unitary transformations), and 
+    \item Extracting a result (quantum measurement).
+\end{enumerate}
+
+\subsection{Storing Quantum Information}
+
+The smallest quantum system we can define is a single qubit. 
+
+\begin{definition}[Qubit]
+    A \textbf{qubit} is an object whose state can be represented by a unit vector $\ket{\psi} \in \C^2$. 
+\end{definition}
+
+As elements of a Hilbert space, any qubit should be expressible as a linear combination of some basis vectors. The first basis we will use is the standard basis.
+
+\begin{example}
+    The \textbf{standard basis} of a single qubit is the set 
+    \begin{equation}
+        \left\{ \begin{bmatrix}
+            1 \\ 0
+        \end{bmatrix}, \begin{bmatrix}
+            0 \\ 1
+        \end{bmatrix} \right\}.
+    \end{equation}
+    In braket notation, we will describe these vectors as $\ket{0} := \begin{bmatrix}
+            1 \\ 0
+        \end{bmatrix}$ and $\ket{1} := \begin{bmatrix}
+            0 \\ 1
+        \end{bmatrix}$. 
+\end{example}
+
+
+\begin{example}
+    The \textbf{Hadamard basis} is the set containing the following two vectors:
+    \begin{align}
+        &\ket{+} := \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1}, \\ 
+        &\ket{-} := \frac{1}{\sqrt{2}} \ket{0} - \frac{1}{\sqrt{2}} \ket{1}.
+    \end{align}
+\end{example}
+
+\begin{question}
+    Verify that the Hadamard basis is indeed an orthonormal basis for a single qubit. 
+\end{question}
+
+\newpage 
+Any state can be written in the Hadamard basis as well. This is equivalent to saying that there exist unique scalars $\alpha'$ and $\beta'$ such that
+\begin{equation}
+    \ket{\psi} := \alpha \ket{0} + \beta \ket{1} = \alpha' \ket{+} + \beta' \ket{-}.
+\end{equation}
+
+\begin{question}
+    Let $\ket{\phi} := \frac{1}{2}\ket{0} + \frac{\sqrt{3}}{2} \ket{1}$. Express $\ket{\phi}$ in the Hadamard basis. 
+\end{question}
+\vspace{50mm}
+
+In the case of having more than one qubit, we can think of having a system that can be represented by a unit vector in $(\C^2)^{\otimes n}$, where the tensor power notation is shorthand for 
+\begin{equation}
+    (\C^2)^{\otimes n} := \C^2 \otimes \overset{n}{\cdots} \otimes \C^2 = \C^{2^n}.
+\end{equation}
+
+\begin{example}[3 qubit system]
+    The \textbf{standard basis} for 3 qubits is the set of all combinations of the tensor product over single qubit standard basis states. For example, one such state is 
+    \begin{equation}
+        \ket{000} := \ket{0} \otimes \ket{0} \otimes \ket{0} = \begin{bmatrix}
+            1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+        \end{bmatrix}.
+    \end{equation}
+    We like to abbreviate $\otimes$ when using braket notation if it isn't too confusing. Using this shorthand, the full set of standard basis states for 3 qubits is 
+    \begin{equation}
+        \{\ket{000}, \ket{001}, \ket{010}, \ket{011}, \ket{100}, \ket{101}, \ket{110}, \ket{111}\}.
+    \end{equation}
+    We will also often write these states as 
+    \begin{equation}
+        \{\ket{0}, \ket{1}, \ket{2}, \ket{3}, \ket{4}, \ket{5}, \ket{6}, \ket{7}\}.
+    \end{equation}
+\end{example}
+
+\newpage 
+\subsection{Transforming Quantum Systems}
+
+A quantum state should only be transformed into another quantum state. By our definition, this means that the transformation should preserve the L2-norm, and it should also be linear. An operation that satisfies these properties is called \textbf{unitary}, and every unitary transformation can be represented by a \textbf{unitary matrix}. This is the family of "quantum gates" we will be using throughout this course. 
+
+\begin{question}
+    Suppose we have a qubit in the following state:
+    \begin{equation}
+        \ket{\psi} = \begin{bmatrix}
+            \frac{1+i}{2} \\ \frac{1 - i}{2}
+        \end{bmatrix}
+    \end{equation}
+    and we have a unitary whose action is represented by the matrix 
+    \begin{equation}
+        U = \begin{bmatrix}
+            \frac{1}{2} & \frac{i\sqrt{3}}{2} \\ 
+            -\frac{\sqrt{3}}{2} & \frac{i}{2}
+        \end{bmatrix}
+    \end{equation}
+
+    What is the state of our system after $A$ is applied to $\ket{\psi}$? 
+\end{question}
+\vspace{30mm}
+
+\begin{definition}[Adjoint]
+    The \textbf{adjoint} $A^\dagger$ (read "A dagger") of a matrix $A$ is the matrix you get after transposing $A$ and taking the complex conjugate of each element. This process is also referred to as taking the \textbf{conjugate transpose} of a matrix.
+\end{definition}
+
+\begin{question}
+    What is the adjoint of $A$? Calculate $\bra{\phi}A^\dagger$ and $\braket{\phi|A^\dagger A|\phi}$. 
+\end{question}
+\newpage 
+
+
+One of the most basic unitary matrices that will show up is the \textbf{identity matrix}. This is the matrix with ones on its diagonals and zeros everywhere else. We will use $I_n$ to denote the $n \times n$ identity matrix.
+
+Let's see a consequence of requiring an operator $U$ to be norm-preserving when applied to a quantum state. We can write this condition mathematically as 
+\begin{equation}
+    || \ket{\psi} ||_2 = 1 \rightarrow ||U \ket{\psi} || _2 = 1,
+\end{equation}
+which we know can alternatively be written as 
+\begin{equation}
+    \braket{\psi | \psi} = 1 \rightarrow \braket{\psi | U^\dagger U | \psi} = 1. 
+\end{equation}
+
+An important consequence of this fact is that all quantum operations are \textbf{reversible}. For any starting state $\ket{\psi}$ and norm preserving operation $U$, we can find the inverse operator $U^\dagger$ which is simply the adjoint of $U$.
+
+\begin{question}
+    Are classical operations reversible? If not, describe an operation that is not reversible.
+\end{question}
+\vspace{20mm}
+
+\begin{definition}
+    A matrix $U$ is a \textbf{unitary matrix} if any of the following equivalent definitions are true.
+    \begin{itemize}
+        \item $U$ is norm-preserving. 
+        \item $U$ preserves inner products (inner product of $\ket{\psi}$ and $\ket{\phi}$ is equal to the inner product of $U\ket{\psi}$ and $U\ket{\phi}$.
+        \item $U^\dagger U = U U^\dagger = I$.
+        \item Rows of $U$ form an orthonormal basis. 
+        \item Columns of $U$ form an orthonormal basis. 
+    \end{itemize}
+\end{definition}
+
+\begin{question}
+    Prove that all of the above definitions for a unitary matrix are equivalent. 
+\end{question}
+\vspace{55mm}
+
+\subsection{Single Qubit Operations}
+
+Here we will look at examples of important single qubit operators. 
+
+\begin{question}
+    Determine the action of the following single qubit operators on the standard basis states. What about their action on a state in superposition, $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$?
+    \begin{equation}
+        1)\; I = \begin{bmatrix}
+            1 & 0 \\ 0 & 1
+        \end{bmatrix} \;\;\;  2)\; \begin{bmatrix}
+            0 & 1 \\ 1 & 0
+        \end{bmatrix} \;\;\;  3)\; \begin{bmatrix}
+            1 & 0 \\ 0 & i
+        \end{bmatrix}\;\;\;  4)\; \begin{bmatrix}
+            0 & -i \\ -1 & 0 
+        \end{bmatrix}\;\;\; 5)\; H = \frac{1}{\sqrt{2}}\begin{bmatrix}
+            1 & 1 \\ 1 & -1
+        \end{bmatrix}
+    \end{equation}
+\end{question}
+\vspace{65mm}
+
+The final operator we looked at in the previous question is called the \textbf{Hadamard gate} $H$. It serves the important function of transitioning between the standard and Hadamard basis. It also is a good gate for us to see our first example of \textbf{negative interference}. 
+
+\begin{question}
+    What is the adjoint of the Hadamard gate? Verify this by computing $H^\dagger H \ket{0}$.
+\end{question}
+\vspace{45mm}
+
+Let's use the previous question to see how we draw quantum circuits. 
+\begin{center}
+\begin{quantikz}
+    \ket{0}&\gate{H}&\gate{H^\dagger}&\\
+\end{quantikz}
+\end{center}
+The starting state of each qubit is written on the left, and the sequence of gates we apply goes from left to right. 
+
+\begin{definition}[Important Single Qubit Gates]
+    The following gates will appear frequently throughout this course and are standard in the literature. 
+    \begin{itemize}
+        \item Hadamard gate: $H := \frac{1}{\sqrt{2}}\begin{bmatrix}
+            1 & 1 \\ 1 & -1
+        \end{bmatrix}$.
+        \item Pauli gates: 
+        \begin{equation}
+            X := \begin{bmatrix}
+                0 & 1 \\ 1 & 0
+            \end{bmatrix} \;\;\; Y := \begin{bmatrix}
+                0 & -i \\ i & 0
+            \end{bmatrix} \;\;\;  Z := \begin{bmatrix}
+                1 & 0 \\ 0 & -1
+            \end{bmatrix} 
+        \end{equation}
+    \end{itemize}
+\end{definition}
+
+\begin{question}
+    What is the state of the qubit at the end of this circuit?
+\begin{center}
+\begin{quantikz}
+    \ket{0}&\gate{H}&\gate{Y}&\\
+\end{quantikz}
+\end{center}
+\end{question}
+
+Remember that since a qubit is a unit vector, if we know it has real amplitudes, it is a vector on the unit circle of the plane. This motivates the following standard gate we will be using as well. 
+
+\begin{definition}[Rotation gate]
+    The rotation gate $R_\theta$ is a parameterized gate defined as 
+    \begin{equation}
+        R_\theta := \begin{bmatrix}
+            \cos \theta & - \sin \theta \\ \sin \theta & \cos \theta
+        \end{bmatrix}. 
+    \end{equation}
+\end{definition}
+
+\begin{question}
+    Verify that the rotation gate is indeed unitary. 
+\end{question}
+
+\vspace{30mm}
+
+\begin{question}
+    Compute the following:
+    \begin{itemize}
+        \item $R_{\pi/4} \ket{0}$ \vspace{5mm}
+        \item $R_{\pi/4} \ket{+}$ \vspace{5mm}
+        \item $R_{\pi/4} \ket{1}$ \vspace{5mm}
+        \item $R_{\pi/4} \ket{-}$ \vspace{5mm}
+    \end{itemize}
+    You may need the fact that, $\cos (\pi/4) = \sin(\pi/4) = \frac{1}{\sqrt{2}}$.
+\end{question}
+
+Let's now look at the full family of single qubit states where we allow complex amplitudes. In your homework, you observed that multiplying a state by a \textbf{global phase} does not change the probability of observing an outcome. That is, multiplying both amplitudes by the same complex number $e^{i\theta}$ didn't change the measurement probabilities.
+
+Things get more interesting when we consider \textbf{relative phases}. These are phases that are applied separately to each amplitude, through transformations that might look like 
+\begin{equation}
+    \alpha\ket{0} + \beta \ket{1} \rightarrow \alpha \ket{0} + \beta e^{i\theta} \ket{1}. 
+\end{equation}
+
+\begin{question}
+    The Hadamard basis states can be written as two states that differ by a relative phase: 
+    \begin{align}
+        \ket{+} &= \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} \\
+        \ket{-} &= \frac{1}{\sqrt{2}} \ket{0} + e^{i\pi} \frac{1}{\sqrt{2}} \ket{1}.
+    \end{align}
+    What is the probability of measuring $\ket{0}$ and $\ket{1}$ for each of these states? What if we apply the $H$ gate first to each state and then measure? 
+\end{question}
+\vspace{75mm}
+
+The above question highlights that relative phase is different from global phase, and can actually be detected. It seems then, that the most general way to express the state of a qubit is something like the following, where $m_0, m_1, \phi_0, \phi_1 \in \R$: 
+\begin{equation}
+    \ket{\psi} := m_0 e^{i\pi \phi_0} \ket{0} + m_1 e^{i\pi \phi_1} \ket{1}.
+\end{equation}
+Thus we have found a four variable parameterization of a qubit. However, we only have two real constraints for a qubit state: 
+\begin{enumerate}
+    \item The $L_2$-norm is 1. 
+    \item The global phase does not matter. 
+\end{enumerate}
+
+\begin{question}
+    Use the constraint of the $L2$ norm to express $m_0$ and $m_1$ using a single parameter. 
+\end{question}
+\vspace{25mm}
+
+\begin{question}
+    Use the constraint on the global phase factor to express $\phi_0$ and $\phi_1$ using a single parameter.
+\end{question}
+\vspace{25mm}
+
+\begin{lemma}[Parameterization of a qubit]
+    
+\end{lemma}
+\vspace{20mm}
+
+We can sum up the important properties of quantum operations as follows: 
+\begin{enumerate}
+    \item \textbf{Reversible.} By unitarity, any operation $U$ has a reverse operation $U^\dagger$.
+    \item \textbf{Deterministic.} The action of a unitary $U$ is well defined.
+    \item \textbf{Continuous.} Any unitary $U$ can be performed "half-way". 
+\end{enumerate}
+
+\begin{question}
+    Find the "half-way" unitary operator of $Z$. That is, find the unitary $U$ such that $U\cdot U = Z$. 
+\end{question}
+
+\newpage
+
+\subsection{Single Qubit Measurements}
+
+The final piece of quantum algorithms we need to formalize are quantum measurements. In contrast to the properties that transformations had, quantum measurements have the exact opposite properties. 
+\begin{enumerate}
+    \item \textbf{Irreversible}. Once a measurement is performed, there is no way to recover the state before without rerunning the entire algorithm. 
+    \item \textbf{Probabilistic}. The probability of observing an outcome is the squared norm of the amplitude corresponding to that outcome. 
+    \item \textbf{Discrete}. Measurement results are inherently discrete. 
+\end{enumerate}
+
+Up until know, all measurements I described were performed in the \textbf{standard basis}. However, it turns out that we can measure in any basis we like! If you fix a basis, every qubit has a unique representation in that basis. 
+
+\begin{example}
+    Consider the Hadamard basis $\ket{+}$, $\ket{-}$. Suppose we have a state $\ket{\psi} := \alpha \ket{0} + \beta \ket{1}$. We can express this state in the Hadamard basis with another pair of amplitudes $\alpha'$ and $\beta'$ as 
+    \begin{equation}
+        \ket{\psi} = \alpha' \ket{+} + \beta' \ket{-}.
+    \end{equation}
+    Measuring in a different basis affects the measurement outcomes. If we measure in the standard basis, $\{\ket{0}, \ket{1}\}$:
+    \begin{enumerate}
+        \item $\ket{0}$ with probability $| \braket{0|\psi} | ^2 = |\alpha|^2$, and 
+        \item $\ket{1}$ with probability $| \braket{1|\psi} | ^2 = |\beta|^2$.
+    \end{enumerate}
+    If we measure in the Hadamard basis, $\{\ket{+}, \ket{-}\}$:
+    \begin{enumerate}
+        \item $\ket{+}$ with probability $| \braket{+|\psi} | ^2 = |\alpha'|^2$, and 
+        \item $\ket{-}$ with probability $| \braket{-|\psi} | ^2 = |\beta'|^2$.
+    \end{enumerate}
+\end{example}
+
+\begin{question}
+    What are the outcomes and corresponding probabilities if we measure $\ket{1}$ in the standard basis? What about in the Hadamard basis? 
+\end{question}
+\newpage 
+
+The standard basis and Hadamard basis are a pair of \textbf{complementary bases}. This means that if you are certain that the state is in $\ket{+}$ or $\ket{-}$, you will be maximally \textit{uncertain} of the state in the standard basis, and vice versa. Another way to think of unitary matrices is that they are a transformation between two orthonormal bases. For example, the Hadamard basis is a transformation between the standard and Hadamard bases. 
+\begin{align}
+    \ket{+} &\overset{H}{\leftrightarrow} \ket{0} \\
+    \ket{-} &\overset{H}{\leftrightarrow} \ket{1} 
+\end{align}
+A useful consequence of this is that if we want to simulate a measurement in the Hadamard basis, we can apply the Hadamard gate and then measure in the standard basis. Let's now define measurements formally. 
+
+\begin{definition}[Measurements]
+    Let $\ket{\psi} \in \C^N$ be a quantum state on $n$ qubits and $\{\ket{v_1}, \ldots, \ket{v_N}\}$ be an orthonormal basis. If we measure in this basis, we will see outcome $\ket{v_i}$ with probability $|\braket{v_i|\psi}|^2$, and the state collapses to $\ket{v_i}$. 
+\end{definition}
+
+\newpage 
+\subsection{Distinguishing non-orthogonal states}
+
+Sometimes, we are interested in distinguishing outcomes of an experiment where the possible results are not necessarily orthogonal. This arises frequently in quantum computing with our limited capabilities of combating noise. 
+
+Consider the following experiment. We are running a simulation on a quantum device, which in theory should measure $\ket{0}$ with probability 1. However, there is some external noise affecting our system such that 1/2 of the time the experiment will end in the state $\ket{+}$ instead. In this case, we will say the experiment "failed". Can we effectively distinguish a failed experiment from a successful experiment? 
+
+\begin{question}
+    What are the probabilities and outcomes when we measure a successful vs. failed experiment in the standard basis?
+\end{question}
+\vspace{25mm}
+
+\begin{question}
+    What are the probabilities and outcomes when we measure a successful vs. failed experiment in the Hadamard basis?
+\end{question}
+\vspace{30mm}
+
+\begin{question}
+    There is no measurement that can be performed which can distinguish these outcomes perfectly. Is there a basis we can measure in that will do better than the previous two bases? 
+\end{question}
+
+\newpage 
+\subsection{Beam Splitters}
+
+A \textbf{beam splitter} is a device which is used to split of beam of light into two. This works even if a single photon is fired, and the measurement statistics will be correctly reproduced! If we place a photon detector at the two possible directions the photon goes after it is split, we will detect the photon with probability 1/2 at each location. The same thing happens if we fire it from the perpendicular direction! 
+
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.8\textwidth]{figs/week2/beam_splitter_1.png}
+         \label{fig:beam-splitter-1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}{0.3\textwidth}
+         \centering
+         \includegraphics[width=0.8\textwidth]{figs/week2/beam_splitter_2.png}
+         \label{fig:beam-splitter-2}
+     \end{subfigure}
+     \hfill
+\end{figure}
+
+\begin{question}
+    What would you expect the outcome of the following setup to be? That is, with what probabilities will each of the detectors find the photons? 
+\end{question}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/week2/beam_splitter_3.png}
+    \label{fig:beam-splitter-3}
+\end{figure}
+
+It turns out that the beam splitter acts like a Hadamard gate, and the horizontal "input" is like a $\ket{0}$ state, and the vertical "input" is like a $\ket{1}$ state. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/week2/beam_splitter_4.png}
+    \label{fig:beam-splitter-4}
+\end{figure}
+
+\newpage 
+\subsection{Elitzur-Vaidman Bombs}
+
+Consider the following thought experiment. Suppose that we had a bomb that we can fire a photon through which has the following properties:
+\begin{itemize}
+    \item If the bomb is not defective, the photon gets detected, and the bomb explodes. 
+    \item If the bomb is defective, the photon passes undetected, and the bomb does not explode. 
+\end{itemize}
+
+Suppose we have many of these bombs and would like to find one which is not defective without exploding it. This is impossible classically, that is, if we don't take advantage of the quantum nature of light. 
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figs/week2/elitzur_vaidman.png}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figs/week2/elitzur_vaidman.png}
+     \end{subfigure}
+     \hfill
+\end{figure}
+\vspace{20mm}
+
+\begin{question}
+    What is the probability of observing each outcome if the bomb is defective? 
+\end{question}
+
+\begin{question}
+    What is the probability the bomb explodes if the bomb is not defective? What is the probability of observing outcomes 0 and 1 if the bomb is not defective and it doesn't explode?
+\end{question}
+
+We can also describe this scenario using a quantum circuit, and creating a special gate to represent the bomb. We will define the gate $B$ as follows: 
+\begin{itemize}
+    \item If the bomb is defective, it is just an identity gate $I$. 
+    \item If the bomb is not defective, measure in the standard basis. If $\ket{0}$ is observed, keep going. If $\ket{1}$ is observed, the bomb explodes. 
+\end{itemize}
+
+
+\begin{center}
+\begin{quantikz}
+    \ket{0}&\gate{H}&\gate{B}&\gate{H}&\meter{}\\
+\end{quantikz}
+\end{center}
+\vspace{50mm}
+
+
+
+\section[Foundations 2c -- {\it Two Qubits, Tensor Products, and Entanglement}]{Foundations 2c: Two Qubits, Tensor Products, and Entanglement}
+
+\textit{Entanglement is not one but rather the characteristic trait of quantum mechanics.} 
+
+{\small{- Erwin Schrodinger}}
+
+
+The final building block for quantum systems that we need before going forward is \textbf{entanglement}. In simple terms, entanglement captures how dependent the probability of seeing one state is to the probability of seeing another state. It is a quantum generalization of joint and conditional distributions. 
+
+\subsection{Partial Measurements}
+
+Once we have multiple qubits, we can decide to just measure one qubit out of the full system. Suppose Alice and Bob each have one qubit, and an operation is performed on the full system (both qubits). Is there something we can say about Bob's qubit by \textbf{only} measuring Alice's qubit? 
+
+We will use the following state to illustrate examples in this section:
+\begin{equation}
+    \ket{\psi} := \begin{bmatrix}
+        \alpha \\ \beta \\ \gamma \\ \delta
+    \end{bmatrix} = \alpha \ket{00} + \beta \ket{01} + \gamma \ket{10} + \delta \ket{11}.
+\end{equation}
+We will say the first qubit is Alice's. 
+
+\begin{question}
+If Alice performs a measurement in the standard basis, what is the probability that she observes $\ket{0}$? What is the state after the measurement? Can the state be written as a tensor product of two states?
+\end{question}
+
+\begin{definition}[Partial Measurement Rule]
+    A quantum system collapses to fit the observed outcome from the measurement made.
+\end{definition}
+
+\begin{question}
+    Write the state $\ket{+-} := \ket{+}\otimes \ket{-}$ in the standard basis. 
+\end{question}
+\vspace{20mm}
+
+\begin{question}
+    Consider the following two states.
+    \begin{itemize}
+        \item $\ket{\phi_1} := \frac{1}{2} \ket{0} + \frac{\sqrt{3}}{2}\ket{1}$
+        \item $\ket{\phi_2} := \frac{1}{2} \ket{0} - \frac{\sqrt{3}}{2}\ket{1}$        
+    \end{itemize}
+    Express $\ket{\phi_1} \otimes \ket{\phi_2}$ in the standard basis. 
+\end{question}
+\vspace{10mm}
+
+If a 2 qubit state can be written as a tensor product, we call the state \textbf{independent} or \textbf{separable}. Not every two qubit state is separable, with an important example being the following state.
+\begin{equation}
+    \frac{\ket{00} + \ket{11}}{\sqrt{2}}.
+\end{equation}
+This state is so important in quantum information, that you'll see it referred to by different names including the \textbf{singlet state}, \textbf{Bell pair}, and others. When a state cannot be written as a tensor product of single qubit states, we say that the state is \textbf{entangled.}
+
+\begin{question}
+    If we measure the first qubit in a Bell pair, what is the probability of observing $\ket{0}$? What is the state of our system afterwards? 
+\end{question}
+\vspace{20mm}
+
+\begin{question}
+    Let $\ket{\psi} := \left( \frac{1}{\sqrt{3}} \ket{0} - \sqrt{\frac{2}{3}}\ket{1}\right) \otimes \left( \frac{1}{\sqrt{2}} \ket{0} +  \frac{1}{\sqrt{2}} \ket{1}\right)$. Suppose we measure the first qubit and observed $\ket{0}$. What was the probability of this event occurring? What is the state of the system after? 
+\end{question}
+\vspace{30mm}
+
+\begin{question}
+    Let $\ket{\phi} := \frac{1}{3}\ket{00} + \frac{1}{\sqrt{3}} \ket{10} + \frac{1}{\sqrt{3}}\ket{11}$. Suppose we measure the first qubit and observed $\ket{0}$. What was the probability of this event occurring? What is the state of the system after? What if we observed $\ket{1}$?
+\end{question}
+\vspace{30mm}
+
+\newpage 
+\subsection{Two Qubit Operations}
+
+We will now define operations on two qubit states. Since the space is now 4 dimensions, these actions are represented by $4 \times 4$ unitaries. 
+
+\begin{definition}[CNOT gate]
+    The CNOT (Controlled-NOT) gate will flip the second qubit if the first qubit is $\ket{1}$, and otherwise do nothing. 
+    \begin{equation}
+        CNOT := \begin{bmatrix}
+            1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0
+        \end{bmatrix}.
+    \end{equation}
+\end{definition}
+
+What if we want to apply a gate to only one qubit? The tensor product formalism gives us a nice way to define this. Suppose we want to apply an $X$ gate to just the second qubit. We can represent this action as applying an $I$ gate to the first qubit. 
+\begin{equation}
+    I \otimes X = \begin{bmatrix}
+        1 & 0 \\
+        0 & 1 
+    \end{bmatrix} \otimes \begin{bmatrix}
+        0 & 1 \\ 
+        1 & 0 
+    \end{bmatrix} = \begin{bmatrix}
+        1 \cdot \begin{bmatrix}
+        0 & 1 \\ 
+        1 & 0 
+    \end{bmatrix} & 0 \cdot \begin{bmatrix}
+        0 & 1 \\ 
+        1 & 0 
+    \end{bmatrix} \\
+        0 \cdot \begin{bmatrix}
+        0 & 1 \\ 
+        1 & 0 
+    \end{bmatrix} & 1 \cdot \begin{bmatrix}
+        0 & 1 \\ 
+        1 & 0 
+    \end{bmatrix}
+    \end{bmatrix} = \begin{bmatrix}
+        0 & 1 & 0 & 0 \\
+        1 & 0 & 0 & 0 \\ 
+        0 & 0 & 0 & 1 \\ 
+        0 & 0 & 1 & 0 
+    \end{bmatrix}. 
+\end{equation}
+
+In general, if we have a separable state $\ket{\psi_1} \otimes \ket{\psi_2}$ and two independent operators $A$ and $B$, we can represent the action $A \otimes B$ as follows: 
+\begin{equation}
+    (A \otimes B) \ket{\psi_1} \otimes \ket{\psi_2} = A \ket{\psi_1} \otimes B \ket{\psi_2}.
+\end{equation}
+
+\begin{question}
+    Use the above shortcut to compute the action of $H \otimes H$ on all four standard basis states. 
+\end{question}
+
+\newpage
+
+Sometimes it will be easier to work in bra-ket notation rather than using matrices, especially as the size of the system increases. Consider the operation $I\otimes I \otimes H \otimes I$ on a system of 4 qubits. The matrix needed to represent this has a size of $16 \times 16$. Instead, we can simply analyze the effect it has on states that are relevant: 
+\begin{align}
+    I_1 \otimes I_2 \otimes H_3 \otimes I_4 \ket{0000} &= \ket{00+0} \\
+    &= \ket{00} \otimes \frac{1}{\sqrt{2}}(\ket{0} + \ket{1}) \otimes \ket{0} \\
+    &= \frac{1}{\sqrt{2}} (\ket{0000} + \ket{0010}).
+\end{align}
+By linearity of operators, we can just perform the analysis on each term independently before combining them together at the end. 
+
+\subsection{Qubits in Quantum Circuit Notation}
+
+Consider the following two qubit circuit. 
+\begin{center}
+\begin{quantikz}
+    \ket{0}&\gate{H}&\ctrl{1}&&\\
+    \ket{0}&&\targ{}&\gate{X}&\\
+\end{quantikz}
+\end{center}
+The circuit starts in the state $\ket{00}$. We then apply an $H$ gate to just the first qubit, and then a CNOT gate with the first qubit as the control (a black circle represents the control bit). 
+
+\begin{question}
+    What is the state of the system after each operation? 
+\end{question}
+\newpage
+
+\subsection{Spooky Action at a Distance}
+
+Einstein never fully accepted quantum mechanics, in part because of the mysterious effects of entanglement. Once a Bell pair is created, in theory the corresponding qubits can be physically separated infinitely far. Experimentally, this has been verified up to 1000 miles apart! 
+
+Why did this fact not sit well with Einstein and other physicists of the time? Suppose we created a Bell pair and moved one qubit to a different galaxy. If Alice now measures her qubit, Bob's state instantly collapses to the same state! This happens faster than the speed of light and Alice has no way of communicating her result to Bob. How does Bob's state know what to collapse to? Is it somehow "predetermined" by the two states? 
+
+\begin{question}
+    Suppose Alice and Bob decide to measure in the Hadamard basis instead. What is the probability that Alice observes $\ket{+}$, and what is Bob's state afterwards? 
+\end{question}
+\vspace{100mm}
+
+Scientists referred to this and similar effects as "hidden variable theory", claiming that somehow the states agree upon how to be measured. We will later prove that there is no hidden variables, and the entanglement is really happening in the way we modeled! 
+
+
+
+\end{document} 
+
+
+
+\subsection{Inference}
+
+If someone gave us a coin and asked us to determine if it was weighted, how would we do so? Could we tell them what the exact weight is? This is a core problem in quantum computing that gets quite challenging, so it'll help to start thinking about this early on. Here we will consider the simple case of the coin, a.k.a. a distribution with two possible outcomes. 
+
+\subsection{Some Review}
+
+Let's review some key ingredients we will need for our proofs. Once we are done with a sequence of steps, we can think of our state as representing a sample space. We would like to sample from this state to determine what the bias of the coin $p$ is.
+
+\begin{definition}
+    A \textbf{random variable} is a function $X : S \rightarrow \R$ where $S$ is our sample space. That is, with every $x \in S$ there is an associated real number $X(x)$. 
+
+    The \textbf{expected value} of a random variable $X$ is defined to be 
+    \begin{equation}
+        \E(X) = \sum_{x\in S} p(x) X(x)
+    \end{equation}
+    where $p(x)$ is the probability that $x$ occurs. 
+\end{definition}
+
+\begin{question}
+    Define the random variable $X$ over the sample space of a coin as follows:
+    \begin{align}
+        &X(T) = 0 \\ &X(H) = 1
+    \end{align}
+    Suppose our coin has a probability of 0.8 to be heads. What is $\E(X)$?
+\end{question}
+\vspace{30mm}
+
+\begin{theorem}[Linearity of Expectation]
+    If we have two random variables $X$ and $Y$, then 
+    \begin{equation}
+        \E(X + Y) = \E(X) + \E(Y)
+    \end{equation}
+    and 
+    \begin{equation}
+        \E(cX) = c\E(X)
+    \end{equation}
+    for any constant $c \in \R$.
+\end{theorem}
+\vspace{10mm}
+\begin{question}
+    Prove the linearity of expectation.
+\end{question}
+\vspace{20mm}
+
+\begin{question}
+    Is it true that $\E(XY) = \E(X)\E(Y)$ for two random variables $X$ and $Y$? 
+\end{question}
+\vspace{20mm}
+
+\begin{definition}
+    The \textbf{variance} of a random variable $X$ is defined as 
+    \begin{equation}
+        \var(X) = \E[(X - \E(X))^2] = \E[f^2] - \E[f]^2.
+    \end{equation}
+    The variance describes how closely the value of the random variable clusters around its expected value. 
+
+    The \textbf{standard deviation} $\sigma(X)$ of a random variable is defined to be the square root of $\var(X)$.
+\end{definition}
+
+\begin{question}
+    Show that the two definitions of variance stated above are equivalent. 
+\end{question}
+\vspace{25mm}
+
+Given some random variable, we would like to bound the probability that it deviates from some value such as its mean. Why does this help us with inference? Suppose we would like to estimate the probability that a coin is heads. If we can show that the probability that over 300 coin tosses, the probability that our sample mean is significantly different from the true mean, we can confidently use our sample mean as the estimate of the true mean. The key tool computer scientists use for this task is called a \textbf{Chernoff bound}. Here we will go over the proof of weaker tools for a similar task, and simply state the Chernoff bound. 
+
+\begin{theorem}[Markov's Inequality]
+    Let $X : S \rightarrow \R$ be a nonnegative random variable. Then, for any $a > 0$, 
+    \begin{equation}
+        \pr(X \geq a) \leq \frac{\E(X)}{a}.
+    \end{equation}
+\end{theorem}
+
+\textit{Proof.}
+\vspace{30mm}
+
+Markov's inequality is quite loose, and doesn't tell us how many samples we would need for a good approximation. Consider the following problem:
+
+\begin{question}
+    Suppose we have a weighted coin that has probability 0.2 to land on heads. If we tossed the coin 20 times, find a bound for the probability that 16 of them were heads using Markov's inequality. 
+\end{question}
+\vspace{30mm}
+
+It turns out that you can't do much better than Markov's inequality in general if you only know the expected value. However, if we use the variance, we can get a tighter bound. 
+
+\begin{theorem}[Chebyshev's Inequality]
+    Let $X : S \rightarrow \R$ be a random variable with expectation $\E(X)$ and variance $\var(X)$. Then, for any $a \in \R$:
+    \begin{equation}
+        \pr(|X - \E(X)| \geq a) \leq \frac{\var(X)}{a^2}.
+    \end{equation}
+\end{theorem}
+
+\textit{Proof.}
+\vspace{30mm}
+
+\begin{question}
+    Consider the same scenario as question 13. What does Chebyshev's inequality say about the probability of this event? The variance of a Binomial distribution is given by $np(1-p)$. 
+\end{question}
+\vspace{30mm}
+
+\begin{theorem}[Chernoff-Hoeffding Bound]
+    Let $X_1, \ldots, X_n$ be independent random variables such that $a_i \leq X_i \leq b_i$. Consider the sum of these random variables, 
+    \begin{equation}
+        S_n = X_1 + \cdots + X_n.
+    \end{equation}
+    Then, for all $\epsilon > 0$, 
+    \begin{equation}
+        \pr(|S_n - \E[S_n]| \geq \epsilon) \leq 2 \exp\left( - \frac{2\epsilon^2}{\sum_{i=1}^n (b_i - a_i)^2} \right).
+    \end{equation}
+\end{theorem}
