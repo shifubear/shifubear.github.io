@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Shion Fukuzawa - HW2 - Problem 2</title>
+<title>Shion Fukuzawa - HW3 - Problem 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HW2 - Problem 2</h1>
+<h1 class="title">HW3 - Problem 4</h1>
 </div>
 
 
@@ -133,24 +133,22 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="problem-2-single-qubit-circuits" class="level1">
-<h1>Problem 2: Single Qubit Circuits</h1>
-<p>We will be using these matrices for this problem.</p>
-<p><span class="math inline">\(X = \begin{bmatrix}0 &amp; 1 \\ 1 &amp; 0\end{bmatrix} \;\;\;\; Y = \begin{bmatrix}0 &amp; -i \\ i &amp; 0\end{bmatrix} \;\;\;\; Z = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1\end{bmatrix}\)</span></p>
-<p><span class="math inline">\(A = \begin{bmatrix}\frac{i}{\sqrt{2}} &amp; \frac{1 - i}{2} \\ \frac{1 + i}{2} &amp; \frac{i}{\sqrt{2}}\end{bmatrix} \;\;\;\; B = \begin{bmatrix}0 &amp; e^{i\pi/3} \\ e^{i2\pi/3} &amp; 0\end{bmatrix} \;\;\;\; C = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; i\end{bmatrix}\)</span></p>
+<section id="problem-4-quantum-teleportation" class="level1">
+<h1>Problem 4: Quantum Teleportation</h1>
+<p>Design a quantum teleportation protocol where Alice and Bob share the <span class="math inline">\(\ket{\Psi^+}\)</span> state, instead of the <span class="math inline">\(\ket{\Phi^+}\)</span> state. You should follow the analysis we did in class to verify that this works successfully. The analysis should include:</p>
 <ol type="1">
-<li><p>Find the adjoint of the matrices <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>.</p></li>
-<li><p>For each of the following circuits, find the state of the qubit at the end of the circuit, and what the possible outcomes and probabilities are if we measure in the stated basis.</p></li>
+<li>A diagram of the circuit for the protocol</li>
+<li>A description of the state of Bob’s qubit after Alice’s measurements</li>
+<li>The sequence of gates to apply to Bob’s state depending on the measurement observed.</li>
 </ol>
-<ul>
-<li>Measure in the Hadamard basis: <img src="./circuit 2-1.png" class="img-fluid"></li>
-<li>Measure in the standard basis: <img src="./circuit 2-2.png" class="img-fluid"></li>
-<li>Measure in the standard basis: <img src="./circuit 2-3.png" class="img-fluid"></li>
-<li>Measure in the Hadamard basis: <img src="./circuit 2-4.png" class="img-fluid"></li>
-<li>Measure in the standard basis: <img src="./circuit 2-5.png" class="img-fluid"></li>
-</ul>
+<section id="bonus-code-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-code-implementation">(Bonus) Code Implementation</h2>
+<p>Look out for our TA’s Python notebook to attempt this part.</p>
+<p>Write a circuit that implements the quantum teleportation protocol you just designed, where Alice and Bob share a <span class="math inline">\(\ket{\Psi^+}\)</span> state. Test your protocol on a random input. One way to generate a random input is to create the <span class="math inline">\(\ket{\theta}\)</span> state from Problem 1, by sampling a random <span class="math inline">\(\theta\)</span> and applying a <span class="math inline">\(R_\theta\)</span> gate to your first qubit.</p>
+<p>Experimentally verify that the teleportation was successful. One way to do this is to take samples of Alice’s original state, and then take samples from Bob’s state after the teleportation is applied.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

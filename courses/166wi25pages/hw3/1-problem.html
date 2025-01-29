@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Shion Fukuzawa - HW2 - Problem 2</title>
+<title>Shion Fukuzawa - HW3 - Problem 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">HW2 - Problem 2</h1>
+<h1 class="title">HW3 - Problem 1</h1>
 </div>
 
 
@@ -133,22 +133,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="problem-2-single-qubit-circuits" class="level1">
-<h1>Problem 2: Single Qubit Circuits</h1>
-<p>We will be using these matrices for this problem.</p>
-<p><span class="math inline">\(X = \begin{bmatrix}0 &amp; 1 \\ 1 &amp; 0\end{bmatrix} \;\;\;\; Y = \begin{bmatrix}0 &amp; -i \\ i &amp; 0\end{bmatrix} \;\;\;\; Z = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1\end{bmatrix}\)</span></p>
-<p><span class="math inline">\(A = \begin{bmatrix}\frac{i}{\sqrt{2}} &amp; \frac{1 - i}{2} \\ \frac{1 + i}{2} &amp; \frac{i}{\sqrt{2}}\end{bmatrix} \;\;\;\; B = \begin{bmatrix}0 &amp; e^{i\pi/3} \\ e^{i2\pi/3} &amp; 0\end{bmatrix} \;\;\;\; C = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; i\end{bmatrix}\)</span></p>
-<ol type="1">
-<li><p>Find the adjoint of the matrices <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>.</p></li>
-<li><p>For each of the following circuits, find the state of the qubit at the end of the circuit, and what the possible outcomes and probabilities are if we measure in the stated basis.</p></li>
-</ol>
+<section id="problem-1-bell-states-and-partial-measurements" class="level1">
+<h1>Problem 1: Bell States and Partial Measurements</h1>
+<p>We’ve discussed the Bell pair in class, which (like any state) can be part of an orthonormal basis. Since these vectors are length four, the basis should have four states. There is a called the Bell basis, formed of the four canonical Bell states. The four states are</p>
 <ul>
-<li>Measure in the Hadamard basis: <img src="./circuit 2-1.png" class="img-fluid"></li>
-<li>Measure in the standard basis: <img src="./circuit 2-2.png" class="img-fluid"></li>
-<li>Measure in the standard basis: <img src="./circuit 2-3.png" class="img-fluid"></li>
-<li>Measure in the Hadamard basis: <img src="./circuit 2-4.png" class="img-fluid"></li>
-<li>Measure in the standard basis: <img src="./circuit 2-5.png" class="img-fluid"></li>
+<li><span class="math inline">\(\left|\Phi^+\right&gt; := \frac{1}{\sqrt{2}}(\left|00\right&gt; + \left|11\right&gt;)\)</span></li>
+<li><span class="math inline">\(\left|\Phi^-\right&gt; := \frac{1}{\sqrt{2}}(\left|00\right&gt; - \left|11\right&gt;)\)</span></li>
+<li><span class="math inline">\(\left|\Psi^+\right&gt; := \frac{1}{\sqrt{2}}(\left|01\right&gt; + \left|10\right&gt;)\)</span></li>
+<li><span class="math inline">\(\left|\Psi^-\right&gt; := \frac{1}{\sqrt{2}}(\left|01\right&gt; - \left|10\right&gt;)\)</span></li>
 </ul>
+<ol type="1">
+<li>Design a two qubit circuit that starts in the state <span class="math inline">\(\left|00\right&gt;\)</span>, and ends with <span class="math inline">\(\ket{\Psi^-}\)</span>.</li>
+<li>For the remaining parts for this problem, we will use the following notation.</li>
+</ol>
+<p><span class="math inline">\(\left|\theta\right&gt; := \cos(\theta)\left|0\right&gt; + \sin(\theta)\left|1\right&gt;.\)</span></p>
+<p>Consider the basis <span class="math inline">\(\{\left|\pi/6\right&gt;, \left|4\pi/6\right&gt;\}\)</span>. Write down <span class="math inline">\(\left|0\right&gt;\)</span> and <span class="math inline">\(\left|1\right&gt;\)</span> as a weighted sum of <span class="math inline">\(\left|\pi/6\right&gt;\)</span> and <span class="math inline">\(\left|4\pi/6\right&gt;\)</span> in the above basis. Recall that</p>
+<p><span class="math inline">\(\cos(\pi/6) = \sqrt{3}/2 \;\;\;\; \sin(\pi/6) = 1/2\)</span></p>
+<p><span class="math inline">\(\cos(4\pi/6) = -1/2 \;\;\;\;\sin(4\pi/6) = \sqrt{3}/2\)</span></p>
+<ol start="3" type="1">
+<li>Suppose Alice has the first qubit and Bob has the second qubit of a <span class="math inline">\(\left|\Psi^-\right&gt;\)</span> state. If Alice measures her qubit in the standard basis, what are the probabilities of each outcome, and the state of the two qubits after the measurement?</li>
+<li>If Alice instead chooses to measure in the <span class="math inline">\(\{\left|\pi/6\right&gt;, \left|4\pi/6\right&gt;\}\)</span> basis, at are the probabilities of each outcome, and the state of the two qubits after the measurement?</li>
+<li>Verbally describe what happens to the second qubit when the first qubit of a <span class="math inline">\(\left|\Psi\right&gt;\)</span> state gets measured.</li>
+</ol>
 
 
 </section>
