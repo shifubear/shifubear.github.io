@@ -347,7 +347,7 @@
     "href": "courses/166wi25.html",
     "title": "Introduction to Quantum Information and Computing",
     "section": "",
-    "text": "Announcements\n\nWelcome to CS 166!\n\n\n\n\nKey Documents and Pages for the Course\n\nMake sure to read through the syllabus. I have outlined the expectations for myself and for you for this quarter amongst other things.\n\n\n\nStaff and Contact Info\nIf you need assistance with course material or logistics, please use the Ed discussion board. For personal accommodations you may email me directly.\nInstructor:\n\nShion Fukuzawa\n\nfukuzaws at uci dot edu\nOffice hours: T, 2-3pm ICS 458F W, 4-5pm ICS 458B, Th, 11-12 ICS 458B\nPollEv link\n\n\nTAs:\n\nFan Wang\n\nOffice hours: F, 3-4pm ICS 458B\n\nKourosh Mirsohi\n\nOffice hours: W, 1-2pm ICS 458B\n\nZiwen Wan\n\nOffice hours: M, 4-5pm ICS 458A\n\n\n\n\nCourse Outline\nThe following is the tentative breakdown of the three modules we will divide the class into.\n\nModule 1: Math Foundations\n\nProbability and Complex numbers\nQuantum circuits\nLinear algebra\nComplexity\n\nModule 2: Quantum Information\n\nNo cloning theorem and quantum money\nQuantum teleportation and superdense coding\nHidden variable theories, monogamy of entanglement, and the CHSH game\nQuantum circuits and complexity\nError correction\n\nModule 3: Quantum Computing\n\nQuery algorithms: Deutsch-Josza, Bernstein-Vazirani, Simon’s\nQuantum Fourier Transform\nShor’s algorithm\nGrover’s algorithm\nPhase estimation (Not covered this quarter)\n\n\n\n\nLecture notes\nIn this section I will post the digital copies of the lecture notes. Annotated versions will be posted as the course progresses.\n\nPreliminaries\n\nProbability and Complex Numbers (unannotated notes, annotated notes)\nQuantum States and Linear Algebra (unannotated notes, annotated notes)\nQuantum Circuits (unannotated notes, annotated notes)\n\nQuantum Information\n\nNo Cloning and Quantum Money (unannotated notes, annotated notes)\nQuantum Teleportation and Superdense Coding (unannotated notes, annotated notes)\nHidden Variables and CHSH\n\nPart 1 (unannotated notes, annotated notes)\nPart 2 (unannotated notes, annotated notes)\n\nCircuits and Complexity (unannotated notes, annotated notes)\n\nQuantum Computing\n\nThe Query Model (unannotated notes, annotated notes)\n\n.tex Source Code\n\n\n\n\nProblem Sets\n\n\nHomework 1 Solutions will be posted January 13, cover sheet must be submitted by January 15 11AM (before class).\nHomework 2 Solutions will be posted January 22, cover sheet must be submitted by January 23 noon.\nHomework 3 Solutions will be posted February 3, cover sheet must be submitted by February 5 11 AM (before class).\nHomework 4 Solutions will be posted February 12, cover sheet must be submitted by February 13 noon.\n\nPlease submit your homework to Gradescope after completing the cover sheet. If you do not have access to Gradescope, let me know ASAP. Solutions will be posted to Canvas."
+    "text": "Announcements\n\nWelcome to CS 166!\n\n\n\n\nKey Documents and Pages for the Course\n\nMake sure to read through the syllabus. I have outlined the expectations for myself and for you for this quarter amongst other things.\n\n\n\nStaff and Contact Info\nIf you need assistance with course material or logistics, please use the Ed discussion board. For personal accommodations you may email me directly.\nInstructor:\n\nShion Fukuzawa\n\nfukuzaws at uci dot edu\nOffice hours: T, 2-3pm ICS 458F W, 4-5pm ICS 458B, Th, 11-12 ICS 458B\nPollEv link\n\n\nTAs:\n\nFan Wang\n\nOffice hours: F, 3-4pm ICS 458B\n\nKourosh Mirsohi\n\nOffice hours: W, 1-2pm ICS 458B\n\nZiwen Wan\n\nOffice hours: M, 4-5pm ICS 458A\n\n\n\n\nCourse Outline\nThe following is the tentative breakdown of the three modules we will divide the class into.\n\nModule 1: Math Foundations\n\nProbability and Complex numbers\nQuantum circuits\nLinear algebra\nComplexity\n\nModule 2: Quantum Information\n\nNo cloning theorem and quantum money\nQuantum teleportation and superdense coding\nHidden variable theories, monogamy of entanglement, and the CHSH game\nQuantum circuits and complexity\nError correction\n\nModule 3: Quantum Computing\n\nQuery algorithms: Deutsch-Josza, Bernstein-Vazirani, Simon’s\nQuantum Fourier Transform\nShor’s algorithm\nGrover’s algorithm\nPhase estimation (Not covered this quarter)\n\n\n\n\nLecture notes\nIn this section I will post the digital copies of the lecture notes. Annotated versions will be posted as the course progresses.\n\nPreliminaries\n\nProbability and Complex Numbers (unannotated notes, annotated notes)\nQuantum States and Linear Algebra (unannotated notes, annotated notes)\nQuantum Circuits (unannotated notes, annotated notes)\n\nQuantum Information\n\nNo Cloning and Quantum Money (unannotated notes, annotated notes)\nQuantum Teleportation and Superdense Coding (unannotated notes, annotated notes)\nHidden Variables and CHSH\n\nPart 1 (unannotated notes, annotated notes)\nPart 2 (unannotated notes, annotated notes)\n\nCircuits and Complexity (unannotated notes, annotated notes)\n\nQuantum Computing\n\nThe Query Model (unannotated notes, annotated notes)\n\n.tex Source Code\n\n\n\n\nProblem Sets\n\n\nHomework 1 Solutions will be posted January 13, cover sheet must be submitted by January 15 11AM (before class).\nHomework 2 Solutions will be posted January 22, cover sheet must be submitted by January 23 noon.\nHomework 3 Solutions will be posted February 3, cover sheet must be submitted by February 5 11 AM (before class).\nHomework 4 Solutions will be posted February 12, cover sheet must be submitted by February 13 noon.\nHomework 5 Solutions will be posted February 26, cover sheet must be submitted by February 27 noon.\n\nPlease submit your homework to Gradescope after completing the cover sheet. If you do not have access to Gradescope, let me know ASAP. Solutions will be posted to Canvas."
   },
   {
     "objectID": "courses/166wi25pages/hw2/4-note.html",
@@ -411,6 +411,62 @@
     "title": "HW2 - Problem 2",
     "section": "",
     "text": "Problem 2: Single Qubit Circuits\nWe will be using these matrices for this problem.\n\\(X = \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\;\\;\\;\\; Y = \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\;\\;\\;\\; Z = \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}\\)\n\\(A = \\begin{bmatrix}\\frac{i}{\\sqrt{2}} & \\frac{1 - i}{2} \\\\ \\frac{1 + i}{2} & \\frac{i}{\\sqrt{2}}\\end{bmatrix} \\;\\;\\;\\; B = \\begin{bmatrix}0 & e^{i\\pi/3} \\\\ e^{i2\\pi/3} & 0\\end{bmatrix} \\;\\;\\;\\; C = \\begin{bmatrix}1 & 0 \\\\ 0 & i\\end{bmatrix}\\)\n\nFind the adjoint of the matrices \\(X\\), \\(Y\\), \\(Z\\), \\(A\\), \\(B\\), \\(C\\).\nFor each of the following circuits, find the state of the qubit at the end of the circuit, and what the possible outcomes and probabilities are if we measure in the stated basis.\n\n\nMeasure in the Hadamard basis: \nMeasure in the standard basis: \nMeasure in the standard basis: \nMeasure in the Hadamard basis: \nMeasure in the standard basis:"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/4-note.html",
+    "href": "courses/166wi25pages/hw5/4-note.html",
+    "title": "HW5 - Problem 4",
+    "section": "",
+    "text": "Problem 4: Simon’s Algorithm Example\nBefore opening the problem, take some time to review section 12.5 of the Computation 1 notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 4"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/3-note.html",
+    "href": "courses/166wi25pages/hw5/3-note.html",
+    "title": "HW5 - Problem 3",
+    "section": "",
+    "text": "Problem 3: Deutsch-Jozsa Example\nBefore opening the problem, take some time to review section 12.2 and 12.3 of the Computation 1 notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 3"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/2-note.html",
+    "href": "courses/166wi25pages/hw5/2-note.html",
+    "title": "HW5 - Problem 2",
+    "section": "",
+    "text": "Problem 2: Hadamard Waves\nBefore opening the problem, take some time to review the Computation 0 notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 2"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/3-problem.html",
+    "href": "courses/166wi25pages/hw5/3-problem.html",
+    "title": "HW5 - Problem 3",
+    "section": "",
+    "text": "Problem 3: Deutsch-Jozsa Example\nLet \\(f\\) be a function that takes 3 bits as inputs and outputs a single bit. The function takes the three bits it received, adds them all together, and outputs the answer mod 2. Given oracle access to this function, we construct the following circuit to run Deutsch-Jozsa.\n\n\n(Definition check) Is this function constant or balanced?\n(Particular instance) What is \\(U_f \\left|101\\right>\\left|-\\right>\\)? What about \\(U_f \\left|010\\right>\\left|-\\right>\\)?\nNow let’s analyze the full algorithm. Starting from \\(\\left|000\\right>\\left|-\\right>\\) as we have in the diagram, what is the state of the algorithm after the \\(H\\) gates? Use the \\(n\\)-qubit Hadamard identity.\n(Continue from 3) What is the state of the algorithm after the \\(U_f\\) gate is applied?\n(Continue from 4) What is the state of the algorithm after the second layer of \\(H\\) gates? Don’t use summation notation, and explicitly write out the coefficients.\n(Continue from 5) What are the possible measurement results and their corresponding probabilities?\n(Continue from 6) What do we conclude based on this outcome? Does this match what we predicted in the first part of the problem?"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/4-problem.html",
+    "href": "courses/166wi25pages/hw5/4-problem.html",
+    "title": "HW5 - Problem 4",
+    "section": "",
+    "text": "Problem 4: Simon’s Algorithm Example\nThe function \\(f : \\{0, 1\\}^3 \\rightarrow \\{0, 1\\}^3\\) is defined as follows:\n\\(f(000) = 110 \\;\\;\\;f(100) = 001\\) \\(f(001) = 001 \\;\\;\\;f(101) = 110\\) \\(f(010) = 000 \\;\\;\\;f(110) = 010\\) \\(f(011) = 010 \\;\\;\\;f(111) = 000\\)\n\nThe inputs are paired so that for \\(x \\neq y\\), \\(f(x) = f(y)\\) if and only if \\(x = y \\oplus s\\) for some fixed \\(s\\). Can you figure out \\(s\\) by inspection?\nIn this question, you will simulate Simon’s algorithm for the function \\(f\\). The unitary operator \\(U_f\\) maps \\(\\left|x\\right>\\left|000\\right>\\) to \\(\\left|x\\right>\\left|000\\oplus f(x)\\right>\\), where \\(x\\) is a 3-bit string. The operator \\(\\oplus\\) is bit-wise addition, mod 2. Write down the state of the algorithm after each step. Use the \\(n\\)-qubit Hadamard identity.\n\n\nStart with \\(\\left|000\\right>\\left|000\\right>\\).\nApply \\(H^{\\otimes 3} \\otimes I^{\\otimes 3}\\).\nApply \\(U_f\\).\n\n\nBased on your answer from the previous problem, what are the possible states we can see if we measure the last three qubits? What are the corresponding probabilities?\nSuppose you measured 110 in the previous step. What is the state of the algorithm?\n(Continue from 4) Apply \\(H^{\\otimes 3}\\) on the first three qubits. What are the possible measurement outcomes? Use the \\(n\\)-qubit Hadamard identity.\n(Continue from 5) Verify that every string \\(x\\) that is a possible outcome of the last measurement satisfies \\(x \\cdot s = 0\\) mod 2."
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/1-problem.html",
+    "href": "courses/166wi25pages/hw5/1-problem.html",
+    "title": "HW5 - Problem 1",
+    "section": "",
+    "text": "Problem 1: The \\(n\\)-Qubit Hadamard\nLet’s practice applying the \\(n\\)-qubit Hadamard we encountered in lecture (Proposition 11.1).\n\nConsider the case where \\(n = 3\\), and \\(x = 101\\).\n\n\nWrite down what \\(H^{\\otimes n} \\left|x\\right>\\) would be in line (82) for this instance.\nDistribute the tensor product you have, and verify that the amplitude of each term is generated by the bitwise dot product \\(x \\cdot y\\) as stated in the proposition.\n\n\nConsider the case where \\(n = 4\\), and \\(x = 0000\\).\n\n\nWhat is equation (82) in this instance? You don’t have to distribute this one.\nWhat is the probability that we measure 0010 if we measure the four qubits in the standard basis?\nMore generally, what can we say about the distribution of outputs when we measure this state in the standard basis?\n\n\nSuppose after running an algorithm for some number of steps, we get the following state:\n\n\\(\\frac{1}{\\sqrt{2^2}} (\\left|00\\right> - \\left|01\\right> + \\left|10\\right> - \\left|11\\right>)\\)\nThe next step of the algorithm is to apply a Hadamard gate to each of the two qubits. What is the state after applying the Hadamard gates?\n\nSuppose after running an algorithm for some number of steps, we get the following state:\n\n\\(\\frac{1}{\\sqrt{2^3}} (\\left|000\\right> - \\left|001\\right> -\\left|010\\right> +\\left|011\\right> +\\left|100\\right> -\\left|101\\right> -\\left|110\\right> + \\left|111\\right>)\\)\nThe next step of the algorithm is to apply a Hadamard gate to each of the two qubits. What is the state after applying the Hadamard gates?"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/1-note.html",
+    "href": "courses/166wi25pages/hw5/1-note.html",
+    "title": "HW5 - Problem 1",
+    "section": "",
+    "text": "Problem 1: The \\(n\\)-Qubit Hadamard\nBefore opening the problem, take some time to review the Computation 0 notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 1"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5/2-problem.html",
+    "href": "courses/166wi25pages/hw5/2-problem.html",
+    "title": "HW5 - Problem 2",
+    "section": "",
+    "text": "Problem 2: Hadamard Waves\nPeople say quantum mechanics describes tiny objects as both a wave and a particle. Besides the use of the word ``amplitude’’, it doesn’t feel like we have seen much wavy-ness in this class. The layer of Hadamard gates gives us one look at states that look somewhat wave like.\nIf we apply \\(H^{\\otimes 4}\\) to \\(\\ket{0000}\\), we can draw the amplitudes as the following, where + means the amplitude of the term is positive, and - means it is negative.\n\n\nDraw the amplitudes of the states \\(H^{\\otimes 4}\\left|0001\\right>\\), \\(H^{\\otimes 4}\\left|0010\\right>\\), \\(H^{\\otimes 4}\\left|0100\\right>\\), \\(H^{\\otimes 4}\\left|1000\\right>\\).\nDraw the amplitudes of the state \\(H^{\\otimes 4}\\left|1010\\right>\\). How does this relate to amplitudes you got in the previous problem?\nBased on what you got in the previous part, draw the amplitudes for \\(H^{\\otimes 4}\\left|1101\\right>\\). Verify that you have the correct signs for each term."
   },
   {
     "objectID": "courses/166wi25pages/hw4/4-note.html",
@@ -642,6 +698,13 @@
     "title": "Homework 4",
     "section": "",
     "text": "Make sure you have blocked out at least an hour to work on these and have a notebook and timer! Remember, it’s just one hour per problem…\nAfter clicking on a problem, there will be a quick summary of which parts of the notes would be relevant. Make sure to take some time to review them before doing the problem!\n\n\nProblems\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw5.html",
+    "href": "courses/166wi25pages/hw5.html",
+    "title": "Homework 5",
+    "section": "",
+    "text": "Make sure you have blocked out at least an hour to work on each problem and have a notebook and timer ready! Remember, it’s just one hour per problem… If a problem looks like too much to write, trust me and just start writing it out. It usually takes less time in practice than I am worried about\nAfter clicking on a problem, there will be a quick summary of which parts of the notes would be relevant. Make sure to take some time to review them before doing the problem!\n\n\nProblems\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4"
   },
   {
     "objectID": "blog.html",
