@@ -595,6 +595,20 @@
     "text": "Problem 4: Shor’s Algorithm Example\nBefore opening the problem, take some time to review Shor’s algorithm and the Period finding algorithm from the Computation 3 notes.\nThis one may take a little longer than an hour, but it’s important to get through. You should not spend more than 2 hours on it though if you get completely stuck.\nProblem 4"
   },
   {
+    "objectID": "courses/166wi25pages/hw6/5-note.html",
+    "href": "courses/166wi25pages/hw6/5-note.html",
+    "title": "HW6 - Problem 5",
+    "section": "",
+    "text": "Bonus Problem: QFT Counter\nBefore opening the problem, take some time to review the QFT from the Computation 3 notes.\nBonus Problem"
+  },
+  {
+    "objectID": "courses/166wi25pages/hw6/5-problem.html",
+    "href": "courses/166wi25pages/hw6/5-problem.html",
+    "title": "HW6 - Problem 5",
+    "section": "",
+    "text": "Bonus Problem: QFT Counter\n(I’ll upload a solution/work through of this problem during week 9. It is a great exercise for getting comfortable with the QFT.)\nSuppose \\(x \\in \\{0, \\ldots, 15\\}\\) is a four bit string. Let \\(x_1 x_2 x_3 x_4\\) be the binary representation of the integer \\(x\\).\n\nExpress the state resulting from applying \\(QFT_N\\) to the state \\(\\left|x\\right>\\).\nNow suppose that \\(y \\in \\{0, \\ldots, N - 1\\}\\). Let \\(y_1\\ldots y_n\\) be the binary representation of the integer \\(y\\). Express the output of the circuit below as a function of \\(y\\) and the \\(N\\)-th root of unity \\(\\omega\\). Here, we are using the gate\n\n\\(P_a = \\begin{bmatrix} 1 & 0 \\\\ 0 & e^{2\\pi i/2^a}\\end{bmatrix}.\\)\n\n\nPut your answer from the first two parts of this problem to express the output of the the following circuit as a function of \\(x\\).\n\n\n\nFinally, express the output of the following circuit. The inverse of the QFT maps from the Fourier amplitudes to the standard basis amplitudes.\n\n\n\nWhat was the effect of applying this circuit?"
+  },
+  {
     "objectID": "courses/166wi25pages/hw6/3-note.html",
     "href": "courses/166wi25pages/hw6/3-note.html",
     "title": "HW6 - Problem 3",
