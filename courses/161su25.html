@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Shion Fukuzawa - Design and Analysis of Algorithms</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Shion Fukuzawa</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../teaching.html">
+ <span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html">
+ <span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shifubear"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../index.xml"><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Design and Analysis of Algorithms</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="announcements" class="level1">
+<h1>Announcements</h1>
+<ul>
+<li>Hi! If you’re looking at this page I’m guessing you will be taking this course with me this summer. I’m excited to meet you!</li>
+<li>There will be an announcement after finals week of Spring, but I will be gone for week 1 of this class. The content will be delivered asynchronously, so stay tuned.</li>
+<li>If you would like to prep before this course, it may help to brush up on data structure fundamentals and discrete math.</li>
+</ul>
+
+<!-- 
+- (June 11) Welcome to the course! As stated in canvas, this will be the place where most content will be hosted. I will post material that is relevant to this summer session in the Canvas page, and this will be announced as it happens. 
+- (June 25) The first set of notes have been posted! Be sure to bring some writing utensils or have it downloaded on a tablet before class begins.  -->
+</section>
+<section id="key-documents-and-pages-for-the-course" class="level1">
+<h1>Key Documents and Pages for the Course</h1>
+<ul>
+<li>Make sure to read through the <a href="./161su25files/syllabus.pdf">syllabus</a>. I have outlined the expectations for myself and for you for this quarter amongst other things.</li>
+</ul>
+</section>
+<section id="teaching-staff-and-contact-info" class="level1">
+<h1>Teaching Staff and Contact Info</h1>
+<p>Instructor:</p>
+<ul>
+<li>Shion Fukuzawa
+<ul>
+<li>fukuzaws at uci dot edu</li>
+<li>Office hours:
+<ul>
+<li>TBD <!-- - [PollEv link](https://PollEv.com​/shionfukuzawa524) --></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>TAs:</p>
+<ul>
+<li>TBD</li>
+</ul>
+</section>
+<section id="course-outline" class="level1">
+<h1>Course Outline</h1>
+<p>The following is the breakdown of the three modules we will divide the class into.</p>
+<ul>
+<li>Module 1: Foundations/Divide and Conquer
+<ul>
+<li>Big-Oh Notation and mathematical preliminaries</li>
+<li>Sorting Algorithms</li>
+<li>Proving the run time of merge sort and quicksort</li>
+<li>The Master Theorem</li>
+<li>Divide and Conquer algorithms</li>
+</ul></li>
+<li>Module 2: Dynamic Programming:
+<ul>
+<li>Optimal substructure property</li>
+<li>Analyzing the size of the search space</li>
+<li>Top-down (memoization) vs.&nbsp;Bottom-up</li>
+</ul></li>
+<li>Module 3: Greedy Algorithms:
+<ul>
+<li>Greedy choice property</li>
+<li>Optimal substructure property</li>
+<li>When can we use a greedy algorithm instead of a dynamic programming approach?</li>
+</ul></li>
+</ul>
+</section>
+<section id="lecture-notes" class="level1">
+<h1>Lecture notes</h1>
+<ul>
+<li>I will be posting links to all the lecture notes here. I will also post the annotated versions as we progress through the course.</li>
+</ul>
+<!-- - The following are digital copies of the lecture notes. I will post annotated versions as we progress through the course as well. 
+
+- Module 0: Preparation and Preliminaries
+  - ([unannotated notes](./161su24files/preliminaries.pdf), [annotated notes](./161su24files/preliminaries-annotated.pdf))
+
+- Module 1: Divide and Conquer
+  - ([unannotated notes](./161su24files/2-divide-and-conquer.pdf), [annotated notes](./161su24files/2-divide-and-conquer-annotated.pdf))
+
+- Module 2: Dynamic Programming
+  - Week 1 ([unannotated notes](./161su24files/3-dynamic-programming-1.pdf), [annotated notes](./161su24files/3-dynamic-programming-1-annotated.pdf))
+  - Week 2 ([unannotated notes](./161su24files/3-dynamic-programming-2.pdf), [annotated notes](./161su24files/3-dynamic-programming-2-annotated.pdf))
+  - Week 3 ([unannotated notes](./161su24files/3-dynamic-programming-lcs.pdf), [annotated notes](./161su24files/3-dynamic-programming-lcs-annotated.pdf))
+
+- Module 3: Greedy Algorithms 
+
+(Note, these are two different topics though there are instance where they overlap.)
+
+  - Greedy Algorithms ([unannotated notes](./161su24files/4-greedy-algorithms.pdf), [annotated notes](./161su24files/4-greedy-algorithms-annotated.pdf))
+  - Graph Algorithms ([unannotated notes](./161su24files/5-graph-algorithms.pdf), [annotated notes](./161su24files/5-graph-algorithms-annotated.pdf))
+  - NP-Completeness ([unannotated notes](./161su24files/6-np-complete.pdf), [annotated notes](./161su24files/6-np-complete-annotated.pdf)) -->
+</section>
+<section id="problem-sets" class="level1">
+<h1>Problem Sets</h1>
+<p>Please submit your problem sets to gradescope. If you do not have access to gradescope, let me know ASAP. Solutions will be posted to Canvas.</p>
+<p>Assignments will not be accepted after the due date. If you cannot solve a problem, please write down what you tried and where you are stuck.</p>
+<!-- - [Homework 1](./161su24files/hw1.pdf): Due Monday July 8 11:59pm. 
+- [Homework 2](./161su24files/hw2.pdf): Due Wednesday July 10 11:00am. 
+- [Homework 3](./161su24files/hw3.pdf): Due Monday July 22 11:00am. 
+- [Homework 4](./161su24files/hw4.pdf): Due Monday July 29 11:00am. 
+- [Homework 5](./161su24files/hw5.pdf): Due Monday August 12 11:00am (Extended to 11:59pm). 
+- [Homework 6](./161su24files/hw6.pdf): Due Tuesday August 20 11:59pm.  -->
+</section>
+<section id="tentative-midterm-information" class="level1">
+<h1>Tentative Midterm Information</h1>
+<ul>
+<li>Midterm 1: Module 1 (Jul 10)</li>
+<li>Midterm 2: Module 2 (Jul 31)</li>
+<li>Midterm 3: Module 3 (Aug 24)</li>
+<li>Final: Aug 28</li>
+</ul>
+<!-- [](./161su24files/sample_submission.pdf) -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="shifubear/shifubear.github.io" data-repo-id="R_kgDOIgiXHw" data-category="General" data-category-id="DIC_kwDOIgiXH84CS3yH" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
