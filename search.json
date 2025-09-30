@@ -343,6 +343,104 @@
     "text": "Announcements\n\nHi! If you’re looking at this page I’m guessing you will be taking this course with me this summer. I’m excited to meet you!\nThere will be an announcement after finals week of Spring, but I will be gone for week 1 of this class. The content will be delivered asynchronously, so stay tuned.\nIf you would like to prep before this course, it may help to brush up on data structure fundamentals and discrete math.\n\n\n\n\n\nKey Documents and Pages for the Course\n\nMake sure to read through the syllabus. I have outlined the expectations for myself and for you for this quarter amongst other things.\n\n\n\nTeaching Staff and Contact Info\nInstructor:\n\nShion Fukuzawa\n\nfukuzaws at uci dot edu\nOffice hours:\n\nTBD \n\n\n\nTAs:\n\nTBD\n\n\n\nCourse Outline\nThe following is the breakdown of the three modules we will divide the class into.\n\nModule 1: Foundations/Divide and Conquer\n\nBig-Oh Notation and mathematical preliminaries\nSorting Algorithms\nProving the run time of merge sort and quicksort\nThe Master Theorem\nDivide and Conquer algorithms\n\nModule 2: Dynamic Programming:\n\nOptimal substructure property\nAnalyzing the size of the search space\nTop-down (memoization) vs. Bottom-up\n\nModule 3: Greedy Algorithms:\n\nGreedy choice property\nOptimal substructure property\nWhen can we use a greedy algorithm instead of a dynamic programming approach?\n\n\n\n\nLecture notes\n\nI will be posting links to all the lecture notes here. I will also post the annotated versions as we progress through the course.\nThe following are digital copies of the lecture notes. I will post annotated versions as we progress through the course as well.\nModule 0: Preparation and Preliminaries\n\n(unannotated notes)\n\n\n\n\n\nProblem Sets\nPlease submit your problem sets to gradescope. If you do not have access to gradescope, let me know ASAP. Solutions will be posted to Canvas.\nAssignments will not be accepted after the due date. If you cannot solve a problem, please write down what you tried and where you are stuck.\n\nHomework 1: Due Wednesday July 2 11:59pm. \n\n\n\nTentative Midterm Information\n\nMidterm 1: Module 1 (Jul 11)\nMidterm 2: Module 2 (Aug 1)\nMidterm 3: Module 3 (Aug 22)\nFinal: Aug 29"
   },
   {
+    "objectID": "courses/166fa25pages/hw1.html",
+    "href": "courses/166fa25pages/hw1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Make sure you have blocked out at least an hour to work on per problem and have a notebook and timer! Remember, it’s just one hour per problem…\nAfter clicking on a problem, there will be a quick summary of which parts of the notes would be relevant. Make sure to take some time to review them before doing the problem!\nIf you need some extra practice, or want to start coding your own quantum computing simulator, take a look at the bonus problems.\nSolutions will be posted October 2 for you to check your work against. Make sure you spend some time working on it on your own before that!\nWhen submitting on Gradescope, submit a PDF containing your work for each problem, as well as information showing how long each problem ended up taking you.\n\nProblems\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4\n\n\n\nBonus Problems\n\nBonus Problems"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/4-note.html",
+    "href": "courses/166fa25pages/hw1/4-note.html",
+    "title": "HW1 - Problem 4",
+    "section": "",
+    "text": "Before opening the problem, take a few minutes to review the Single Qubit Systems notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 4"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/3-note.html",
+    "href": "courses/166fa25pages/hw1/3-note.html",
+    "title": "HW1 - Problem 3",
+    "section": "",
+    "text": "Before opening the problem, take a few minutes to review section 2.1 from the Single Qubit Systems notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 3"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/2-note.html",
+    "href": "courses/166fa25pages/hw1/2-note.html",
+    "title": "HW1 - Problem 2",
+    "section": "",
+    "text": "Before opening the problem, take a few minutes to review sections 1.3 from the Probability and Complex Numbers notes. Be ready to draw some complex numbers on the complex plane! When you’re ready, set a timer for an hour and open the problem.\nProblem 2"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/3-problem.html",
+    "href": "courses/166fa25pages/hw1/3-problem.html",
+    "title": "HW1 - Problem 3",
+    "section": "",
+    "text": "Problem 3: Qubit States\nConsider a qubit in the following state:\n\\(\\left|\\psi\\right> := \\frac{i}{\\sqrt{2}} \\left|0\\right> - \\frac{1}{\\sqrt{2}} \\left|1\\right>\\)\n\nVerify that \\(\\left|\\psi\\right>\\) is indeed a quantum state.\nIf we measure \\(\\left|\\psi\\right>\\), what is the probability that we observe \\(\\left|0\\right>\\)?\nSuppose we did observe \\(\\left| 0 \\right>\\). What is the state of the qubit after the measurement?\nFind a state that is orthogonal to \\(\\left|\\psi\\right>\\).\n\nLet’s try one more time with another quantum state! Practice makes perfect.\nConsider the following quantum state\n\\(\\left|\\psi\\right> := \\left( \\frac{\\sqrt{3}}{4} + i \\frac{1}{4} \\right) \\left|0\\right> + \\left(- \\frac{\\sqrt{3}}{4} + i \\frac{3}{4}\\right) \\left|1\\right>.\\)\n\nVerify that \\(\\ket{\\psi}\\) is a quantum state.\nWhat is the probability that we measure \\(\\ket{0}\\) if we measure in the standard basis? What is the state after the measurement?\nFind a state orthogonal to \\(\\ket{\\psi}\\).\nConsider the state \\(e^{i \\pi / 4}\\ket{\\psi}\\). That is, multiply the two amplitudes by \\(e^{i \\pi / 4}\\). What is the probability that we measure \\(\\ket{0}\\) if we measure in the standard basis? \\end{enumerate}"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/bonus-problems.html",
+    "href": "courses/166fa25pages/hw1/bonus-problems.html",
+    "title": "HW1 - Bonus Problems",
+    "section": "",
+    "text": "Draw the following complex numbers and their complex conjugates in the complex plane. If they are in the standard representation, convert them to the phase representation and vice versa.\n\n\\(w = 1/2 + i\\)\n\\(z = \\frac{5}{2} - i\\frac{5\\sqrt{3}}{2}\\)\n\\(\\beta = 6(\\cos(\\pi/4) + i\\sin(\\pi/4))\\)\n\\(\\xi = 0.01(\\cos(4\\pi/3) + i\\sin(4\\pi/3))\\)"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/bonus-problems.html#problem-2",
+    "href": "courses/166fa25pages/hw1/bonus-problems.html#problem-2",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 2",
+    "text": "Problem 2\nFor each pair of vectors below, compute their tensor product, \\(\\left<\\phi|\\psi\\right>\\) and \\(\\left<\\psi|\\phi\\right>\\).\n\n\\(\\left|\\psi\\right> = \\begin{bmatrix}7 \\\\ 4i\\end{bmatrix}\\) and \\(\\left|\\phi\\right> = \\begin{bmatrix}3i \\\\ 2\\end{bmatrix}\\)\n\n\\(\\left|\\psi\\right> = \\begin{bmatrix}3 + 2i \\\\ -2\\end{bmatrix}\\) and \\(\\left|\\phi\\right> = \\begin{bmatrix}1 - 3i \\\\ 4 + i\\end{bmatrix}\\)?"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/bonus-problems.html#problem-3",
+    "href": "courses/166fa25pages/hw1/bonus-problems.html#problem-3",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 3",
+    "text": "Problem 3\nWrite down a function is_qubit() in a language of choice that takes as input a list of length 2 and returns True if the input represents a qubit, and False otherwise."
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/bonus-problems.html#problem-4",
+    "href": "courses/166fa25pages/hw1/bonus-problems.html#problem-4",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 4",
+    "text": "Problem 4\nWrite down a function random_qubit() in a language of choice that randomly generates a qubit state. The output of this should pass the is_qubit() test from the previous problem."
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/bonus-problems.html#problem-5",
+    "href": "courses/166fa25pages/hw1/bonus-problems.html#problem-5",
+    "title": "HW1 - Bonus Problems",
+    "section": "Problem 5",
+    "text": "Problem 5\nWrite down a function inner_product(q1, q2) in a language of choice that takes two qubit states and returns their inner product. Try running this function with the vectors in problem 2 and compare your solution against the output of the code."
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/4-problem.html",
+    "href": "courses/166fa25pages/hw1/4-problem.html",
+    "title": "HW1 - Problem 4",
+    "section": "",
+    "text": "Problem 4: Linear algebra with Qubits\n\nWhich of the following matrices are stochastic and/or unitary?\n\n\\(A = \\begin{bmatrix} 0 & 1 \\\\ 1 & 0 \\end{bmatrix}, \\; B = \\begin{bmatrix} 0 & 1/3 \\\\ 1 & 2/3 \\end{bmatrix}, \\; C = \\begin{bmatrix} 2 & -1 \\\\ 1/2 & 1/2 \\end{bmatrix}, \\; D = \\frac{1}{\\sqrt{2}}\\begin{bmatrix} i & 1 \\\\ 1 & -i \\end{bmatrix}\\)\n\nDefine the two qubit states \\(\\left|\\phi\\right>\\) and \\(\\left|\\psi\\right>\\) as:\n\n\\(\\left|\\phi\\right> = \\frac{\\left|0\\right> + 3i\\left|1\\right>}{\\sqrt{10}} \\text{ and } \\left|\\psi\\right> = \\frac{2\\left|0\\right> - i\\left|1\\right>}{\\sqrt{5}}.\\)\nWhat is \\(\\left<\\phi | \\psi\\right>\\)?\nWhat about \\(\\left<\\psi | \\phi\\right>\\)\n\nA qubit state should be normalized, meaning the norm should be 1: \\(|| \\left|\\phi\\right> || = 1\\). The following state \\(\\left|\\phi\\right>\\) is not normalized. Find a constant \\(N\\) such that \\(\\frac{1}{N}\\left|\\phi\\right>\\) is normalized.\n\n\\(\\left|\\phi\\right> = 3\\left|0\\right> - i\\left|1\\right>\\)\n\nDefine\n\n\\(\\left|i\\right> = \\frac{\\left|0\\right> + i \\left|1\\right>}{\\sqrt{2}} \\text{ and } \\left|-i\\right> = \\frac{\\left|0\\right> - i \\left|1\\right>}{\\sqrt{2}}\\).\nProve that the pair of states \\(\\left|i\\right>\\), \\(\\left|-i\\right>\\) form an orthonormal basis."
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/1-problem.html",
+    "href": "courses/166fa25pages/hw1/1-problem.html",
+    "title": "HW1 - Problem 1",
+    "section": "",
+    "text": "Problem 1\nFrankie the frog lives in a pond with two lily pads, east and west. One day, she found two coins at the bottom of the pond and has placed one on each of the two lily pads. Every morning, Frankie flips the coin on the lily pad she spent her last day on, and jumps to the other lily pad if it lands heads. If the coin is tails, she stays on her lily pad for the day.\nThe state space is E and W, corresponding to the lily pad Frankie spends her day on. We cannot assume that the coins are fair, as we do not know where they came from! They could be weighted in very different ways. Let’s call the probability that the east coin lands on heads to be \\(p\\) and the probability that the west coin lands on heads to be \\(q\\).\n\nOn day one, Frankie is on the east lily pad. How can we express this fact using a probability vector?\nWrite down the stochastic matrix that corresponds to Frankie’s game.\nGently place Frankie on the east lily pad and leave the pond for 1 day. Write down the probability vector that represents our best guess for Frankie’s location.\nWhat if instead of 1 day, we left Frankie on the east lily pad and left for 2 days. What is the probability vector that represents our best guess for Frankie’s location?\nWe find another frog Arnold with his own pair of lily pads too, which we will call the north and south lily pads. They also each have coins, each with probability r and s of being heads. What is the probability vector that represents the fact that Arnold is on the north lily pad?\nWe could independently track Frankie and Arnold’s locations, but we can also combine the state spaces to describe both of their states at once. What is the probability vector that describes Frankie on the west lily pad and Arnold on the north lily pad?\nSuppose we place Frankie on the west lily pad and Arnold on the north lily pad, and leave the pond for a day. What is the probability vector that represents our best guess for the state of the frogs after one day?\n(Bonus) Draw Frankie and Arnold the frogs."
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/1-note.html",
+    "href": "courses/166fa25pages/hw1/1-note.html",
+    "title": "HW1 - Problem 1",
+    "section": "",
+    "text": "Before opening the problem, take a few minutes to review sections 1.1 - 1.2 from the Probability and Complex Numbers notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 1"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw1/2-problem.html",
+    "href": "courses/166fa25pages/hw1/2-problem.html",
+    "title": "HW1 - Problem 2",
+    "section": "",
+    "text": "Problem 2\n\nWrite down the two solutions to \\(z^2 = 1\\) in the standard notation of complex numbers.\nWhat are the \\(\\theta\\) if we write the above two solutions in polar notation, that is in the form \\(\\cos \\theta + i \\sin \\theta = e^{i\\theta}\\). Draw the two solutions in the complex plane and label the angle \\(\\theta\\) they form with the positive real axis. Verify that for each of the \\(\\theta\\), you get \\((e^{i\\theta})^2 = 1\\).\nWhat are the three solutions to \\(z^3 = 1\\) (Hint: It may be easier to find this using polar notation)? Draw them in the complex plane.\nLet the three solutions from the previous problem be 1, \\(\\omega_3\\), \\(\\omega_3^2\\) going in counter clockwise order. Verify that the second solution does indeed square to be the third solution.\nWe call solutions to the equation \\(z^n = 1\\) the \\(n\\)-th roots of unity. Of particular interest is the first one in the counter clockwise direction after 1, which we call \\(\\omega_n\\). All the other \\(n\\)-th roots of unity can be constructed once this is known. What is a general form for the value of \\(\\omega_n\\)? As a hint, you will want to use polar coordinates.\nSince complex numbers can be expressed as vectors, we can model addition of complex numbers as vector addition too. Recall that when adding two vectors, you can simply place the first vector at the origin, then the second vector at the end of the first vector. The vector from the origin to the new end point is the sum of the two vectors.\n\n\nWhat do you get when you add all three 3rd roots of unity? Briefly justify your solution by drawing the addition. 7. Do you get the same result as above if adding up all the 4-th roots of unity? What if we add all the \\(n\\)-th roots of unity?"
+  },
+  {
     "objectID": "courses/46su25.html",
     "href": "courses/46su25.html",
     "title": "ICS46: Data Structure Implementation and Analysis",
