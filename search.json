@@ -406,6 +406,62 @@
     "text": "Problem 2: Single Qubit Circuits\nWe will be using these matrices for this problem.\n\\(X = \\begin{bmatrix}0 & 1 \\\\ 1 & 0\\end{bmatrix} \\;\\;\\;\\; Y = \\begin{bmatrix}0 & -i \\\\ i & 0\\end{bmatrix} \\;\\;\\;\\; Z = \\begin{bmatrix}1 & 0 \\\\ 0 & -1\\end{bmatrix}\\)\n\\(A = \\begin{bmatrix}\\frac{i}{\\sqrt{2}} & \\frac{1 - i}{2} \\\\ \\frac{1 + i}{2} & \\frac{i}{\\sqrt{2}}\\end{bmatrix} \\;\\;\\;\\; B = \\begin{bmatrix}0 & e^{i\\pi/3} \\\\ e^{i2\\pi/3} & 0\\end{bmatrix} \\;\\;\\;\\; C = \\begin{bmatrix}1 & 0 \\\\ 0 & i\\end{bmatrix}\\)\n\nFind the adjoint of the matrices \\(X\\), \\(Y\\), \\(Z\\), \\(A\\), \\(B\\), \\(C\\).\nFor each of the following circuits, find the state of the qubit at the end of the circuit, and what the possible outcomes and probabilities are if we measure in the stated basis.\n\n\nMeasure in the Hadamard basis: \nMeasure in the standard basis: \nMeasure in the standard basis: \nMeasure in the Hadamard basis: \nMeasure in the standard basis:"
   },
   {
+    "objectID": "courses/166fa25pages/hw4/bonus-problem.html",
+    "href": "courses/166fa25pages/hw4/bonus-problem.html",
+    "title": "HW4 - Problem 3",
+    "section": "",
+    "text": "Bonus Problem: Implausible consequences from beating the CHSH game\nIn class I stated the optimal win rate for the CHSH game with quantum information is approximately 85%. We won’t prove that upper bound, but let’s see why we don’t believe that it’s possible to get to 100%.\nSuppose there existed super-quantum non-local frogs that allowed us to win the CHSH game. That is, if Alice and Bob each took one of these frogs to their respective planets, when Alice gives a bit \\(x\\) to her frog, it responds with a bit \\(a\\) and when Bob gives a bit \\(y\\) to his frog, it responds with a bit \\(b\\) such that\n\\(xy = (a + b)(\\text{mod }2)\\)\nwould always be true.\n\nEnlist the help of these frogs to design a strategy for Alice and Bob to win the CHSH game 100% of the time.\n\nNow imagine that Alice and Bob each had \\(n\\) of these frogs, Alice has an \\(n\\)-bit string \\(X\\), and Bob has a different \\(n\\)-bit string \\(Y\\). Instead of playing the CHSH game, they want to compute the inner product of their bit strings. That is, they need to calculate\n\\(X\\cdot Y = (x_1\\cdot y_1 + \\cdots + x_n\\cdot y_n) \\mod 2\\)\nwhere \\(x_i\\), \\(y_i\\) are the \\(i\\)-th bits of \\(A\\) and \\(B\\) respectively.\n\nLet’s try an example to make sure you have the right idea of the inner product. Verify that the inner product between \\(X=11001\\) and \\(Y=11110\\) is 0.\nOutline a strategy where Alice and Bob use as many frogs as needed and Alice sends \\(n\\) bits to Bob, and Bob sends \\(n\\) bits to Alice such that both of them can learn the answer to \\(X \\cdot Y\\) afterwards.\nOutline a strategy where Alice and Bob use as many frogs as needed and Alice sends 1 bit to Bob, and Bob sends 1 bit to Alice such that both of them can learn the answer to \\(X \\cdot Y\\).\n(Challenge) Outline a strategy where Alice and Bob use as many frogs as needed and only Alice sends one bit to Bob, such that both of them can learn the answer to \\(X \\cdot Y\\).\n\nWe won’t prove it here, but it is possible to show that any Boolean function \\(f\\) that takes as input \\(2n\\) bits, can be expressed as\n\\(f(x_1, x_2, \\ldots, x_n, y_1, y_2, \\ldots, y_n) = \\sum_{j=1}^N A_j(X)\\cdot B_j(Y) \\text{  (mod 2)}.\\)\nThat is, we can compute the function by doing some set of operations on the first \\(n\\) bits (the \\(A_j\\)’s), another set of operations on the second \\(n\\) bits (the \\(B_j\\)’s), then taking the inner product of the results.\nSuppose that we are able to compute all the \\(A_j\\) and \\(B_j\\) functions\n\n(Challenge) Show that we can use any number of frogs and one bit of communication from Alice to Bob so that both of them know the answer to \\(f\\).\n\nThe consequence of the last two problems makes it incredibly hard to believe that the CHSH game could be beaten with a probability of 100%, since this would imply that any function that depends on \\(2n\\) bits of input can be computed at long distances by communicating only a single bit of information!"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/bonus-note.html",
+    "href": "courses/166fa25pages/hw4/bonus-note.html",
+    "title": "HW4 - Problem 3",
+    "section": "",
+    "text": "Bonus Problem: Implausible consequences from beating the CHSH game\nBefore opening the problem, take some time to review the CHSH game. When you’re ready, set a timer for an hour and open the problem.\nBonus Problem"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/3-note.html",
+    "href": "courses/166fa25pages/hw4/3-note.html",
+    "title": "HW4 - Problem 4",
+    "section": "",
+    "text": "Problem 3: Proving the correctness of the phase flip code\nBefore opening the problem, take some time to review Information 4. When you’re ready, set a timer for an hour and open the problem.\nProblem 3"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/2-note.html",
+    "href": "courses/166fa25pages/hw4/2-note.html",
+    "title": "HW4 - Problem 2",
+    "section": "",
+    "text": "Problem 2: The Perfect Magic Trick\nBefore opening the problem, take some time to review partial measurements. When you’re ready, set a timer for an hour and open the problem.\nProblem 2"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/3-problem.html",
+    "href": "courses/166fa25pages/hw4/3-problem.html",
+    "title": "HW4 - Problem 4",
+    "section": "",
+    "text": "Problem 3: Proving the correctness of the phase flip code\n\nWhat are the eigenvalue/eigenvector pairs of the \\(X\\) operator? If we perform a projective measurement using this operator, which basis of measurement are we representing?\nWhat are the eigenvalue/eigenvector pairs of the \\(XX\\) operator? Let \\(P_+\\) be the state representing the projection onto the +1 eigenspace and \\(P_-\\) be the state representing the projection onto the -1 eigenspace of the \\(XX\\) operator.\nConsider a state \\(a\\left|0\\right> + b\\left|1\\right>\\) encoded using the phase flip code: \\(a\\left|+++\\right> + b\\left|---\\right>\\). Write down the state after a phase flip error occurs on the last qubit.\nTake the state from the previous problem, and calculate the measurement of the \\(X_1X_2\\) observable followed by a measurement of the \\(X_2X_3\\) observable. What is the sequence of eigenvalues observed?\nWhat is the state after these measurements? Did we learn anything about the amplitudes \\(a\\) and \\(b\\)?"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/1-problem.html",
+    "href": "courses/166fa25pages/hw4/1-problem.html",
+    "title": "HW4 - Problem 1",
+    "section": "",
+    "text": "Problem 1: Proving Shion’s Code is Bugged\nThe following strategy (slightly modified for easier math) for the CHSH game was discovered by one of your classmates in this class, yielding a 100% winrate which should not be possible. We won’t prove the optimal winrate, but we can show that this value is incorrect by computing the probabilities of success for each of the strategies and outcomes. You can assume that the angle 1.499 is rounded to 1.5, and 1.999 is rounded to 2.\n\n\nConsider the case where \\(x=0\\) and \\(y=0\\). Make sure to note that we are starting in the state \\(\\left|\\Psi-\\right>\\) Let’s suppose Alice measures first for our analysis. What are the possible states after her measurement? There are two cases so make sure to state each one.\nFor each of these cases, what are the measurement outcomes and probabilities for Bob?\nWhat should the probability that Alice and Bob win using this strategy be if \\(x=0\\) and \\(y=0\\)?\nNow let’s consider the case where \\(x=0\\) and \\(y=1\\). What are the possible states after Alice’s measurement in this case?\nIn each of the cases, what are the possible measurement outcomes for Bob?\nWhat should the probability that Alice and Bob win using this strategy be if \\(x=0\\) and \\(y=1\\)?\n(Take a guess) What do you think is causing this error? If you were debugging this code where would you try to start?"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/1-note.html",
+    "href": "courses/166fa25pages/hw4/1-note.html",
+    "title": "HW4 - Problem 1",
+    "section": "",
+    "text": "Problem 1: Hacking the CHSH Game\nBefore opening the problem, take some time to review the CHSH game from the notes. When you’re ready, set a timer for an hour and open the problem.\nProblem 1"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4/2-problem.html",
+    "href": "courses/166fa25pages/hw4/2-problem.html",
+    "title": "HW4 - Problem 2",
+    "section": "",
+    "text": "Problem 2: The Perfect Magic Trick\n(This problem is taken from Ryan O’Donnell’s 2018 offering of a quantum computing course.)\nAlice is on Mars, Bob is on Jupiter, Charlie is on Saturn. With each of them is a referee. The referees have agreed before hand to uniformly pick one of the following four strings: 111, 100, 010, 001. The players know that these are the four options too. The first bit will be presented to Alice, the second to Bob, and the third to Charlie.\nUpon receiving their bit, Alice, Bob, and Charlie must quickly respond with a 0 or a 1. They “succeed with the magic trick” if:\n\nThe referees presented 111: The responses have an even number of 1’s\nThe referees presented a single 1 and two 0’s: The responses have an odd number of 1’s\n\nWe assume that the spatial distance between the three parties prevent them from communicating at all, but they are allowed to coordinate before the game and bring anything they want with them.\n\nDesign a deterministic (classical) strategy for Alice, Bob, and Charlie in which the probability that they succeed is 3/4.\n\n\nSuppose that Alice, Bob, and Charlie prepare the following 3-qubit state on Earth before the magic trick begins:\n\\(\\frac{1}{2}\\left|000\\right> - \\frac{1}{2} \\left|011\\right> - \\frac{1}{2} \\left|101\\right> - \\frac{1}{2} \\left|110\\right>.\\)\nAlice takes the first qubit, Bob the second, and Charlie the third qubit to their respective planets. Now, when they receive their challenges, they each use the following strategy:\n\nIf they are given a 1, they measure their qubit and respond with the outcome.\nIf they are given a 0, they first apply a Hadamard gate to their qubit, and then measure and respond with the outcome.\n\nLet’s analyze the probability that Alice, Bob, and Charlie succeed with the magic trick.\n\nIf they are all given a 0, what’s the probability that they win?\nIf one person gets a 1 and the other two get a 0, what’s the probability that they win? (You only need to consider the case where Alice is the person to get a 1, since the game is symmetric)"
+  },
+  {
     "objectID": "courses/166fa25pages/hw3/4-note.html",
     "href": "courses/166fa25pages/hw3/4-note.html",
     "title": "HW3 - Problem 4",
@@ -572,6 +628,13 @@
     "title": "Homework 3",
     "section": "",
     "text": "Make sure you have blocked out at least an hour to work on these and have a notebook and timer! Remember, it’s just one hour per problem…\nAfter clicking on a problem, there will be a quick summary of which parts of the notes would be relevant. Make sure to take some time to review them before doing the problem!\n\n\nProblems\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4"
+  },
+  {
+    "objectID": "courses/166fa25pages/hw4.html",
+    "href": "courses/166fa25pages/hw4.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Make sure you have blocked out at least an hour to work on these and have a notebook and timer! Remember, it’s just one hour per problem…\nAfter clicking on a problem, there will be a quick summary of which parts of the notes would be relevant. Make sure to take some time to review them before doing the problem!\n\n\nProblems\n\nProblem 1\nProblem 2\nProblem 3\nBonus Problem"
   },
   {
     "objectID": "courses/46su25.html",
