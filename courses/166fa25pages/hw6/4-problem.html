@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Shion Fukuzawa - Introduction to Quantum Information and Computing</title>
+<title>Shion Fukuzawa - HW6 - Problem 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,8 +59,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -70,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Shion Fukuzawa</span>
     </a>
   </div>
@@ -80,15 +81,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../teaching.html">
+    <a class="nav-link" href="../../../teaching.html">
  <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../research.html">
+    <a class="nav-link" href="../../../research.html">
  <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog.html">
+    <a class="nav-link" href="../../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
@@ -97,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../index.xml"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -117,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Quantum Information and Computing</h1>
+<h1 class="title">HW6 - Problem 4</h1>
 </div>
 
 
@@ -132,140 +133,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="./166fa25files/166facollage.jpg" class="img-fluid"></p>
-<section id="announcements" class="level1">
-<h1>Announcements</h1>
-<ul>
-<li>Welcome to CS 166!</li>
-</ul>
-<!-- Make this a patch notes scrollable box -->
-</section>
-<section id="key-documents-and-pages-for-the-course" class="level1">
-<h1>Key Documents and Pages for the Course</h1>
-<ul>
-<li>Make sure to read through the <a href="./166fa25files/syllabus.pdf">syllabus</a>. I have outlined the expectations for myself and for you for this quarter amongst other things.</li>
-</ul>
-</section>
-<section id="staff-and-contact-info" class="level1">
-<h1>Staff and Contact Info</h1>
-<p>If you need assistance with course material or logistics, please use the Ed discussion board. For personal accommodations you may email me directly.</p>
-<p>Instructor:</p>
-<ul>
-<li>Shion Fukuzawa
-<ul>
-<li>fukuzaws at uci dot edu</li>
-<li>Office hours: Friday 2-3pm DBH4011 (Starting week 2)</li>
-<li><a href="https://PollEv.com​/shionfukuzawa524">PollEv link</a></li>
-</ul></li>
-</ul>
-<p>TAs:</p>
-<ul>
-<li>Fan Wang
-<ul>
-<li>Office hours: Monday, Wednesday 4-5pm ICS458B</li>
-</ul></li>
-<li>Kourosh Mirsohi
-<ul>
-<li>Office hours: Monday, Wednesday 1-2pm ICS458A</li>
-</ul></li>
-</ul>
-</section>
-<section id="course-outline" class="level1">
-<h1>Course Outline</h1>
-<p>The following is the tentative breakdown of the three modules we will divide the class into.</p>
-<ul>
-<li>Module 1: Math Foundations
-<ul>
-<li>Probability and Complex numbers</li>
-<li>Quantum circuits</li>
-<li>Linear algebra</li>
-<li>Complexity</li>
-</ul></li>
-<li>Module 2: Quantum Information
-<ul>
-<li>No cloning theorem and quantum money</li>
-<li>Quantum teleportation and superdense coding</li>
-<li>Hidden variable theories, monogamy of entanglement, and the CHSH game</li>
-<li>Quantum circuits and complexity</li>
-<li>Error correction</li>
-</ul></li>
-<li>Module 3: Quantum Computing
-<ul>
-<li>Query algorithms: Deutsch-Josza, Bernstein-Vazirani, Simon’s</li>
-<li>Quantum Fourier Transform</li>
-<li>Shor’s algorithm</li>
-<li>Grover’s algorithm</li>
-<li>Phase estimation (Not covered this quarter)</li>
-</ul></li>
-</ul>
-</section>
-<section id="lecture-notes" class="level1">
-<h1>Lecture notes</h1>
-<p>In this section I will post the digital copies of the lecture notes. Annotated versions will be posted as the course progresses.</p>
-<ul>
-<li>Preliminaries
-<ul>
-<li>Probability and Complex Numbers (<a href="./166fa25files/1-Foundations-1.pdf">unannotated notes</a>, <a href="./166fa25files/1-Foundations-1-annotated.pdf">annotated notes</a>)</li>
-<li>Single Qubit Intro and Linear Algebra (<a href="./166fa25files/1-Foundations-2.pdf">unannotated notes</a>, <a href="./166fa25files/1-Foundations-2-annotated.pdf">annotated notes</a>)</li>
-<li>Single Qubit Systems (<a href="./166fa25files/1-Foundations-3.pdf">unannotated notes</a>, <a href="./166fa25files/1-Foundations-3-annotated.pdf">annotated notes</a>)</li>
-<li>Two Qubit Systems (<a href="./166fa25files/1-Foundations-4.pdf">unannotated notes</a>, <a href="./166fa25files/1-Foundations-4-annotated.pdf">annotated notes</a>)</li>
-</ul></li>
-<li>Quantum Information
-<ul>
-<li>No Cloning Theorem (<a href="./166fa25files/2-Information-1-NoCloning.pdf">unannotated notes</a>, <a href="./166fa25files/2-Information-1-NoCloning-annotated.pdf">annotated notes</a>, <a href="./166fa25files/2-Information-NoCloning-Slides.pptx">Goodrich slides</a>)</li>
-<li>Quantum Teleportation (<a href="./166fa25files/2-Information-2-Teleportation.pdf">unannotated notes</a>, <a href="./166fa25files/2-Information-2-Teleportation-annotated.pdf">annotated notes</a>)</li>
-<li>Hidden Variables and CHSH
-<ul>
-<li>Part 1 (<a href="./166fa25files/2-Information-HVT-1.pdf">unannotated notes</a>, <a href="./166fa25files/2-Information-HVT-1-annotated.pdf">annotated notes</a>)</li>
-<li>Part 2 (<a href="./166fa25files/2-information-HVT-2.pdf">unannotated notes</a>, <a href="./166fa25files/2-information-HVT-2-annotated.pdf">annotated notes</a>)</li>
-</ul></li>
-<li>Error Correction
-<ul>
-<li>Part 1 (<a href="./166fa25files/2-Information-4-Error-Correction.pdf">unannotated notes</a>, <a href="./166fa25files/2-Information-4-Error-Correction-annotated.pdf">annotated notes</a>)</li>
-<li>Part 2 (<a href="./166fa25files/2-Information-ErrorCorrection-2-annotated.pdf">annotated notes</a>)</li>
-</ul></li>
-</ul></li>
-<li>Quantum Computation
-<ul>
-<li>Query-based Algorithms
-<ul>
-<li>Part 1 (<a href="./166fa25files/3-Computation-1-A.pdf">unannotated notes</a>, <a href="./166fa25files/3-Computation-1-A-annotated.pdf">annotated notes</a>)</li>
-<li>Part 2 (<a href="./166fa25files/3-Computation-1-B.pdf">unannotated notes</a>, <a href="./166fa25files/3-Computation-1-B-annotated.pdf">annotated notes</a>)</li>
-</ul></li>
-<li>Grover’s Algorithm (Quantum Search) (<a href="./166fa25files/3-Computation-2.pdf">unannotated notes</a>, <a href="./166fa25files/3-Computation-2-annotated.pdf">annotated notes</a>)</li>
-<li>Shor’s Algorithm (Factoring) (<a href="./166fa25files/3-Computation-3.pdf">unannotated notes</a>, <a href="./166fa25files/3-Computation-3-annotated.pdf">annotated notes</a>)</li>
-</ul></li>
-</ul>
-</section>
-<section id="problem-sets" class="level1">
-<h1>Problem Sets</h1>
-<ul>
-<li>Homework 1: Due Monday October 6, 11:59PM
-<ul>
-<li><a href="../courses/166fa25pages/hw1.html">Homework 1</a></li>
-</ul></li>
-<li>Homework 2: Due Tuesday October 14, 11:59PM
-<ul>
-<li><a href="../courses/166fa25pages/hw2.html">Homework 2</a></li>
-</ul></li>
-<li>Homework 3: Due Wednesday October 29, 11:59PM
-<ul>
-<li><a href="../courses/166fa25pages/hw3.html">Homework 3</a></li>
-</ul></li>
-<li>Homework 4: Due Thursday November 6, 11:59PM
-<ul>
-<li><a href="../courses/166fa25pages/hw4.html">Homework 4</a></li>
-</ul></li>
-<li>Homework 5: Due Thursday November 20, 11:59PM
-<ul>
-<li><a href="../courses/166fa25pages/hw5.html">Homework 5</a></li>
-</ul></li>
-<li>Homework 6: Due Thursday December 4, 11:59PM
-<ul>
-<li><a href="../courses/166fa25pages/hw6.html">Homework 6</a></li>
-</ul></li>
-</ul>
-<p>Please submit your homework to Gradescope. Solutions will be posted to Canvas.</p>
+<section id="problem-4-shors-algorithm-example" class="level1">
+<h1>Problem 4: Shor’s Algorithm Example</h1>
+<p>Consider the Period Finding algorithm for the function <span class="math inline">\(f : \{0, \ldots, N - 1\} \rightarrow \{0, \ldots, M - 1\}\)</span>, where <span class="math inline">\(f_x(s) = x^s \text{ mod } M\)</span>.</p>
+<p>In this problem, we will use Shor’s algorithm to factor <span class="math inline">\(M = 817\)</span> and <span class="math inline">\(N = 2^{20}\)</span>. Make sure you have the pseudocode in the notes for both Shor’s algorithm and period finding ready, as I will be referring to line numbers in those for the problems.</p>
+<ol type="1">
+<li>Suppose that we sampled <span class="math inline">\(x = 357\)</span> in step 1 of Shor’s algorithm. Explicitly write out what the function is that we pass to the period finding subroutine.</li>
+<li>(Period Finding) What is the period <span class="math inline">\(r\)</span> of the function you wrote in the previous problem? You might want to write a quick Python script or notebook to find this. We will use this to guide the analysis, but in practice we don’t know what this is and discover it as the output of the process.</li>
+<li>(Period Finding) Suppose that we measure <span class="math inline">\(\ket{264}\)</span> in the second register (step 4 of period finding pseudocode). Use what you know about the period <span class="math inline">\(r\)</span> from the previous problem to determine what the state of the first register is after this measurement. It should be in a form</li>
+</ol>
+<p><span class="math inline">\(\frac{1}{\sqrt{s}}\sum_{j=0}^{s-1} \ket{jr + l}\)</span></p>
+<p>but you should write the terms explicitly instead of using summation notation. 4. (Period Finding) In the next step, we apply the QFT in the first register and measure it in the standard basis. Suppose that the measurement outcome here was <span class="math inline">\(\left|141474\right&gt;\)</span>. What is the fraction we are trying to approximate? Write down its continued fraction approximation. You may (should) use tools like wolframalpha.com.</p>
+<p>You can type “continued fraction a/b” in the prompt to receive the approximation in a linear form <span class="math inline">\([a; r_1, r_2, r_3,...]\)</span> which means</p>
+<p><span class="math inline">\(\frac{a}{r_1-\frac{1}{r_2-\frac{1}{r_3 ...}} }.\)</span></p>
+<p>The nice thing about Wolfram is that you can also evaluate an approximation given in a linear form by typing “evaluate continued fraction <span class="math inline">\([a; r_1, r_2, r_3,...]\)</span>”. You can then try different approximations by only considering the first <span class="math inline">\(k\)</span> <span class="math inline">\(r_i\)</span> terms. The denominators in these approximations are the <span class="math inline">\(Q_0&lt;Q_1&lt;\cdots\)</span> in the notes. One of these should be the period of <span class="math inline">\(f\)</span>. Which one is it? 5. We now return to Shor’s algorithm, using the value of <span class="math inline">\(r\)</span> we found from period finding. Evaluate <span class="math inline">\(\gcd(x^{r/2}, 817)\)</span> and <span class="math inline">\(\gcd(x^{r/2},817)\)</span> to find the factors of <span class="math inline">\(M\)</span>. What were they?</p>
 
 
 </section>
